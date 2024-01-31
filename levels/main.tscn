@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ygmll4g223mh"]
+
+[ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="2_qosn2"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_3si3j")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Window" parent="." instance=ExtResource("2_qosn2")]
+position = Vector2i(0, 36)
+
+[node name="Window2" parent="." instance=ExtResource("2_qosn2")]
+position = Vector2i(0, 36)
