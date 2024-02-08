@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=11 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Texture2D" uid="uid://0ed6rfvl13tp" path="res://arts/wallpaper.webp" id="2_dpm1l"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="3_asdw0"]
 [ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/Download1.webp" id="4_fxont"]
 [ext_resource type="Texture2D" uid="uid://b28svp7gvmcw" path="res://arts/Email.webp" id="4_xn4il"]
+[ext_resource type="Texture2D" uid="uid://d2k20t827o2kh" path="res://arts/artage-io-48173_1707373470.png" id="7_c75e3"]
+[ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/artage-io-48177_1707373402.png" id="8_tg680"]
+[ext_resource type="Texture2D" uid="uid://bju6bno5h4bs2" path="res://arts/artage-io-48153_1707373450.png" id="9_b33k3"]
+[ext_resource type="Texture2D" uid="uid://eacgxqex4k3u" path="res://arts/artage-io-48155_1707373438.png" id="10_ed1g7"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -63,6 +67,46 @@ text = ""
 icon = ExtResource("4_fxont")
 icon_texture = ExtResource("4_fxont")
 icon_name = "Downloader"
+window = ExtResource("2_qosn2")
+
+[node name="TextureButton3" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("7_c75e3")
+icon_name = "Internet"
+window = ExtResource("2_qosn2")
+
+[node name="TextureButton4" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("8_tg680")
+icon_name = "My Computer"
+window = ExtResource("2_qosn2")
+
+[node name="TextureButton5" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("4_fxont")
+icon_name = "Downloader"
+window = ExtResource("2_qosn2")
+
+[node name="TextureButton6" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("9_b33k3")
+icon_name = "Music"
+window = ExtResource("2_qosn2")
+
+[node name="TextureButton7" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("10_ed1g7")
+icon_name = "Zen Garden"
 window = ExtResource("2_qosn2")
 
 [node name="Icons" type="Control" parent="Control"]

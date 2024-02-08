@@ -7,8 +7,10 @@
 custom_minimum_size = Vector2(60, 60)
 offset_right = 40.0
 offset_bottom = 40.0
+focus_mode = 0
 text = "Email"
 icon = ExtResource("2_hxui3")
+clip_text = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
