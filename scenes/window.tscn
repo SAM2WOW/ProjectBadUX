@@ -1,7 +1,14 @@
-[gd_scene format=3 uid="uid://dp76guknwa3lx"]
+[gd_scene load_steps=2 format=3 uid="uid://dp76guknwa3lx"]
+
+[ext_resource type="Theme" uid="uid://b5ew5gsgnofxv" path="res://Themes/Classic95/Classic95.tres" id="1_4j8po"]
 
 [node name="Window" type="Window"]
+title = "SCAM.EXE"
+position = Vector2i(0, 36)
 size = Vector2i(512, 512)
+keep_title_visible = true
+content_scale_mode = 1
+theme = ExtResource("1_4j8po")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
