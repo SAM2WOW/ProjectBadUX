@@ -15,11 +15,28 @@ run/main_scene="res://levels/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://arts/icon.svg"
 
+[autoload]
+
+WindowsManager="*res://scripts/WindowsManager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [gui]
 
+fonts/dynamic_fonts/use_oversampling=false
 theme/custom="res://Themes/Classic95/Classic95.tres"
+theme/custom_font="res://Themes/W95FA.otf"
+theme/default_font_antialiasing=0
+theme/default_font_subpixel_positioning=0
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
