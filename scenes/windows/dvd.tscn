@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://bo5n4f42rhea0"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_2s4pe"]
+[ext_resource type="Script" path="res://scenes/windows/dvd.gd" id="2_h6qfk"]
+[ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="2_ltt71"]
+[ext_resource type="Texture2D" uid="uid://dm8c66hyo85l" path="res://Themes/Classic95/Styles/Window/CloseBtn.png" id="4_iedv1"]
+[ext_resource type="Texture2D" uid="uid://tyjtjti37h5c" path="res://Themes/Classic95/Styles/Window/CloseBtnH.png" id="5_qoo8e"]
+[ext_resource type="Texture2D" uid="uid://c5q3bccdc35i" path="res://Themes/Classic95/Styles/Window/CloseBtnPressed.png" id="6_bblga"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lbno"]
+texture = ExtResource("4_iedv1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02xw6"]
+texture = ExtResource("5_qoo8e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2qta"]
+texture = ExtResource("6_bblga")
+
+[node name="DVD" instance=ExtResource("1_2s4pe")]
+transparent_bg = true
+position = Vector2i(0, 0)
+size = Vector2i(191, 117)
+borderless = true
+transparent = true
+script = ExtResource("2_h6qfk")
+window_icon = ExtResource("2_ltt71")
+window_name = "DVD.exe"
+
+[node name="CenterContainer" parent="Control" index="1"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Control" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ltt71")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="Control" index="3"]
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_2lbno")
+theme_override_styles/hover = SubResource("StyleBoxTexture_02xw6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i2qta")
+text = "     "
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

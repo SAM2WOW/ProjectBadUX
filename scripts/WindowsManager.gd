@@ -14,7 +14,7 @@ func add_window(window):
 	
 	var b = icon_btn.instantiate()
 	b.window = window
-	$"../Control/Panel/HBoxContainer".add_child(b)
+	$"../CanvasLayer/Control/Taskbar/HBoxContainer".add_child(b)
 	
 	opened_windows[window.name] = b
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm2pilqd3soih"
-path="res://.godot/imported/ezgif-7-aa06086179.png-4e6bc81c5a8884c0723aa0e20deeb899.ctex"
+uid="uid://b28svp7gvmcw"
+path="res://.godot/imported/Email.webp-f16fcdeabd35cf31051baa8342848794.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/ezgif-7-aa06086179.png"
-dest_files=["res://.godot/imported/ezgif-7-aa06086179.png-4e6bc81c5a8884c0723aa0e20deeb899.ctex"]
+source_file="res://arts/icons/Email.webp"
+dest_files=["res://.godot/imported/Email.webp-f16fcdeabd35cf31051baa8342848794.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpd7ml5of2hgr"]
 
 [ext_resource type="Script" path="res://scenes/icon.gd" id="2_3ac65"]
-[ext_resource type="Texture2D" uid="uid://b28svp7gvmcw" path="res://arts/Email.webp" id="2_hxui3"]
+[ext_resource type="Texture2D" uid="uid://b28svp7gvmcw" path="res://arts/icons/Email.webp" id="2_hxui3"]
 
 [node name="Icon" type="Button"]
 custom_minimum_size = Vector2(60, 60)

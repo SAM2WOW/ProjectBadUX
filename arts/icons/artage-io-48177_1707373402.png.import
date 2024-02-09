@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b28svp7gvmcw"
-path="res://.godot/imported/Email.webp-f9875983c40f34b1223b66f35d1447b7.ctex"
+uid="uid://cwift0uawmdct"
+path="res://.godot/imported/artage-io-48177_1707373402.png-94178080a24fd62a8d82db2e4cd8fb9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/Email.webp"
-dest_files=["res://.godot/imported/Email.webp-f9875983c40f34b1223b66f35d1447b7.ctex"]
+source_file="res://arts/icons/artage-io-48177_1707373402.png"
+dest_files=["res://.godot/imported/artage-io-48177_1707373402.png-94178080a24fd62a8d82db2e4cd8fb9e.ctex"]
 
 [params]
 

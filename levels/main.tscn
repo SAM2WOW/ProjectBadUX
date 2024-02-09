@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=17 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
@@ -6,15 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="2_qosn2"]
 [ext_resource type="Script" path="res://scripts/WindowsManager.gd" id="3_6e8k6"]
 [ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="3_asdw0"]
-[ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/Download1.webp" id="4_fxont"]
-[ext_resource type="Texture2D" uid="uid://b28svp7gvmcw" path="res://arts/Email.webp" id="4_xn4il"]
-[ext_resource type="Texture2D" uid="uid://d2k20t827o2kh" path="res://arts/artage-io-48173_1707373470.png" id="7_c75e3"]
+[ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/icons/Download1.webp" id="4_fxont"]
+[ext_resource type="Texture2D" uid="uid://cye1pdsjf00si" path="res://arts/icons/artage-io-48140_1707444770.png" id="6_cglk1"]
 [ext_resource type="PackedScene" uid="uid://bydua10qenqlu" path="res://scenes/windows/notepad.tscn" id="7_jkpee"]
-[ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/artage-io-48177_1707373402.png" id="8_tg680"]
-[ext_resource type="Texture2D" uid="uid://bju6bno5h4bs2" path="res://arts/artage-io-48153_1707373450.png" id="9_b33k3"]
-[ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/artage-io-48169_1707373413.png" id="9_mas5o"]
-[ext_resource type="Texture2D" uid="uid://eacgxqex4k3u" path="res://arts/artage-io-48155_1707373438.png" id="10_ed1g7"]
+[ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/icons/artage-io-48177_1707373402.png" id="8_tg680"]
+[ext_resource type="Texture2D" uid="uid://bju6bno5h4bs2" path="res://arts/icons/artage-io-48153_1707373450.png" id="9_b33k3"]
+[ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="9_mas5o"]
+[ext_resource type="Texture2D" uid="uid://eacgxqex4k3u" path="res://arts/icons/artage-io-48155_1707373438.png" id="10_ed1g7"]
 [ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="10_mbeyi"]
+[ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="11_qbj6n"]
+[ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -32,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 visible = false
@@ -69,7 +71,7 @@ layout_mode = 2
 layout_mode = 2
 text = ""
 icon = null
-icon_texture = ExtResource("4_xn4il")
+icon_texture = ExtResource("6_cglk1")
 icon_name = "Notepad"
 window = ExtResource("7_jkpee")
 
@@ -85,9 +87,9 @@ window = ExtResource("10_mbeyi")
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
-icon_texture = ExtResource("7_c75e3")
-icon_name = "SCAM"
-window = ExtResource("2_qosn2")
+icon_texture = ExtResource("11_qbj6n")
+icon_name = "DVD"
+window = ExtResource("12_q22pg")
 
 [node name="TextureButton4" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2
@@ -121,7 +123,19 @@ icon_texture = ExtResource("10_ed1g7")
 icon_name = "SCAM"
 window = ExtResource("2_qosn2")
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Taskbar" type="Panel" parent="CanvasLayer/Control"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 1
 anchors_preset = 12
@@ -135,7 +149,7 @@ offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Taskbar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -148,23 +162,3 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Windows" type="Node2D" parent="."]
-
-[node name="Window" parent="." instance=ExtResource("2_qosn2")]
-position = Vector2i(442, 82)
-visible = false
-
-[node name="Window2" parent="." instance=ExtResource("2_qosn2")]
-position = Vector2i(30, 42)
-visible = false
-
-[node name="Window3" parent="." instance=ExtResource("2_qosn2")]
-position = Vector2i(30, 42)
-visible = false
-borderless = true
-
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
-position = Vector2i(715, 342)
-size = Vector2i(139, 108)
-dialog_text = "YOU GOT SCAMED
-
-:D"
