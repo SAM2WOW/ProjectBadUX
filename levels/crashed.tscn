@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://lwrsoty1s143"]
+
+[ext_resource type="Script" path="res://levels/crashed.gd" id="1_46qfb"]
+
+[node name="Crashed" type="Node"]
+script = ExtResource("1_46qfb")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.501961, 0.501961, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Control/CenterContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b][ Your PC CRASHED ][/b] [/center]
+
+
+
+
+You have fell for the [wave amp=50.0 freq=5.0 connected=1]UX DARK PATTERNS[/wave]
+
+* Clicked on a fake download button
+* Failed the email mini game
+
+
+
+
+[center][b]Please restart your computer to continue...[/b] [/center]"
+fit_content = true
+autowrap_mode = 0

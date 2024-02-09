@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqqmtve8d4xl0"]
+
+[ext_resource type="Texture2D" uid="uid://b28svp7gvmcw" path="res://arts/Email.webp" id="1_cjflg"]
+[ext_resource type="Script" path="res://scenes/windowicon.gd" id="2_m1438"]
+
+[node name="WindowIcon" type="Button"]
+custom_minimum_size = Vector2(30, 30)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+icon = ExtResource("1_cjflg")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("2_m1438")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

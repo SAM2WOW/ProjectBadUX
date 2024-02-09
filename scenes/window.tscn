@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp76guknwa3lx"]
+[gd_scene load_steps=3 format=3 uid="uid://dp76guknwa3lx"]
 
 [ext_resource type="Script" path="res://scenes/window.gd" id="1_y2w8t"]
+[ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/artage-io-48169_1707373413.png" id="2_xl0rm"]
 
 [node name="Window" type="Window"]
 title = "SCAM.EXE"
@@ -9,6 +10,8 @@ size = Vector2i(512, 512)
 keep_title_visible = true
 content_scale_mode = 1
 script = ExtResource("1_y2w8t")
+window_icon = ExtResource("2_xl0rm")
+window_name = "Notepad"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -35,6 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control/CenterContainer"]
+visible = false
 layout_mode = 2
 text = "HI YOU GOT SCAMMED"
 
