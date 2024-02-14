@@ -9,13 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/icons/Download1.webp" id="4_fxont"]
 [ext_resource type="Texture2D" uid="uid://cye1pdsjf00si" path="res://arts/icons/artage-io-48140_1707444770.png" id="6_cglk1"]
 [ext_resource type="PackedScene" uid="uid://bydua10qenqlu" path="res://scenes/windows/notepad.tscn" id="7_jkpee"]
-[ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/icons/artage-io-48177_1707373402.png" id="8_tg680"]
 [ext_resource type="Texture2D" uid="uid://bju6bno5h4bs2" path="res://arts/icons/artage-io-48153_1707373450.png" id="9_b33k3"]
 [ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="9_mas5o"]
 [ext_resource type="Texture2D" uid="uid://eacgxqex4k3u" path="res://arts/icons/artage-io-48155_1707373438.png" id="10_ed1g7"]
 [ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="10_mbeyi"]
 [ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="11_qbj6n"]
 [ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
+[ext_resource type="PackedScene" uid="uid://c7jcd2xhvuig2" path="res://scenes/windows/crash_cup.tscn" id="13_3o8x1"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -95,9 +95,9 @@ window = ExtResource("12_q22pg")
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
-icon_texture = ExtResource("8_tg680")
-icon_name = "SCAM"
-window = ExtResource("2_qosn2")
+icon_texture = ExtResource("9_mas5o")
+icon_name = "CUP_TRICK.exe"
+window = ExtResource("13_3o8x1")
 
 [node name="TextureButton5" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2

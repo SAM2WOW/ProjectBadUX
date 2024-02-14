@@ -1,25 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7jcd2xhvuig2"]
+[gd_scene load_steps=5 format=3 uid="uid://c7jcd2xhvuig2"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_h0o7c"]
 [ext_resource type="Script" path="res://scenes/windows/crash_cup.gd" id="2_a07wd"]
 [ext_resource type="Texture2D" uid="uid://cf2a0f3wc61k6" path="res://arts/465718-dark-skull.jpg" id="3_fqr8e"]
+[ext_resource type="Texture2D" uid="uid://bxlc0w4yxltg4" path="res://arts/pngtree-empty-red-plastic-cup-isolated-with-clipping-path-for-mockup-png-image_9948799.png" id="4_ru1k7"]
 
 [node name="Cup Virus" instance=ExtResource("1_h0o7c")]
 position = Vector2i(0, 22)
 size = Vector2i(846, 472)
 script = ExtResource("2_a07wd")
-window_name = ""
+window_name = "CUP_TRICK.exe"
+
+[node name="Control" parent="." index="0"]
+mouse_filter = 2
 
 [node name="ColorRect" parent="Control" index="0"]
-color = Color(1, 0, 0, 1)
+mouse_filter = 2
+color = Color(0.54902, 0.0941176, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Control" index="1"]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 0
 offset_right = 853.0
 offset_bottom = 480.0
+mouse_filter = 2
 texture = ExtResource("3_fqr8e")
 stretch_mode = 3
+
+[node name="CenterContainer" parent="Control" index="2"]
+mouse_filter = 2
 
 [node name="Label" parent="Control/CenterContainer" index="0"]
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -33,7 +42,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 111
-text = "WARNING"
+text = "WARNING!!"
 
 [node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="1"]
 layout_mode = 2
@@ -47,3 +56,56 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 210
 
 [node name="Node2D" type="Node2D" parent="." index="1"]
+
+[node name="Cup1" type="Sprite2D" parent="Node2D" index="0"]
+z_index = 5
+position = Vector2(228.185, 312.295)
+rotation = 3.14159
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("4_ru1k7")
+
+[node name="Cup2" type="Sprite2D" parent="Node2D" index="1"]
+z_index = 5
+position = Vector2(428.505, 312.295)
+rotation = 3.14159
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("4_ru1k7")
+
+[node name="CONFIRM" type="Button" parent="Node2D/Cup2" index="0"]
+z_index = -1
+offset_left = 88.43
+offset_top = -162.66
+offset_right = 170.43
+offset_bottom = -120.31
+rotation = -3.14159
+scale = Vector2(2.245, 2.245)
+text = "CONFIRM
+"
+
+[node name="Cup3" type="Sprite2D" parent="Node2D" index="2"]
+z_index = 5
+position = Vector2(615.135, 312.295)
+rotation = 3.14159
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("4_ru1k7")
+
+[node name="Cancel" type="Button" parent="Node2D/Cup3" index="0"]
+z_index = -1
+offset_left = 84.815
+offset_top = -19.385
+offset_right = 160.505
+offset_bottom = 22.965
+rotation = -3.14159
+scale = Vector2(2.245, 2.245)
+disabled = true
+text = "cancel"
+
+[node name="Timer" type="Timer" parent="." index="2"]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[connection signal="mouse_entered" from="Node2D/Cup2/CONFIRM" to="." method="_on_confirm_mouse_entered"]
+[connection signal="pressed" from="Node2D/Cup2/CONFIRM" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Node2D/Cup3/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
