@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7jcd2xhvuig2"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_h0o7c"]
+[ext_resource type="Script" path="res://scenes/windows/crash_cup.gd" id="2_a07wd"]
+[ext_resource type="Texture2D" uid="uid://cf2a0f3wc61k6" path="res://arts/465718-dark-skull.jpg" id="3_fqr8e"]
+
+[node name="Cup Virus" instance=ExtResource("1_h0o7c")]
+position = Vector2i(0, 22)
+size = Vector2i(846, 472)
+script = ExtResource("2_a07wd")
+window_name = ""
+
+[node name="ColorRect" parent="Control" index="0"]
+color = Color(1, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control" index="1"]
+modulate = Color(1, 1, 1, 0.45098)
+layout_mode = 0
+offset_right = 853.0
+offset_bottom = 480.0
+texture = ExtResource("3_fqr8e")
+stretch_mode = 3
+
+[node name="Label" parent="Control/CenterContainer" index="0"]
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 111
+text = "WARNING"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Control/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 111
+text = "WARNING"
+
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 31
+text = "YOUR PC WILL CRASH IN 30 Seconds"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 210
+
+[node name="Node2D" type="Node2D" parent="." index="1"]
