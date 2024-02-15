@@ -2,18 +2,18 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://lvc7daufmx6l"
-path="res://.godot/imported/W95FA.otf-ec193a955412d1e62aaa2d468ca74112.fontdata"
+uid="uid://d1tsa0yhuqli5"
+path="res://.godot/imported/ChicagoFLF.ttf-fd04989c64b27f103c00adc07e058e00.fontdata"
 
 [deps]
 
-source_file="res://Themes/W95FA.otf"
-dest_files=["res://.godot/imported/W95FA.otf-ec193a955412d1e62aaa2d468ca74112.fontdata"]
+source_file="res://Themes/ChicagoFLF.ttf"
+dest_files=["res://.godot/imported/ChicagoFLF.ttf-fd04989c64b27f103c00adc07e058e00.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=0
+antialiasing=1
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8

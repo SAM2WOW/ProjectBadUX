@@ -73,12 +73,13 @@ texture = ExtResource("4_ru1k7")
 
 [node name="CONFIRM" type="Button" parent="Node2D/Cup2" index="0"]
 z_index = -1
-offset_left = 88.43
+offset_left = 100.535
 offset_top = -162.66
-offset_right = 170.43
+offset_right = 186.535
 offset_bottom = -120.31
 rotation = -3.14159
 scale = Vector2(2.245, 2.245)
+focus_mode = 0
 text = "CONFIRM
 "
 
@@ -97,6 +98,7 @@ offset_right = 160.505
 offset_bottom = 22.965
 rotation = -3.14159
 scale = Vector2(2.245, 2.245)
+focus_mode = 0
 disabled = true
 text = "cancel"
 

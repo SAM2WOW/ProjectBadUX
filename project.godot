@@ -30,7 +30,10 @@ window/stretch/aspect="expand"
 
 [gui]
 
+fonts/dynamic_fonts/use_oversampling=false
 theme/custom="res://Themes/Classic95/Classic95.tres"
+theme/custom_font="res://Themes/ChicagoFLF.ttf"
+theme/default_font_antialiasing=0
 timers/tooltip_delay_sec=0.3
 
 [rendering]

@@ -33,7 +33,7 @@ func _on_confirm_mouse_entered():
 		
 		#$Node2D/Cup2/CONFIRM.position = Vector2(88.43, -162.66)
 		tween = create_tween()
-		tween.tween_property($Node2D/Cup2/CONFIRM, "position", Vector2(88.43, -19.385), 0.5)
+		tween.tween_property($Node2D/Cup2/CONFIRM, "position", Vector2(100.535, -19.385), 0.5)
 		
 		var table = [$Node2D/Cup1, $Node2D/Cup2, $Node2D/Cup3]
 		for i in range(19):
@@ -56,8 +56,8 @@ func on_tween_finished():
 	$Node2D/Cup3/Cancel.set_disabled(false)
 	
 	tween = create_tween()
-	tween.tween_property($Node2D/Cup2/CONFIRM, "position", Vector2(88.43, -162.66), 0.3)
-	tween.tween_property($Node2D/Cup3/Cancel, "position", Vector2(84.815, -162.66), 1)
+	tween.tween_property($Node2D/Cup2/CONFIRM, "position", Vector2(100.535, -162.66), 0.3)
+	tween.tween_property($Node2D/Cup3/Cancel, "position", Vector2(84.815, -162.66), 2)
 
 
 func _on_confirm_pressed():
