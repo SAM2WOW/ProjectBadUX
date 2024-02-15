@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b11hmmcjsikmg"]
+[gd_scene load_steps=4 format=3 uid="uid://b11hmmcjsikmg"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_vl86w"]
+[ext_resource type="Texture2D" uid="uid://dmo2ehu6voht8" path="res://Themes/Classic95/Styles/General/DownArrow.png" id="2_80wfq"]
 [ext_resource type="Script" path="res://scenes/windows/trick_confirm.gd" id="2_wxph2"]
 
 [node name="Trick Confirm" instance=ExtResource("1_vl86w")]
 position = Vector2i(0, 0)
 size = Vector2i(426, 347)
+theme_override_icons/close = ExtResource("2_80wfq")
+theme_override_icons/close_pressed = ExtResource("2_80wfq")
 script = ExtResource("2_wxph2")
 window_name = "Confirm?"
 second_trick = false
