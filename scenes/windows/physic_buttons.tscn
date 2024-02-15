@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgjjxchebes4"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_m1ls7"]
+[ext_resource type="Texture2D" uid="uid://eacgxqex4k3u" path="res://arts/icons/artage-io-48155_1707373438.png" id="2_1eq5m"]
+[ext_resource type="Script" path="res://scenes/windows/physic_buttons.gd" id="2_bjh7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fulvd"]
+size = Vector2(61, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccdvu"]
+size = Vector2(27.49, 641)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4sfr"]
+size = Vector2(785.25, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_03hp1"]
+radius = 41.0488
+
+[node name="Physics" instance=ExtResource("1_m1ls7")]
+position = Vector2i(0, 0)
+size = Vector2i(500, 500)
+script = ExtResource("2_bjh7p")
+window_icon = ExtResource("2_1eq5m")
+window_name = "Physics"
+
+[node name="Node2D" type="Node2D" parent="." index="1"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Node2D" index="0"]
+position = Vector2(55.555, 45.815)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D" index="0"]
+position = Vector2(29.945, 14.685)
+shape = SubResource("RectangleShape2D_fulvd")
+
+[node name="Button" type="Button" parent="Node2D/RigidBody2D" index="1"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "CLOSE"
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="Node2D" index="1"]
+position = Vector2(102.315, 11.53)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D2" index="0"]
+position = Vector2(29.945, 14.685)
+shape = SubResource("RectangleShape2D_fulvd")
+
+[node name="Button" type="Button" parent="Node2D/RigidBody2D2" index="1"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "CLOSE"
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="Node2D" index="2"]
+position = Vector2(189.795, 74.645)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D3" index="0"]
+position = Vector2(29.945, 14.685)
+shape = SubResource("RectangleShape2D_fulvd")
+
+[node name="Button" type="Button" parent="Node2D/RigidBody2D3" index="1"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "CLOSE"
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="Node2D" index="3"]
+position = Vector2(231.93, 74.645)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D4" index="0"]
+position = Vector2(29.945, 14.685)
+shape = SubResource("RectangleShape2D_fulvd")
+
+[node name="Button" type="Button" parent="Node2D/RigidBody2D4" index="1"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "CLOSE"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" index="0"]
+position = Vector2(-3.5, 310.5)
+shape = SubResource("RectangleShape2D_ccdvu")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D" index="5"]
+position = Vector2(508.49, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2" index="0"]
+position = Vector2(-10.745, 310.5)
+shape = SubResource("RectangleShape2D_ccdvu")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D" index="6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3" index="0"]
+position = Vector2(131.375, -1.625)
+shape = SubResource("RectangleShape2D_c4sfr")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D" index="7"]
+position = Vector2(0, 510.57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D4" index="0"]
+position = Vector2(131.375, -9.5)
+shape = SubResource("RectangleShape2D_c4sfr")
+
+[node name="CursorBody" type="StaticBody2D" parent="Node2D" index="8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CursorBody" index="0"]
+shape = SubResource("CircleShape2D_03hp1")

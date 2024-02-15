@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/icons/Download1.webp" id="4_fxont"]
 [ext_resource type="Texture2D" uid="uid://cye1pdsjf00si" path="res://arts/icons/artage-io-48140_1707444770.png" id="6_cglk1"]
 [ext_resource type="PackedScene" uid="uid://bydua10qenqlu" path="res://scenes/windows/notepad.tscn" id="7_jkpee"]
-[ext_resource type="Texture2D" uid="uid://bju6bno5h4bs2" path="res://arts/icons/artage-io-48153_1707373450.png" id="9_b33k3"]
 [ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="9_mas5o"]
 [ext_resource type="Texture2D" uid="uid://eacgxqex4k3u" path="res://arts/icons/artage-io-48155_1707373438.png" id="10_ed1g7"]
 [ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="10_mbeyi"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
 [ext_resource type="PackedScene" uid="uid://c7jcd2xhvuig2" path="res://scenes/windows/crash_cup.tscn" id="13_3o8x1"]
 [ext_resource type="PackedScene" uid="uid://b11hmmcjsikmg" path="res://scenes/windows/trick_confirm.tscn" id="14_kw5uc"]
+[ext_resource type="PackedScene" uid="uid://dgjjxchebes4" path="res://scenes/windows/physic_buttons.tscn" id="16_kwsdj"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -112,9 +112,9 @@ window = ExtResource("14_kw5uc")
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
-icon_texture = ExtResource("9_b33k3")
-icon_name = "SCAM"
-window = ExtResource("2_qosn2")
+icon_texture = ExtResource("10_ed1g7")
+icon_name = "Physics"
+window = ExtResource("16_kwsdj")
 
 [node name="TextureButton7" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2
