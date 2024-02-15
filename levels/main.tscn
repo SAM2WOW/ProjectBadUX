@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=18 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="11_qbj6n"]
 [ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
 [ext_resource type="PackedScene" uid="uid://c7jcd2xhvuig2" path="res://scenes/windows/crash_cup.tscn" id="13_3o8x1"]
+[ext_resource type="PackedScene" uid="uid://b11hmmcjsikmg" path="res://scenes/windows/trick_confirm.tscn" id="14_kw5uc"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -104,8 +105,8 @@ layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
 icon_texture = ExtResource("4_fxont")
-icon_name = "SCAM"
-window = ExtResource("2_qosn2")
+icon_name = "Confirm Shame"
+window = ExtResource("14_kw5uc")
 
 [node name="TextureButton6" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2

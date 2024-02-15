@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://b11hmmcjsikmg"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_vl86w"]
+[ext_resource type="Script" path="res://scenes/windows/trick_confirm.gd" id="2_wxph2"]
+
+[node name="Trick Confirm" instance=ExtResource("1_vl86w")]
+position = Vector2i(0, 0)
+size = Vector2i(426, 347)
+script = ExtResource("2_wxph2")
+window_name = "Confirm?"
+second_trick = false
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer2" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Would you like to scbscribe to 
+FITNESS PRO plan?
+ 
+12$ per minute
+ 
+ 
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="Node2D" type="Node2D" parent="." index="1"]
+
+[node name="Yes" type="Button" parent="Node2D" index="0"]
+offset_left = 132.0
+offset_top = 217.0
+offset_right = 211.0
+offset_bottom = 245.0
+text = "    YES    "
+
+[node name="Confirm" type="Button" parent="Node2D" index="1"]
+offset_left = 215.0
+offset_top = 217.0
+offset_right = 292.0
+offset_bottom = 245.0
+text = "confirm"
+
+[node name="No" type="Button" parent="Node2D" index="2"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 349.0
+offset_top = 319.0
+offset_right = 426.0
+offset_bottom = 347.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+text = "NO"
+flat = true
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="." index="2"]
+size = Vector2i(241, 155)
+dialog_text = "If you choose to cancel, you might lose ALL of your save data!"
+dialog_autowrap = true
+
+[connection signal="pressed" from="Node2D/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Node2D/Confirm" to="." method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Node2D/No" to="." method="_on_no_mouse_entered"]
+[connection signal="pressed" from="Node2D/No" to="." method="_on_no_pressed"]
+[connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

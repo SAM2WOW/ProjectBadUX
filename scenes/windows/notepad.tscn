@@ -24,7 +24,10 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 text = "Hi son!
-My computer have been acting weird and I can't find "
+
+My computer have been acting weird and I couldn't check nana's email anymore. 
+
+Can you help me pull up her email again?"
 wrap_mode = 1
 
 [node name="Panel" type="Panel" parent="Control/VBoxContainer" index="1"]
