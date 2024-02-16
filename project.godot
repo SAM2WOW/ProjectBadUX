@@ -20,6 +20,7 @@ config/icon="res://arts/icon.svg"
 [autoload]
 
 Global="*res://scripts/Global.gd"
+SoundPlayer="*res://scripts/Sound_player.gd"
 
 [display]
 

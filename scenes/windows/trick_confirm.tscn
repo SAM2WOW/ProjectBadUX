@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scenes/windows/trick_confirm.gd" id="2_wxph2"]
 
 [node name="Trick Confirm" instance=ExtResource("1_vl86w")]
-position = Vector2i(0, 0)
+position = Vector2i(0, 22)
 size = Vector2i(426, 347)
 theme_override_icons/close = ExtResource("2_80wfq")
 theme_override_icons/close_pressed = ExtResource("2_80wfq")

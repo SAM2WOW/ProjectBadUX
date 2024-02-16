@@ -17,7 +17,7 @@ size = Vector2(785.25, 29)
 radius = 41.0488
 
 [node name="Physics" instance=ExtResource("1_m1ls7")]
-position = Vector2i(0, 0)
+position = Vector2i(0, 22)
 size = Vector2i(500, 500)
 script = ExtResource("2_bjh7p")
 window_icon = ExtResource("2_1eq5m")

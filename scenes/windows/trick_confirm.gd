@@ -25,6 +25,7 @@ func _on_close_requested():
 
 
 func _on_no_pressed():
+	SoundPlayer.play("Deny")
 	Global.windowsManager.add_window($ConfirmationDialog)
 	$ConfirmationDialog.show()
 	$ConfirmationDialog.popup_centered()
@@ -33,6 +34,7 @@ func _on_no_pressed():
 func _on_yes_pressed():
 	emit_signal("confirmed")
 	
+	SoundPlayer.play("Confirm")
 	Global.windowsManager.remove_window(self)
 	queue_free()
 
@@ -53,6 +55,7 @@ func _on_no_mouse_entered():
 
 
 func _on_confirmation_dialog_canceled():
+	SoundPlayer.play("Deny")
 	Global.windowsManager.remove_window($ConfirmationDialog)
 	$ConfirmationDialog.hide()
 
@@ -60,6 +63,7 @@ func _on_confirmation_dialog_canceled():
 func _on_confirmation_dialog_confirmed():
 	emit_signal("canceled")
 	
+	SoundPlayer.play("Confirm")
 	Global.windowsManager.remove_window($ConfirmationDialog)
 	Global.windowsManager.remove_window(self)
 	queue_free()

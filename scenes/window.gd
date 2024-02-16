@@ -21,9 +21,13 @@ func _on_close_requested():
 	Global.windowsManager.remove_window(self)
 	
 	queue_free()
+	
+	SoundPlayer.play("Deny")
 
 
 func _on_button_pressed():
 	Global.windowsManager.remove_window(self)
 	
 	queue_free()
+	
+	SoundPlayer.play("Deny")

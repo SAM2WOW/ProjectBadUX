@@ -61,6 +61,8 @@ func on_tween_finished():
 
 
 func _on_confirm_pressed():
+	SoundPlayer.play("Confirm")
+	
 	$Control/CenterContainer/VBoxContainer/Label2.set_text("GOOD BYE")
 	$Timer.start(2)
 	
@@ -68,6 +70,8 @@ func _on_confirm_pressed():
 
 
 func _on_cancel_pressed():
+	SoundPlayer.play("Deny")
+	
 	$Timer.stop()
 	$Control/CenterContainer/VBoxContainer/Label.hide()
 	

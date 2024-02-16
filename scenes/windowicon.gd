@@ -15,5 +15,7 @@ func _ready():
 
 
 func _on_pressed():
+	SoundPlayer.play("Confirm")
+	
 	window.popup()
 	window.grab_focus()

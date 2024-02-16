@@ -11,6 +11,8 @@ func _ready():
 
 
 func _on_pressed():
+	SoundPlayer.play("Confirm")
+	
 	var w = window.instantiate()
 	
 	Global.windowsManager.add_window(w)
