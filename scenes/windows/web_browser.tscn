@@ -1,0 +1,351 @@
+[gd_scene load_steps=15 format=3 uid="uid://cn6sbyi6q46q0"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_qx6jo"]
+[ext_resource type="Script" path="res://scenes/windows/web_browser.gd" id="2_fywun"]
+[ext_resource type="Texture2D" uid="uid://d2k20t827o2kh" path="res://arts/icons/artage-io-48173_1707373470.png" id="2_i72r4"]
+[ext_resource type="Texture2D" uid="uid://mlmygn30vmv1" path="res://arts/McGoogle.webp" id="3_syoli"]
+[ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="4_pf1hf"]
+[ext_resource type="Texture2D" uid="uid://dpmcjththyl4e" path="res://arts/Captcha.jpg" id="6_eylj3"]
+[ext_resource type="Texture2D" uid="uid://df2r26s4pnacf" path="res://arts/crosshair068.png" id="7_6p72y"]
+[ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/duck.png" id="7_ofi06"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x50vf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_of7jr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fkg3u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1d2ao"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_osnml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hber1"]
+
+[node name="WebBrowser" instance=ExtResource("1_qx6jo")]
+position = Vector2i(0, 22)
+size = Vector2i(720, 527)
+mouse_passthrough = true
+script = ExtResource("2_fywun")
+window_icon = ExtResource("2_i72r4")
+window_name = "Web Browser"
+
+[node name="Control" parent="." index="0"]
+mouse_filter = 2
+
+[node name="ColorRect" parent="Control" index="0"]
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control" index="1"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_right = 196.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.619608, 0.619608, 0.619608, 1)
+theme_override_font_sizes/font_size = 11
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" index="3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="TabContainer" type="TabContainer" parent="Control/ScrollContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x50vf")
+tab_alignment = 1
+tabs_visible = false
+
+[node name="GoogleFrontPage" type="CenterContainer" parent="Control/ScrollContainer/TabContainer" index="1"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/TabContainer/GoogleFrontPage" index="0"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(200, 79.08)
+layout_mode = 2
+texture = ExtResource("3_syoli")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(234.825, 0)
+layout_mode = 2
+placeholder_text = "Duck"
+
+[node name="SearchButton" type="Button" parent="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Search"
+
+[node name="SearchResults" type="CenterContainer" parent="Control/ScrollContainer/TabContainer" index="2"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/TabContainer/SearchResults" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3" index="0"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+texture = ExtResource("4_pf1hf")
+
+[node name="BadWebsite1" type="Button" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_of7jr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fkg3u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1d2ao")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_osnml")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hber1")
+text = "Download Free Duck Image Here"
+
+[node name="Label4" type="Label" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Looking for high-quality duck images? Browse our collection of duck photos and pictures of ducks, all available for free download."
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer2" index="0"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer2/HBoxContainer" index="0"]
+layout_mode = 2
+texture = ExtResource("4_pf1hf")
+
+[node name="BadWebsite2" type="Button" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer2/HBoxContainer" index="1"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_of7jr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fkg3u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1d2ao")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_osnml")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hber1")
+text = "1000+ Ducks Pictures | Download Free Images on ...
+"
+
+[node name="Label3" type="Label" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Download the perfect duck pictures. Find over 100+ of the best free duck images. Free for commercial use ✓ No attribution required ✓ Copyright-free."
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer2" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3" index="2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer3" index="0"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer3/HBoxContainer" index="0"]
+layout_mode = 2
+texture = ExtResource("4_pf1hf")
+
+[node name="GoodWebsite" type="Button" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer3/HBoxContainer" index="1"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_of7jr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fkg3u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1d2ao")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_osnml")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hber1")
+text = "417214 Duck Stock Photos"
+
+[node name="Label2" type="Label" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer3" index="1"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Browse 21045 beautiful Duck stock images, photos and wallpaper for royalty-free download from the creative contributors at this duck website!"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer3" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3" index="3"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer4" index="0"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer4/HBoxContainer" index="0"]
+layout_mode = 2
+texture = ExtResource("4_pf1hf")
+
+[node name="BadWebsite3" type="Button" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer4/HBoxContainer" index="1"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_of7jr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fkg3u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1d2ao")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_osnml")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hber1")
+text = "Duck Images [Hd] - Download Duck Pictures For Free"
+
+[node name="Label2" type="Label" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer4" index="1"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Choose from free images of mallard ducks to bright yellow rubber duckies. There are a variety of shots from close-ups to silhouette photos of these migrant ...
+"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer4" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="DuckCaptcha" type="CenterContainer" parent="Control/ScrollContainer/TabContainer" index="3"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/TabContainer/DuckCaptcha" index="0"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Shoot the AI ducks. Don't shoot the real duck.
+Download link ready in 15 seconds ...
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer" index="1"]
+layout_mode = 2
+mouse_filter = 2
+max_value = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(30, 85.045)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6_eylj3")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="DuckReady" type="CenterContainer" parent="Control/ScrollContainer/TabContainer" index="4"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/TabContainer/DuckReady" index="0"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/TabContainer/DuckReady/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(30, 85.045)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("7_ofi06")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/TabContainer/DuckReady/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Congrats! Your image is ready to download now!
+"
+
+[node name="Download" type="Button" parent="Control/ScrollContainer/TabContainer/DuckReady/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Download"
+
+[node name="Node2D" type="Node2D" parent="." index="1"]
+
+[node name="Ducks" type="Node2D" parent="Node2D" index="0"]
+
+[node name="Crosshair" type="Sprite2D" parent="Node2D" index="1"]
+visible = false
+modulate = Color(1, 0, 0, 1)
+z_index = 500
+position = Vector2(326, 312)
+texture = ExtResource("7_6p72y")
+
+[node name="Timer" type="Timer" parent="." index="2"]
+wait_time = 15.0
+one_shot = true
+
+[node name="SpawnTimer" type="Timer" parent="." index="3"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="caret_changed" from="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_text_edit_caret_changed"]
+[connection signal="pressed" from="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/SearchButton" to="." method="_on_search_button_pressed"]
+[connection signal="mouse_entered" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer/HBoxContainer2/BadWebsite1" to="." method="_on_bad_website_1_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer/HBoxContainer2/BadWebsite1" to="." method="_on_bad_website_1_mouse_exited"]
+[connection signal="pressed" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer/HBoxContainer2/BadWebsite1" to="." method="_on_bad_website_1_pressed"]
+[connection signal="mouse_entered" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer2/HBoxContainer/BadWebsite2" to="." method="_on_bad_website_2_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer2/HBoxContainer/BadWebsite2" to="." method="_on_bad_website_2_mouse_exited"]
+[connection signal="pressed" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer2/HBoxContainer/BadWebsite2" to="." method="_on_bad_website_2_pressed"]
+[connection signal="mouse_entered" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer3/HBoxContainer/GoodWebsite" to="." method="_on_good_website_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer3/HBoxContainer/GoodWebsite" to="." method="_on_good_website_mouse_exited"]
+[connection signal="pressed" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer3/HBoxContainer/GoodWebsite" to="." method="_on_good_website_pressed"]
+[connection signal="mouse_entered" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer4/HBoxContainer/BadWebsite3" to="." method="_on_bad_website_3_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer4/HBoxContainer/BadWebsite3" to="." method="_on_bad_website_3_mouse_exited"]
+[connection signal="pressed" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer4/HBoxContainer/BadWebsite3" to="." method="_on_bad_website_3_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/TabContainer/DuckReady/VBoxContainer/Download" to="." method="_on_download_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

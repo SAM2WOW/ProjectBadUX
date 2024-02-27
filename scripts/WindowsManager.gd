@@ -24,6 +24,8 @@ func add_window(window):
 	# auto focus new window
 	window.popup_centered()
 	window.grab_focus()
+	
+	window.set_position(Vector2i(120, 20) + Vector2i(40, 40) * opened_windows.size())
 
 
 func remove_window(window):

@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://c137uw1r0onxb"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_badle"]
+[ext_resource type="Script" path="res://scenes/windows/ads_video.gd" id="2_0kve8"]
+[ext_resource type="Texture2D" uid="uid://d3475jxevd3rn" path="res://arts/ads/OIG2 (1).jpg" id="3_r1j6i"]
+[ext_resource type="VideoStream" path="res://arts/videos/Grandpa Found the Car Keys.ogv" id="4_4v2ab"]
+[ext_resource type="Texture2D" uid="uid://dm8c66hyo85l" path="res://Themes/Classic95/Styles/Window/CloseBtn.png" id="5_xm2ar"]
+[ext_resource type="Texture2D" uid="uid://tyjtjti37h5c" path="res://Themes/Classic95/Styles/Window/CloseBtnH.png" id="6_k0agj"]
+[ext_resource type="Texture2D" uid="uid://c5q3bccdc35i" path="res://Themes/Classic95/Styles/Window/CloseBtnPressed.png" id="7_bd2ei"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lbno"]
+texture = ExtResource("5_xm2ar")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02xw6"]
+texture = ExtResource("6_k0agj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2qta"]
+texture = ExtResource("7_bd2ei")
+
+[node name="Ads" instance=ExtResource("1_badle")]
+position = Vector2i(0, 0)
+size = Vector2i(600, 420)
+borderless = true
+script = ExtResource("2_0kve8")
+window_icon = null
+window_name = ""
+
+[node name="CenterContainer" parent="Control" index="1"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Control" index="2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_r1j6i")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control" index="3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("4_4v2ab")
+volume_db = -21.62
+autoplay = true
+expand = true
+loop = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" index="4"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+show_percentage = false
+
+[node name="Button" type="Button" parent="Control" index="5"]
+visible = false
+layout_mode = 0
+offset_right = 28.48
+offset_bottom = 26.575
+theme_override_styles/normal = SubResource("StyleBoxTexture_2lbno")
+theme_override_styles/hover = SubResource("StyleBoxTexture_02xw6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i2qta")
+text = "     "
+
+[node name="Timer" type="Timer" parent="." index="1"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="finished" from="Control/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

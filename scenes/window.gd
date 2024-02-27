@@ -17,6 +17,7 @@ func _ready():
 	tween.parallel().tween_property(self, "position", intial_pos + final_size / 2, 0.25)
 	"""
 
+
 func _on_close_requested():
 	Global.windowsManager.remove_window(self)
 	

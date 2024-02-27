@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_h0o7c"]
 [ext_resource type="Script" path="res://scenes/windows/crash_cup.gd" id="2_a07wd"]
 [ext_resource type="Texture2D" uid="uid://cf2a0f3wc61k6" path="res://arts/465718-dark-skull.jpg" id="3_fqr8e"]
-[ext_resource type="Texture2D" uid="uid://bxlc0w4yxltg4" path="res://arts/pngtree-empty-red-plastic-cup-isolated-with-clipping-path-for-mockup-png-image_9948799.png" id="4_ru1k7"]
+[ext_resource type="Texture2D" uid="uid://bxlc0w4yxltg4" path="res://arts/redcup.png" id="4_ru1k7"]
 [ext_resource type="AudioStream" uid="uid://3amfpjiw3d02" path="res://sounds/ComputerExplosionAnxietyTimer.wav" id="5_wg5ob"]
 
 [node name="Cup Virus" instance=ExtResource("1_h0o7c")]
