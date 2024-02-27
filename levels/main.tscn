@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=19 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c7jcd2xhvuig2" path="res://scenes/windows/crash_cup.tscn" id="13_3o8x1"]
 [ext_resource type="PackedScene" uid="uid://b11hmmcjsikmg" path="res://scenes/windows/trick_confirm.tscn" id="14_kw5uc"]
 [ext_resource type="PackedScene" uid="uid://dgjjxchebes4" path="res://scenes/windows/physic_buttons.tscn" id="16_kwsdj"]
+[ext_resource type="PackedScene" uid="uid://cmv4wtgfnvwbu" path="res://scenes/taskbar.tscn" id="18_n68yv"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -136,30 +137,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Taskbar" type="Panel" parent="CanvasLayer/Control"]
-custom_minimum_size = Vector2(0, 40)
+[node name="Taskbar" parent="CanvasLayer/Control" instance=ExtResource("18_n68yv")]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -16.0
-offset_top = -40.0
-offset_right = 30.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Taskbar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 16.0
-offset_right = -30.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="Windows" type="Node2D" parent="."]
