@@ -4,18 +4,29 @@ extends "res://scenes/window.gd"
 var ads = preload("res://scenes/windows/ads.tscn")
 var ads_video = preload("res://scenes/windows/ads_video.tscn")
 var cup = preload("res://scenes/windows/crash_cup.tscn")
-
+var downloader = preload("res://scenes/windows/downloader.tscn")
 
 var spawn_time = 2.0
 var duck = preload("res://scenes/duck.tscn")
 
+
+func _ready():
+	super._ready()
+	$Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/TextEdit.grab_focus()
+	
+	# shuffle search results
+	for i in $Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3.get_children():
+		$Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3.move_child(i, randi_range(0, 3))
+	
 
 func _process(delta):
 	$Node2D/Crosshair.set_position($Node2D.get_local_mouse_position())
 	
 	if not $Timer.is_stopped():
 		$Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer/ProgressBar.set_value(1.0 - ($Timer.get_time_left() / 15.0))
-
+		
+		$Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer/Label.set_text("Shoot the AI ducks. Don't shoot the real duck.
+		Download link ready in %d seconds ..." % $Timer.get_time_left())
 
 func _on_search_button_pressed():
 	var text = $Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/TextEdit.get_line(0)
@@ -51,6 +62,7 @@ func _on_good_website_pressed():
 	$SpawnTimer.start()
 	
 	$Node2D/Crosshair.show()
+	$Node2D/Grass.show()
 
 
 func _on_bad_website_3_pressed():
@@ -94,6 +106,7 @@ func _on_timer_timeout():
 	
 	$Node2D/Crosshair.hide()
 	$Node2D/Ducks.hide()
+	$Node2D/Grass.hide()
 	
 	$Control/ScrollContainer/TabContainer.set_current_tab(3)
 	SoundPlayer.play("Confirm")
@@ -109,21 +122,28 @@ func _on_spawn_timer_timeout():
 	
 	var d = duck.instantiate()
 	$Node2D/Ducks.add_child(d)
-	d.set_position(Vector2(randf_range(0, 720), 527))
+	#d.set_position(Vector2(randf_range(0, 720), 527))
+	d.set_position(Vector2(720 / 2, 527))
 	
+	d.connect("duck_kill", _on_duck_kill)
 	if d.bad:
 		d.connect("duck_out", _on_duck_out)
 
 
 func _on_duck_out():
-	var left_time = $Timer.get_time_left() + 2
+	var left_time = max($Timer.get_time_left() + 2, 0.0)
 	
 	$Timer.start(left_time)
 
 
 func _on_duck_kill():
-	pass
+	var left_time = max($Timer.get_time_left() + 2, 0.0)
+	
+	$Timer.start(left_time)
 
 
 func _on_download_pressed():
-	pass # Replace with function body.
+	var w = downloader.instantiate()
+	Global.windowsManager.add_window(w)
+	
+	_on_button_pressed()

@@ -337,6 +337,7 @@ offset_right = 80.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_i6gdo")
 
 [node name="Timer" type="Timer" parent="."]
@@ -347,5 +348,9 @@ libraries = {
 "": SubResource("AnimationLibrary_8q2lg")
 }
 autoplay = "Idle"
+playback_default_blend_time = 0.3
 
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

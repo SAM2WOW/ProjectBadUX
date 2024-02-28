@@ -4,18 +4,50 @@ signal duck_out
 signal duck_kill
 
 var velocity
+var direction = 1
+var speed
 
 var bad = false
+var hovering = false
+
+func _ready():
+	speed = randf_range(1.0, 2.0)
+	
+	if randi() % 2:
+		direction = -1
+	
+	if randi() % 2:
+		bad = true
+		
+		$Sprites/Duck.hide()
+		$Sprites/Duck2.show()
 
 
 func _process(delta):
-	$Duck.rotate(0.01)
+	var new_size = lerpf($Sprites.scale.x, 1 + 0.1 * int(hovering), delta * 50)
+	$Sprites.set_scale(Vector2(new_size, new_size))
+		
+	$Sprites.rotate(0.01 * direction)
 	
-	move_local_y(delta * -150)
+	move_local_y(delta * (-200 * speed))
+	
+	move_local_x(delta * 80 * direction * speed)
 	
 	if position.y < 0.0:
 		emit_signal("duck_out")
 		queue_free()
+	
+	if get_local_mouse_position().length() < 50:
+		_on_area_2d_mouse_entered()
+	else:
+		_on_area_2d_mouse_exited()
+
+
+func kill():
+	if not bad:
+		emit_signal("duck_kill")
+	
+	queue_free()
 
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
@@ -24,9 +56,18 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			print("DUck")
 
 
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			if hovering:
+				kill()
+
+
 func _on_area_2d_mouse_entered():
-	$Duck.set_scale(Vector2(0.1, 0.1))
+	
+	hovering = true
 
 
 func _on_area_2d_mouse_exited():
-	$Duck.set_scale(Vector2(0.045, 0.045))
+	$Sprites.set_scale(Vector2(1, 1))
+	hovering = false

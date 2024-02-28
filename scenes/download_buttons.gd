@@ -1,15 +1,50 @@
 extends Node2D
 
+var target
+var moving = false
+var speed = 50
+
+var hovering = false
+
+var bad = false
 
 func _ready():
 	$Timer.start(randf_range(1.0, 4.0))
 
 
 func _on_timer_timeout():
-	
-	
-	$Timer.start(randf_range(1.0, 4.0))
+	target = Vector2(randf_range(12, 500), randf_range(12, 500))
+	moving = true
+	$AnimationPlayer.play("Walking")
 
 
-func move():
-	pass
+func _process(delta):
+	speed = lerpf(speed, 50 + 80 * int(hovering), delta * 25)
+	
+	$AnimationPlayer.set_speed_scale(speed / 20)
+	
+	if moving:
+		position.x = move_toward(position.x, target.x, delta * speed)
+		position.y = move_toward(position.y, target.y, delta * speed)
+		
+		if position.distance_to(target) < 10:
+			moving = false
+			$Timer.start(randf_range(1.0, 4.0))
+			
+			$AnimationPlayer.play("Idle")
+
+
+func _on_texture_button_mouse_entered():
+	hovering = true
+	
+	$TextureButton.set_scale(Vector2(1.2, 1.2))
+
+
+func _on_texture_button_mouse_exited():
+	hovering = false
+	
+	$TextureButton.set_scale(Vector2(1, 1))
+
+
+func _on_texture_button_pressed():
+	pass # Replace with function body.

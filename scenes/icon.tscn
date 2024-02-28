@@ -10,6 +10,7 @@ offset_bottom = 40.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
+mouse_default_cursor_shape = 2
 text = "Email"
 icon = ExtResource("2_hxui3")
 icon_alignment = 1

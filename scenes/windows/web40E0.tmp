@@ -24,7 +24,6 @@
 [node name="WebBrowser" instance=ExtResource("1_qx6jo")]
 position = Vector2i(0, 22)
 size = Vector2i(720, 527)
-unresizable = true
 mouse_passthrough = true
 script = ExtResource("2_fywun")
 window_icon = ExtResource("2_i72r4")
