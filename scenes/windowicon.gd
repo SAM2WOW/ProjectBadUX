@@ -1,8 +1,8 @@
 extends Button
+class_name WindowIcon
 
 @export var icon_texture : Texture2D
 var window
-
 
 func _ready():
 	if "window_icon" in window:
