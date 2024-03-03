@@ -10,7 +10,6 @@ offset_bottom = 40.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
 focus_mode = 0
-mouse_default_cursor_shape = 2
 icon = ExtResource("1_kw5so")
 clip_text = true
 icon_alignment = 1
