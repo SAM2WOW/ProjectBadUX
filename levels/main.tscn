@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=20 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
@@ -14,10 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
 [ext_resource type="PackedScene" uid="uid://c7jcd2xhvuig2" path="res://scenes/windows/crash_cup.tscn" id="13_3o8x1"]
 [ext_resource type="PackedScene" uid="uid://b11hmmcjsikmg" path="res://scenes/windows/trick_confirm.tscn" id="14_kw5uc"]
-[ext_resource type="PackedScene" path="res://scenes/windows/downloader.tscn" id="15_1l86a"]
+[ext_resource type="PackedScene" uid="uid://d3o7t7plpq8ec" path="res://scenes/windows/downloader.tscn" id="15_1l86a"]
 [ext_resource type="Texture2D" uid="uid://d2k20t827o2kh" path="res://arts/icons/artage-io-48173_1707373470.png" id="17_wvqwt"]
+[ext_resource type="PackedScene" uid="uid://drdp1ecdhxd8t" path="res://scenes/EmailScene/emailIcon.tscn" id="18_ev3lk"]
 [ext_resource type="PackedScene" uid="uid://cmv4wtgfnvwbu" path="res://scenes/taskbar.tscn" id="18_n68yv"]
-[ext_resource type="PackedScene" path="res://scenes/windows/web_browser.tscn" id="18_q7rax"]
+[ext_resource type="PackedScene" uid="uid://cn6sbyi6q46q0" path="res://scenes/windows/web_browser.tscn" id="18_q7rax"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -129,6 +130,9 @@ icon = ExtResource("4_fxont")
 icon_texture = ExtResource("17_wvqwt")
 icon_name = "Browser.exe"
 window = ExtResource("18_q7rax")
+
+[node name="Icon" parent="Control/Icons/GridContainer" instance=ExtResource("18_ev3lk")]
+layout_mode = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2

@@ -35,9 +35,9 @@ color = Color(0, 0.109804, 0.682353, 1)
 [node name="Label" type="Label" parent="ColorRect/ColorRect2"]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 82.0
-offset_right = 78.0
-offset_bottom = 105.0
+offset_top = 90.0
+offset_right = 83.0
+offset_bottom = 113.0
 rotation = -1.5708
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "TASK LIST"
