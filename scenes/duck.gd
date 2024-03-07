@@ -53,6 +53,7 @@ func kill():
 	
 	if not bad:
 		Global.healthBar.take_damage(5)
+		Global.warningWindow.AddWarning(1)
 
 
 func _on_area_2d_input_event(viewport, event, shape_idx):

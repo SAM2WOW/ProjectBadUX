@@ -69,3 +69,4 @@ func _on_texture_button_button_down():
 		$AudioStreamPlayer.play()
 		
 		Global.healthBar.take_damage(5)
+		Global.warningWindow.AddWarning(2)
