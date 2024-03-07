@@ -53,6 +53,7 @@ func _on_bad_website_1_pressed():
 	SoundPlayer.play("Confirm")
 	
 	Global.healthBar.take_damage(10)
+	Global.warningWindow.AddWarning(0)
 	
 	for i in range(4):
 		var w = ads.instantiate()
@@ -70,6 +71,7 @@ func _on_bad_website_2_pressed():
 	SoundPlayer.play("Confirm")
 	
 	Global.healthBar.take_damage(10)
+	Global.warningWindow.AddWarning(0)
 	
 	for i in range(2):
 		var w = ads.instantiate()
@@ -98,6 +100,8 @@ func _on_bad_website_3_pressed():
 	
 	var w = ads_video.instantiate()
 	Global.windowsManager.add_window(w)
+	
+	Global.warningWindow.AddWarning(0)
 
 
 func _on_bad_website_1_mouse_entered():
@@ -170,6 +174,7 @@ func _on_duck_out():
 	
 	#$Timer.start(left_time)
 	Global.healthBar.take_damage(5)
+	Global.warningWindow.AddWarning(1)
 	pass
 
 

@@ -13,6 +13,8 @@ signal selected
 func _ready():
 	#$Timer.start(randf_range(1.0, 4.0))
 	
+	$TextureButton.set_texture_normal(load("res://arts/downloads/DownloadBtn (%d).png" % randi_range(1, 4)))
+	
 	if bad:
 		$TextureButton.set_default_cursor_shape(0)
 	
@@ -45,7 +47,7 @@ func _process(delta):
 func _on_texture_button_mouse_entered():
 	hovering = true
 	
-	$TextureButton.set_scale(Vector2(1.2, 1.2))
+	$TextureButton.set_scale(Vector2(1.1, 1.1))
 
 
 func _on_texture_button_mouse_exited():
@@ -60,10 +62,11 @@ func _on_texture_button_pressed():
 
 func _on_texture_button_button_down():
 	if bad:
-		target = Vector2(-50 + (620 * (randi() % 2)), randf_range(12, 500))
+		target = Vector2(-160 + (800 * (randi() % 2)), randf_range(12, 500))
 		moving = true
 		$AnimationPlayer.play("Walking")
 		
 		$AudioStreamPlayer.play()
 		
 		Global.healthBar.take_damage(5)
+		Global.warningWindow.AddWarning(2)

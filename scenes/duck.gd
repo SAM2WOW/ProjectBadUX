@@ -21,7 +21,7 @@ func _ready():
 	if randi() % 2:
 		bad = true
 		
-		$Sprites/Duck2.set_texture(load("res://arts/ducks/aiduck (%d).png" % randi_range(0, 5)))
+		$Sprites/Duck2.set_texture(load("res://arts/ducks/aiduck (%d).png" % randi_range(1, 5)))
 		
 		$Sprites/Duck.hide()
 		$Sprites/Duck2.show()
@@ -53,6 +53,7 @@ func kill():
 	
 	if not bad:
 		Global.healthBar.take_damage(5)
+		Global.warningWindow.AddWarning(1)
 
 
 func _on_area_2d_input_event(viewport, event, shape_idx):

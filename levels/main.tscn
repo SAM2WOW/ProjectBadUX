@@ -96,6 +96,7 @@ icon_name = "ads"
 window = ExtResource("10_mbeyi")
 
 [node name="DuckBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+visible = false
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
