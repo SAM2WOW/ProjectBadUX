@@ -61,3 +61,5 @@ func _on_texture_button_button_down():
 		target = Vector2(-50 + (620 * (randi() % 2)), randf_range(12, 500))
 		moving = true
 		$AnimationPlayer.play("Walking")
+		
+		$AudioStreamPlayer.play()

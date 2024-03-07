@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cn6sbyi6q46q0"]
+[gd_scene load_steps=24 format=3 uid="uid://cn6sbyi6q46q0"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_qx6jo"]
 [ext_resource type="Script" path="res://scenes/windows/web_browser.gd" id="2_fywun"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://ym3v0ya15fec" path="res://sounds/duck_hunt/Duckdie3.wav" id="10_ahpff"]
 [ext_resource type="AudioStream" uid="uid://cctd1hhwvgmdb" path="res://sounds/duck_hunt/Gun3.wav" id="10_huuyk"]
 [ext_resource type="Texture2D" uid="uid://df2r26s4pnacf" path="res://arts/ducks/crosshair068.png" id="14_6s44u"]
+[ext_resource type="AudioStream" uid="uid://c8boxdtcr1pku" path="res://sounds/CorruptedMiniGame1.wav" id="15_tqvip"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x50vf"]
 
@@ -374,6 +375,9 @@ one_shot = true
 
 [node name="SpawnTimer" type="Timer" parent="." index="5"]
 one_shot = true
+
+[node name="CorruptedMiniGame" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("15_tqvip")
 
 [connection signal="caret_changed" from="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_text_edit_caret_changed"]
 [connection signal="pressed" from="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/SearchButton" to="." method="_on_search_button_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3o7t7plpq8ec"]
+[gd_scene load_steps=6 format=3 uid="uid://d3o7t7plpq8ec"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_hg3ly"]
 [ext_resource type="Script" path="res://scenes/windows/downloader.gd" id="2_77k42"]
 [ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/icons/Download1.webp" id="3_d4ghp"]
 [ext_resource type="Texture2D" uid="uid://bg34oqt3hb5n3" path="res://arts/downloads/download.jpg" id="4_05er3"]
+[ext_resource type="AudioStream" uid="uid://c5h2jfxhf8gl7" path="res://sounds/CorruptedMiniGame2.wav" id="5_e2nqi"]
 
 [node name="Downloader" instance=ExtResource("1_hg3ly")]
 title = "Downloader"
@@ -38,3 +39,7 @@ text = "Please click the button to download!"
 
 [node name="Node2D" type="Node2D" parent="." index="1"]
 y_sort_enabled = true
+
+[node name="CorruptedMiniGame" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("5_e2nqi")
+autoplay = true

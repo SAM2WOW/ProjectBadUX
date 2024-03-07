@@ -87,6 +87,8 @@ func _on_good_website_pressed():
 	$Node2D/Crosshair.show()
 	$Node2D/Grass.show()
 	
+	$CorruptedMiniGame.play()
+	
 	duck_mode = true
 
 func _on_bad_website_3_pressed():
@@ -133,6 +135,8 @@ func _on_timer_timeout():
 	$Node2D/Crosshair.hide()
 	$Node2D/Ducks.hide()
 	$Node2D/Grass.hide()
+	
+	$CorruptedMiniGame.stop()
 	
 	for i in $Node2D/Ducks.get_children():
 		i.queue_free()
