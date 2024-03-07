@@ -24,8 +24,9 @@ offset_right = 263.0
 offset_bottom = -38.0
 grow_horizontal = 1
 taskList = {
-1: "task 1",
-2: "task 2"
+1: "Download an image of a duck",
+2: "Clean your email inbox",
+3: "Shop for shampoo online"
 }
 
 [node name="TaskButton" type="Button" parent="."]
