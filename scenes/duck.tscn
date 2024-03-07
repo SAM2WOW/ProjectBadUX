@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://c4woyvddh80lh"]
 
 [ext_resource type="Script" path="res://scenes/duck.gd" id="1_e22o3"]
-[ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/duck.png" id="1_qb84b"]
-[ext_resource type="Texture2D" uid="uid://bhel604q1k2b5" path="res://arts/OIG4.png" id="3_f7aom"]
+[ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/ducks/duck.png" id="2_m04b3"]
+[ext_resource type="Texture2D" uid="uid://4io1lsu20clk" path="res://arts/ducks/aiduck (1).png" id="3_xnv11"]
 [ext_resource type="AudioStream" uid="uid://7t7hepiuap7n" path="res://sounds/duck_hunt/Quack1.wav" id="4_duc1u"]
 [ext_resource type="AudioStream" uid="uid://bdxpp0x8jl5vg" path="res://sounds/duck_hunt/Quack2.wav" id="5_ssvkb"]
 [ext_resource type="AudioStream" uid="uid://b4b0nn300hj0d" path="res://sounds/duck_hunt/Quack3.wav" id="6_gtxpl"]
@@ -54,12 +54,11 @@ shape = SubResource("CircleShape2D_mixc6")
 
 [node name="Duck" type="Sprite2D" parent="Sprites"]
 scale = Vector2(0.045, 0.045)
-texture = ExtResource("1_qb84b")
+texture = ExtResource("2_m04b3")
 
 [node name="Duck2" type="Sprite2D" parent="Sprites"]
-visible = false
-scale = Vector2(0.681848, 0.681848)
-texture = ExtResource("3_f7aom")
+scale = Vector2(0.841314, 0.841314)
+texture = ExtResource("3_xnv11")
 
 [node name="Quack" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_uac1u")

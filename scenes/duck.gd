@@ -11,13 +11,17 @@ var bad = false
 var hovering = false
 
 func _ready():
-	speed = randf_range(1.0, 2.0)
+	randomize()
+	
+	speed = randf_range(0.5, 1.0)
 	
 	if randi() % 2:
 		direction = -1
 	
 	if randi() % 2:
 		bad = true
+		
+		$Sprites/Duck2.set_texture(load("res://arts/ducks/aiduck (%d).png" % randi_range(0, 6)))
 		
 		$Sprites/Duck.hide()
 		$Sprites/Duck2.show()
@@ -27,7 +31,7 @@ func _process(delta):
 	var new_size = lerpf($Sprites.scale.x, 1 + 0.1 * int(hovering), delta * 50)
 	$Sprites.set_scale(Vector2(new_size, new_size))
 		
-	$Sprites.rotate(0.01 * direction)
+	#$Sprites.rotate(0.01 * direction)
 	
 	move_local_y(delta * (-200 * speed))
 	
@@ -44,9 +48,7 @@ func _process(delta):
 
 
 func kill():
-	if not bad:
-		emit_signal("duck_kill")
-	
+	emit_signal("duck_kill")
 	queue_free()
 
 

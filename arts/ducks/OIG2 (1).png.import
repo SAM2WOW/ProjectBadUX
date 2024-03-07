@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpmcjththyl4e"
-path="res://.godot/imported/Captcha.jpg-608190dcd6c02b4d6b276342fec33a24.ctex"
+uid="uid://r2l5eeymekxl"
+path="res://.godot/imported/OIG2 (1).png-f49dc8b20cbaaa8e5247202355badd5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/Captcha.jpg"
-dest_files=["res://.godot/imported/Captcha.jpg-608190dcd6c02b4d6b276342fec33a24.ctex"]
+source_file="res://arts/ducks/OIG2 (1).png"
+dest_files=["res://.godot/imported/OIG2 (1).png-f49dc8b20cbaaa8e5247202355badd5e.ctex"]
 
 [params]
 

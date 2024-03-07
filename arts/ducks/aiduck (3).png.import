@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df2r26s4pnacf"
-path="res://.godot/imported/crosshair068.png-b57cc2d230a0e5670c640475b4168c76.ctex"
+uid="uid://bg8pps5cwex8q"
+path="res://.godot/imported/aiduck (3).png-ec715f6663f54bed7f2d4f8584ca1c9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/crosshair068.png"
-dest_files=["res://.godot/imported/crosshair068.png-b57cc2d230a0e5670c640475b4168c76.ctex"]
+source_file="res://arts/ducks/aiduck (3).png"
+dest_files=["res://.godot/imported/aiduck (3).png-ec715f6663f54bed7f2d4f8584ca1c9e.ctex"]
 
 [params]
 

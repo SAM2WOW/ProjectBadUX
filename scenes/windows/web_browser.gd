@@ -8,6 +8,7 @@ var downloader = preload("res://scenes/windows/downloader.tscn")
 
 var spawn_time = 2.0
 var duck = preload("res://scenes/duck.tscn")
+var duck_mode = false
 
 
 func _ready():
@@ -25,8 +26,17 @@ func _process(delta):
 	if not $Timer.is_stopped():
 		$Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer/ProgressBar.set_value(1.0 - ($Timer.get_time_left() / 15.0))
 		
-		$Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer/Label.set_text("Shoot the AI ducks. Don't shoot the real duck.
-		Download link ready in %d seconds ..." % $Timer.get_time_left())
+		$Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer/Label.set_text(">>> Please Remove All The AI Ducks <<<
+ 
+Download link ready in %d seconds ..." % $Timer.get_time_left())
+
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			if duck_mode:
+				$Gun.play()
+
 
 func _on_search_button_pressed():
 	var text = $Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/TextEdit.get_line(0)
@@ -37,6 +47,7 @@ func _on_search_button_pressed():
 
 func _on_text_edit_caret_changed():
 	_on_search_button_pressed()
+
 
 func _on_bad_website_1_pressed():
 	SoundPlayer.play("Confirm")
@@ -51,8 +62,6 @@ func _on_bad_website_2_pressed():
 	
 	_on_button_pressed()
 
-
-
 func _on_good_website_pressed():
 	SoundPlayer.play("Confirm")
 	
@@ -63,7 +72,8 @@ func _on_good_website_pressed():
 	
 	$Node2D/Crosshair.show()
 	$Node2D/Grass.show()
-
+	
+	duck_mode = true
 
 func _on_bad_website_3_pressed():
 	SoundPlayer.play("Confirm")
@@ -102,6 +112,8 @@ func _on_bad_website_3_mouse_exited():
 
 
 func _on_timer_timeout():
+	duck_mode = false
+	
 	$SpawnTimer.stop()
 	
 	$Node2D/Crosshair.hide()
@@ -113,8 +125,8 @@ func _on_timer_timeout():
 
 
 func _on_spawn_timer_timeout():
-	if spawn_time > 0.4:
-		spawn_time = spawn_time * 0.9
+	#if spawn_time > 0.4:
+	#	spawn_time = spawn_time * 0.9
 		
 	$SpawnTimer.start(spawn_time)
 	
@@ -131,15 +143,21 @@ func _on_spawn_timer_timeout():
 
 
 func _on_duck_out():
-	var left_time = max($Timer.get_time_left() + 2, 0.0)
+	#var left_time = max($Timer.get_time_left() + 2, 0.0)
 	
-	$Timer.start(left_time)
+	#$Timer.start(left_time)
+	
+	pass
 
 
 func _on_duck_kill():
-	var left_time = max($Timer.get_time_left() + 2, 0.0)
+	#var left_time = max($Timer.get_time_left() + 2, 0.0)
 	
-	$Timer.start(left_time)
+	#$Timer.start(left_time)
+	
+	$Killed.play()
+	
+	pass
 
 
 func _on_download_pressed():

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhel604q1k2b5"
-path="res://.godot/imported/OIG4.png-588134e7ebbfb1403fccab3a2d87e877.ctex"
+path="res://.godot/imported/OIG4.png-23cfbddd988ca0d24de66cc0007cc745.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/OIG4.png"
-dest_files=["res://.godot/imported/OIG4.png-588134e7ebbfb1403fccab3a2d87e877.ctex"]
+source_file="res://arts/ducks/OIG4.png"
+dest_files=["res://.godot/imported/OIG4.png-23cfbddd988ca0d24de66cc0007cc745.ctex"]
 
 [params]
 

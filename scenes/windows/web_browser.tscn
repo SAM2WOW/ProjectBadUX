@@ -5,15 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://d2k20t827o2kh" path="res://arts/icons/artage-io-48173_1707373470.png" id="2_i72r4"]
 [ext_resource type="Texture2D" uid="uid://mlmygn30vmv1" path="res://arts/McGoogle.webp" id="3_syoli"]
 [ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="4_pf1hf"]
-[ext_resource type="Texture2D" uid="uid://dpmcjththyl4e" path="res://arts/Captcha.jpg" id="6_eylj3"]
-[ext_resource type="Texture2D" uid="uid://df2r26s4pnacf" path="res://arts/crosshair068.png" id="7_6p72y"]
-[ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/duck.png" id="7_ofi06"]
+[ext_resource type="Texture2D" uid="uid://dpmcjththyl4e" path="res://arts/ducks/Captcha.jpg" id="6_ofcvg"]
+[ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/ducks/duck.png" id="7_slx8e"]
 [ext_resource type="AudioStream" uid="uid://cxms0ar6waa5j" path="res://sounds/duck_hunt/Gun1.wav" id="8_bcqet"]
 [ext_resource type="AudioStream" uid="uid://beug2qgf75x1u" path="res://sounds/duck_hunt/DuckDie1.wav" id="8_mvrbe"]
 [ext_resource type="AudioStream" uid="uid://wff7d3mod7mn" path="res://sounds/duck_hunt/Duckdie2.wav" id="9_jwacf"]
 [ext_resource type="AudioStream" uid="uid://c0j8m1rxm7r0m" path="res://sounds/duck_hunt/Gun2.wav" id="9_tpu04"]
 [ext_resource type="AudioStream" uid="uid://ym3v0ya15fec" path="res://sounds/duck_hunt/Duckdie3.wav" id="10_ahpff"]
 [ext_resource type="AudioStream" uid="uid://cctd1hhwvgmdb" path="res://sounds/duck_hunt/Gun3.wav" id="10_huuyk"]
+[ext_resource type="Texture2D" uid="uid://df2r26s4pnacf" path="res://arts/ducks/crosshair068.png" id="14_6s44u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x50vf"]
 
@@ -296,24 +296,26 @@ layout_mode = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer" index="0"]
-layout_mode = 2
-text = "Shoot the AI ducks. Don't shoot the real duck.
-Download link ready in 15 seconds ...
-"
-
-[node name="ProgressBar" type="ProgressBar" parent="Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer" index="1"]
-layout_mode = 2
-mouse_filter = 2
-max_value = 1.0
-
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer" index="2"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer" index="0"]
 custom_minimum_size = Vector2(30, 85.045)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("6_eylj3")
+texture = ExtResource("6_ofcvg")
 expand_mode = 2
-stretch_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = ">>> Please Remove All The AI Ducks <<<
+ 
+Download link ready in 15 seconds ...
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/ScrollContainer/TabContainer/DuckCaptcha/VBoxContainer" index="2"]
+layout_mode = 2
+mouse_filter = 2
+max_value = 1.0
 
 [node name="DuckReady" type="CenterContainer" parent="Control/ScrollContainer/TabContainer" index="4"]
 visible = false
@@ -329,7 +331,7 @@ alignment = 1
 custom_minimum_size = Vector2(30, 85.045)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("7_ofi06")
+texture = ExtResource("7_slx8e")
 expand_mode = 2
 stretch_mode = 4
 
@@ -359,7 +361,7 @@ visible = false
 modulate = Color(1, 0, 0, 1)
 z_index = 500
 position = Vector2(326, 312)
-texture = ExtResource("7_6p72y")
+texture = ExtResource("14_6s44u")
 
 [node name="Grass" type="Polygon2D" parent="Node2D" index="2"]
 visible = false
@@ -371,7 +373,6 @@ wait_time = 15.0
 one_shot = true
 
 [node name="SpawnTimer" type="Timer" parent="." index="5"]
-wait_time = 2.0
 one_shot = true
 
 [connection signal="caret_changed" from="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_text_edit_caret_changed"]
