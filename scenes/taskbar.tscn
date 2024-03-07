@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmv4wtgfnvwbu"]
+[gd_scene load_steps=6 format=3 uid="uid://cmv4wtgfnvwbu"]
 
 [ext_resource type="Texture2D" uid="uid://bf8cyt2hiqp1a" path="res://arts/icons/Windows98ComputerIcon.webp" id="2_fa27x"]
 [ext_resource type="Script" path="res://scenes/healthBar.gd" id="3_0dulu"]
-[ext_resource type="Texture2D" uid="uid://b70p31dc8pwwy" path="res://arts/whiteBg.png" id="3_j8264"]
 [ext_resource type="Script" path="res://scenes/MenuButton.gd" id="3_oyxl4"]
 [ext_resource type="PackedScene" uid="uid://8qx2cukxmkd8" path="res://scenes/windows/TaskList.tscn" id="4_aftko"]
-[ext_resource type="Texture2D" uid="uid://h4467qhlcdtx" path="res://arts/segmentedBar.png" id="4_i5ktg"]
-[ext_resource type="Texture2D" uid="uid://cs5jtht8cyxee" path="res://arts/healthBar.png" id="5_id6do"]
 [ext_resource type="PackedScene" uid="uid://ph1twhablq2u" path="res://scenes/warningWindow.tscn" id="8_whrwn"]
 
 [node name="Taskbar" type="Panel"]
@@ -72,10 +69,6 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.874434, 0.954044)
 value = 100.0
-nine_patch_stretch = true
-texture_under = ExtResource("3_j8264")
-texture_over = ExtResource("4_i5ktg")
-texture_progress = ExtResource("5_id6do")
 script = ExtResource("3_0dulu")
 
 [node name="Label" type="Label" parent="."]
@@ -96,19 +89,6 @@ text = "HP:"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="TaskList" parent="." instance=ExtResource("4_aftko")]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-offset_top = -354.0
-offset_right = -1084.0
-offset_bottom = -37.0
-grow_vertical = 0
-taskList = {
-1: "task 1",
-2: "task 2"
-}
 
 [node name="WarningWindow" parent="." instance=ExtResource("8_whrwn")]
 layout_mode = 1
