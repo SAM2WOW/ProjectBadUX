@@ -6,6 +6,7 @@ var taskCompletion : Dictionary;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.taskWindow = self
 	initiate_tasks();
 	
 func show_window():

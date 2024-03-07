@@ -32,6 +32,8 @@ func donwload():
 	$Control.hide()
 	$Finished.show()
 	
+	Global.taskWindow.complete_task(1)
+	
 	for i in $Node2D.get_children():
 		i.queue_free()
 	
