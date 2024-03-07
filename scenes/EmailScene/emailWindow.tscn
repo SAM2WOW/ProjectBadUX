@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnjmpi2b7pjw0"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_lwpwy"]
+
+[node name="Window" instance=ExtResource("1_lwpwy")]
+mode = 3
+size = Vector2i(960, 540)
+window_name = "Email"

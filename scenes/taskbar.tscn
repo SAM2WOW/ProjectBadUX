@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmv4wtgfnvwbu"]
+[gd_scene load_steps=6 format=3 uid="uid://cmv4wtgfnvwbu"]
 
 [ext_resource type="Texture2D" uid="uid://bf8cyt2hiqp1a" path="res://arts/icons/Windows98ComputerIcon.webp" id="2_fa27x"]
 [ext_resource type="Script" path="res://scenes/healthBar.gd" id="3_0dulu"]
 [ext_resource type="Script" path="res://scenes/MenuButton.gd" id="3_oyxl4"]
 [ext_resource type="PackedScene" uid="uid://8qx2cukxmkd8" path="res://scenes/windows/TaskList.tscn" id="4_aftko"]
+[ext_resource type="PackedScene" uid="uid://ph1twhablq2u" path="res://scenes/warningWindow.tscn" id="8_whrwn"]
 
 [node name="Taskbar" type="Panel"]
 custom_minimum_size = Vector2(0, 40)
@@ -88,5 +89,21 @@ text = "HP:"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="WarningWindow" parent="." instance=ExtResource("8_whrwn")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -209.0
+offset_top = -234.0
+offset_right = -2.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+warningList = {
+0: "yo mama so fat",
+1: "yo mama super fat"
+}
 
 [connection signal="pressed" from="TaskButton" to="TaskButton" method="_on_pressed"]
