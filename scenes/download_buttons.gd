@@ -8,6 +8,8 @@ var hovering = false
 
 var bad = false
 
+signal selected
+
 func _ready():
 	#$Timer.start(randf_range(1.0, 4.0))
 	
@@ -53,7 +55,7 @@ func _on_texture_button_mouse_exited():
 
 
 func _on_texture_button_pressed():
-	pass # Replace with function body.
+	emit_signal("selected")
 
 
 func _on_texture_button_button_down():
@@ -63,3 +65,5 @@ func _on_texture_button_button_down():
 		$AnimationPlayer.play("Walking")
 		
 		$AudioStreamPlayer.play()
+		
+		Global.healthBar.take_damage(5)

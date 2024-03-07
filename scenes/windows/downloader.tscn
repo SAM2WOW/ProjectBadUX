@@ -33,13 +33,55 @@ mouse_filter = 2
 
 [node name="Label" type="Label" parent="Control" index="3"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 20.0
+offset_left = 87.715
+offset_top = 14.36
+offset_right = 410.715
+offset_bottom = 34.36
 text = "Please click the button to download!"
 
-[node name="Node2D" type="Node2D" parent="." index="1"]
+[node name="Finished" type="Control" parent="." index="1"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Finished" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Finished" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Finished/CenterContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Finished/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "You file has been downloaded!"
+
+[node name="Download" type="Button" parent="Finished/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+text = "OK"
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
 y_sort_enabled = true
 
-[node name="CorruptedMiniGame" type="AudioStreamPlayer" parent="." index="2"]
+[node name="CorruptedMiniGame" type="AudioStreamPlayer" parent="." index="3"]
 stream = ExtResource("5_e2nqi")
 autoplay = true
+
+[connection signal="pressed" from="Finished/CenterContainer/VBoxContainer/Download" to="." method="_on_download_pressed"]
