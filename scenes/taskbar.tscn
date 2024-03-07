@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmv4wtgfnvwbu"]
+[gd_scene load_steps=9 format=3 uid="uid://cmv4wtgfnvwbu"]
 
 [ext_resource type="Texture2D" uid="uid://e477jmxvr3pk" path="res://arts/icon.svg" id="1_qgoj2"]
 [ext_resource type="Script" path="res://scenes/healthBar.gd" id="3_0dulu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://8qx2cukxmkd8" path="res://scenes/windows/TaskList.tscn" id="4_aftko"]
 [ext_resource type="Texture2D" uid="uid://h4467qhlcdtx" path="res://arts/segmentedBar.png" id="4_i5ktg"]
 [ext_resource type="Texture2D" uid="uid://cs5jtht8cyxee" path="res://arts/healthBar.png" id="5_id6do"]
+[ext_resource type="PackedScene" uid="uid://ph1twhablq2u" path="res://scenes/warningWindow.tscn" id="8_whrwn"]
 
 [node name="Taskbar" type="Panel"]
 custom_minimum_size = Vector2(0, 40)
@@ -83,17 +84,32 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="TaskList" parent="." instance=ExtResource("4_aftko")]
-visible = false
 layout_mode = 1
-anchors_preset = 9
-anchor_right = 0.0
-offset_top = -309.0
-offset_right = 263.0
-offset_bottom = -38.0
-grow_horizontal = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_top = -354.0
+offset_right = -1084.0
+offset_bottom = -37.0
+grow_vertical = 0
 taskList = {
 1: "task 1",
 2: "task 2"
+}
+
+[node name="WarningWindow" parent="." instance=ExtResource("8_whrwn")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -209.0
+offset_top = -234.0
+offset_right = -2.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+warningList = {
+0: "yo mama so fat",
+1: "yo mama super fat"
 }
 
 [connection signal="pressed" from="TaskButton" to="TaskButton" method="_on_pressed"]

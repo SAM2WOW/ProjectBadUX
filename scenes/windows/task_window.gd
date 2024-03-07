@@ -2,6 +2,7 @@ extends Control
 
 @export var taskList : Dictionary;
 var taskNode = preload("res://scenes/windows/task.tscn");
+var taskCompletion : Dictionary;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,11 +21,19 @@ func initiate_tasks():
 		var t = taskNode.instantiate();
 		t.init_task(task, taskList[task]);
 		$TaskContainer.add_child(t);
+		taskCompletion[task] = false;
 
 func complete_task(taskId : int):
+	if taskCompletion[taskId]:
+		print("task already completed");
+		return;
 	for task in $TaskContainer.get_children():
 		if !task is Task || task.id != taskId: continue;
 		task.finish_task();
+	taskCompletion[taskId] = true;
+
+func show_warning(warning : String):
+	pass;
 	
 func _input(ev):
 	if (Input.is_key_pressed(KEY_2)):
