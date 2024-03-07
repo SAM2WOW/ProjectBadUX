@@ -58,7 +58,8 @@ func _on_bad_website_1_pressed():
 		var w = ads.instantiate()
 		Global.windowsManager.add_window(w)
 		
-		await get_tree().create_timer(0.2).timeout
+		if get_tree():
+			await get_tree().create_timer(0.2).timeout
 
 func _on_bad_website_2_pressed():
 	#var w = cup.instantiate()
@@ -74,7 +75,8 @@ func _on_bad_website_2_pressed():
 		var w = ads.instantiate()
 		Global.windowsManager.add_window(w)
 		
-		await get_tree().create_timer(0.2).timeout
+		if get_tree():
+			await get_tree().create_timer(0.2).timeout
 
 func _on_good_website_pressed():
 	SoundPlayer.play("Confirm")

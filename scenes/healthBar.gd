@@ -15,6 +15,10 @@ func take_damage(dmg : float):
 
 func game_over():
 	print("game over!");
+	
+	Global.crash_reason = "Fall for too many dark UX patterns..."
+	get_tree().change_scene_to_file("res://levels/crashed.tscn")
+	SoundPlayer.play("Crash")
 
 func _input(ev):
 	if Input.is_key_pressed(KEY_1):

@@ -35,18 +35,17 @@ grow_vertical = 2
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][b][ Your PC CRASHED ][/b] [/center]
-
-
-
-
-You have fell for the [wave amp=50.0 freq=5.0 connected=1]UX DARK PATTERNS[/wave]
-
-* Clicked on a fake download button
-* Failed the email mini game
-
-
-
-
-[center][b]Please restart your computer to continue...[/b] [/center]"
+ 
+ 
+ 
+---------------------------------------
+|                                                                     |
+| You have fell for the [wave amp=50.0 freq=5.0 connected=1]UX DARK PATTERNS[/wave]  |
+|                                                                     |
+---------------------------------------
+ 
+ 
+ 
+[center][b]Press any key to continue...[/b] [/center]"
 fit_content = true
 autowrap_mode = 0
