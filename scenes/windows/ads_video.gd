@@ -34,3 +34,7 @@ func _on_video_stream_player_finished():
 
 func _on_timer_timeout():
 	$Control/Button.show()
+
+
+func _on_timer_damange_timeout():
+	Global.healthBar.take_damage(1)

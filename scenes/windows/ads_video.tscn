@@ -76,6 +76,10 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[node name="TimerDamange" type="Timer" parent="." index="2"]
+autostart = true
+
 [connection signal="finished" from="Control/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerDamange" to="." method="_on_timer_damange_timeout"]

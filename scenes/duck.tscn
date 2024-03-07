@@ -57,6 +57,7 @@ scale = Vector2(0.045, 0.045)
 texture = ExtResource("2_m04b3")
 
 [node name="Duck2" type="Sprite2D" parent="Sprites"]
+visible = false
 scale = Vector2(0.841314, 0.841314)
 texture = ExtResource("3_xnv11")
 

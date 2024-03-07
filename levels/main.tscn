@@ -144,9 +144,5 @@ mouse_filter = 2
 
 [node name="Taskbar" parent="CanvasLayer/Control" instance=ExtResource("18_n68yv")]
 layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
 
 [node name="Windows" type="Node2D" parent="."]

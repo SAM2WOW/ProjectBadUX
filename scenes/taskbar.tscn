@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmv4wtgfnvwbu"]
 
-[ext_resource type="Texture2D" uid="uid://e477jmxvr3pk" path="res://arts/icon.svg" id="1_qgoj2"]
+[ext_resource type="Texture2D" uid="uid://bf8cyt2hiqp1a" path="res://arts/icons/Windows98ComputerIcon.webp" id="2_fa27x"]
 [ext_resource type="Script" path="res://scenes/healthBar.gd" id="3_0dulu"]
 [ext_resource type="Script" path="res://scenes/MenuButton.gd" id="3_oyxl4"]
 [ext_resource type="PackedScene" uid="uid://8qx2cukxmkd8" path="res://scenes/windows/TaskList.tscn" id="4_aftko"]
@@ -14,14 +14,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="TaskList" parent="." instance=ExtResource("4_aftko")]
+layout_mode = 1
+anchors_preset = 9
+anchor_right = 0.0
+offset_top = -309.0
+offset_right = 263.0
+offset_bottom = -38.0
+grow_horizontal = 1
+taskList = {
+1: "task 1",
+2: "task 2"
+}
+
 [node name="TaskButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 64.0
+offset_right = 88.0
 grow_vertical = 2
-icon = ExtResource("1_qgoj2")
-icon_alignment = 1
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+text = "Tasks"
+icon = ExtResource("2_fa27x")
 expand_icon = true
 script = ExtResource("3_oyxl4")
 
@@ -72,18 +88,5 @@ text = "HP:"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="TaskList" parent="." instance=ExtResource("4_aftko")]
-layout_mode = 1
-anchors_preset = 9
-anchor_right = 0.0
-offset_top = -309.0
-offset_right = 263.0
-offset_bottom = -38.0
-grow_horizontal = 1
-taskList = {
-1: "task 1",
-2: "task 2"
-}
 
 [connection signal="pressed" from="TaskButton" to="TaskButton" method="_on_pressed"]

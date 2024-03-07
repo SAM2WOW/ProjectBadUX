@@ -52,6 +52,8 @@ func _on_text_edit_caret_changed():
 func _on_bad_website_1_pressed():
 	SoundPlayer.play("Confirm")
 	
+	Global.healthBar.take_damage(10)
+	
 	for i in range(4):
 		var w = ads.instantiate()
 		Global.windowsManager.add_window(w)
@@ -63,6 +65,8 @@ func _on_bad_website_2_pressed():
 	#_on_button_pressed()
 	
 	SoundPlayer.play("Confirm")
+	
+	Global.healthBar.take_damage(10)
 	
 	for i in range(2):
 		var w = ads.instantiate()
@@ -127,6 +131,9 @@ func _on_timer_timeout():
 	$Node2D/Ducks.hide()
 	$Node2D/Grass.hide()
 	
+	for i in $Node2D/Ducks.get_children():
+		i.queue_free()
+	
 	$Control/ScrollContainer/TabContainer.set_current_tab(3)
 	SoundPlayer.play("Confirm")
 
@@ -153,7 +160,7 @@ func _on_duck_out():
 	#var left_time = max($Timer.get_time_left() + 2, 0.0)
 	
 	#$Timer.start(left_time)
-	
+	Global.healthBar.take_damage(5)
 	pass
 
 

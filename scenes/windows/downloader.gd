@@ -7,8 +7,8 @@ var download = preload("res://scenes/download_buttons.tscn")
 func _ready():
 	super._ready()
 	
-	var goodx = randi_range(0, 5)
-	var goody = randi_range(0, 5)
+	var goodx = randi_range(0, 4)
+	var goody = randi_range(0, 4)
 	
 	for x in range(5):
 		for y in range(5):
