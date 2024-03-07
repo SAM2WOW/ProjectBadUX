@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=21 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="10_mbeyi"]
 [ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="11_qbj6n"]
 [ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
+[ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/ducks/duck.png" id="13_1w4ho"]
 [ext_resource type="PackedScene" uid="uid://c7jcd2xhvuig2" path="res://scenes/windows/crash_cup.tscn" id="13_3o8x1"]
+[ext_resource type="PackedScene" uid="uid://dwg32wpr3ts6c" path="res://scenes/windows/duck.tscn" id="14_5cp0w"]
 [ext_resource type="PackedScene" uid="uid://b11hmmcjsikmg" path="res://scenes/windows/trick_confirm.tscn" id="14_kw5uc"]
 [ext_resource type="PackedScene" uid="uid://d3o7t7plpq8ec" path="res://scenes/windows/downloader.tscn" id="15_1l86a"]
 [ext_resource type="Texture2D" uid="uid://doiqmgy3d7agt" path="res://arts/icons/Internets.png" id="16_q855k"]
@@ -72,7 +74,6 @@ layout_mode = 2
 [node name="NoteBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2
 text = ""
-icon = null
 icon_texture = ExtResource("6_cglk1")
 icon_name = "Notepad"
 window = ExtResource("7_jkpee")
@@ -93,6 +94,14 @@ icon = ExtResource("4_fxont")
 icon_texture = ExtResource("9_mas5o")
 icon_name = "ads"
 window = ExtResource("10_mbeyi")
+
+[node name="DuckBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("13_1w4ho")
+icon_name = "Duck.jpg"
+window = ExtResource("14_5cp0w")
 
 [node name="TextureButton3" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false
