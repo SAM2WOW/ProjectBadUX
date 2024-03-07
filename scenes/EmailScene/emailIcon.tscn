@@ -22,6 +22,7 @@ grow_vertical = 2
 
 [node name="CheckBox" type="CheckBox" parent="HBoxContainer" index="0"]
 layout_mode = 2
+button_mask = 0
 
 [node name="Sender" type="Label" parent="HBoxContainer" index="1"]
 layout_mode = 2

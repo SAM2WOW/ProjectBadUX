@@ -4,7 +4,11 @@ extends "res://scenes/window.gd"
 var ads = [
 	"res://arts/ads/OIG2 (1).jpg",
 	"res://arts/ads/OIG2..jpg",
-	"res://arts/ads/OIG2.jpg"
+	"res://arts/ads/OIG2.jpg",
+	"res://arts/ads/RRp6pTrYz29gqeSS9frXaeWfkW3DSdFedc6sdMVdciA.webp",
+	"res://arts/ads/ZPVYdXk.jpeg",
+	"res://arts/ads/images (1).jpg",
+	"res://arts/ads/images.jpg"
 ]
 
 func _process(delta):

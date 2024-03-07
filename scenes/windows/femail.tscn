@@ -1,9 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgs2n8sq1oivp"]
+[gd_scene load_steps=14 format=3 uid="uid://bgs2n8sq1oivp"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_vw0qd"]
 [ext_resource type="Script" path="res://scenes/windows/femail.gd" id="2_6edev"]
 [ext_resource type="Texture2D" uid="uid://l4x62gxv0oar" path="res://arts/icons/Email.png" id="3_j26nj"]
+[ext_resource type="Texture2D" uid="uid://btb7c35kbiuic" path="res://arts/ads/casino (1).jpg" id="4_egelx"]
+[ext_resource type="Texture2D" uid="uid://wx4f7gmebkib" path="res://arts/ads/frame_0_delay-2.5s.jpg" id="4_imfb1"]
 [ext_resource type="PackedScene" uid="uid://drdp1ecdhxd8t" path="res://scenes/EmailScene/emailIcon.tscn" id="4_pk7rf"]
+[ext_resource type="Texture2D" uid="uid://fkc3iet10khe" path="res://arts/ads/casino (2).jpg" id="5_4715i"]
+[ext_resource type="Texture2D" uid="uid://de8np1mco2ohq" path="res://arts/ads/frame_1_delay-2.5s.jpg" id="5_lwrdl"]
+[ext_resource type="Texture2D" uid="uid://chw2lunq50yig" path="res://arts/ads/frame_2_delay-0.5s.jpg" id="6_r7gu2"]
+[ext_resource type="Script" path="res://scripts/adsBtn.gd" id="6_v6a1y"]
+[ext_resource type="Texture2D" uid="uid://b4ib7fichebvo" path="res://arts/ads/frame_3_delay-s.jpg" id="7_i0y5b"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_p44hs"]
+frames = 2
+frame_0/texture = ExtResource("4_egelx")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("5_4715i")
+frame_1/duration = 0.5
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_wf5ga"]
+frames = 4
+frame_0/texture = ExtResource("4_imfb1")
+frame_1/texture = ExtResource("5_lwrdl")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_r7gu2")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_i0y5b")
+frame_3/duration = 1.0
 
 [node name="Femail" instance=ExtResource("1_vw0qd")]
 title = "fE-Mail"
@@ -28,26 +52,42 @@ theme_override_constants/margin_bottom = 20
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" index="0"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" index="0"]
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "✉ My Emails - thisismyemail@femail.com
+ "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" index="1"]
+visible = false
 layout_mode = 2
 
 [node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
 layout_mode = 2
-text = "Compose"
+text = " ✎ Compose "
 
-[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+[node name="VSeparator" type="VSeparator" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
 layout_mode = 2
-text = "Seach:"
 
-[node name="TextEdit" type="TextEdit" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="2"]
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+text = "Search:"
+
+[node name="TextEdit" type="TextEdit" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+placeholder_text = "emails"
 
-[node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/VBoxContainer" index="1"]
+[node name="Button2" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="4"]
+layout_mode = 2
+text = "Search"
+
+[node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/VBoxContainer" index="2"]
+visible = false
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" index="2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" index="3"]
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -56,48 +96,90 @@ layout_mode = 2
 
 [node name="Inbox" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="0"]
 layout_mode = 2
-text = "Inbox (5)"
+focus_mode = 0
+text = " 
+📥 Inbox (5)
+ "
 
 [node name="Archive" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="1"]
 layout_mode = 2
-text = "Archive(1)"
+focus_mode = 0
+text = "  
+📂 Archive(1)
+ "
+
+[node name="TextureButton" type="TextureButton" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 10
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_p44hs")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_v6a1y")
 
 [node name="VSeparator" type="VSeparator" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" index="2"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+clip_tabs = false
+all_tabs_in_front = true
+
+[node name="Inbox" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Vbox" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/Panel" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Icon" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="0" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+
+[node name="Icon2" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="1" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+
+[node name="Icon3" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="2" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+
+[node name="Icon4" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="3" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+
+[node name="Icon5" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="4" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+
+[node name="Icon6" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="5" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+
+[node name="Archive" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer" index="2"]
+visible = false
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/Panel/ScrollContainer" index="0"]
+[node name="Vbox" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Archive" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Icon" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/Panel/ScrollContainer/VBoxContainer" index="0" instance=ExtResource("4_pk7rf")]
+[node name="Icon" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Archive/Vbox" index="0" instance=ExtResource("4_pk7rf")]
 layout_mode = 2
 
-[node name="Icon2" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/Panel/ScrollContainer/VBoxContainer" index="1" instance=ExtResource("4_pk7rf")]
+[node name="TextureButton" type="TextureButton" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="1"]
 layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_wf5ga")
+script = ExtResource("6_v6a1y")
 
-[node name="Icon3" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/Panel/ScrollContainer/VBoxContainer" index="2" instance=ExtResource("4_pk7rf")]
-layout_mode = 2
-
-[node name="Icon4" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/Panel/ScrollContainer/VBoxContainer" index="3" instance=ExtResource("4_pk7rf")]
-layout_mode = 2
-
-[node name="Icon5" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/Panel/ScrollContainer/VBoxContainer" index="4" instance=ExtResource("4_pk7rf")]
-layout_mode = 2
-
-[node name="Icon6" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/Panel/ScrollContainer/VBoxContainer" index="5" instance=ExtResource("4_pk7rf")]
-layout_mode = 2
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" method="_on_pressed"]
