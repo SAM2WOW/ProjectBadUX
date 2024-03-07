@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cmv4wtgfnvwbu"]
 
-[ext_resource type="Texture2D" uid="uid://e477jmxvr3pk" path="res://arts/icon.svg" id="1_qgoj2"]
+[ext_resource type="Texture2D" uid="uid://bf8cyt2hiqp1a" path="res://arts/icons/Windows98ComputerIcon.webp" id="2_fa27x"]
 [ext_resource type="Script" path="res://scenes/healthBar.gd" id="3_0dulu"]
 [ext_resource type="Texture2D" uid="uid://b70p31dc8pwwy" path="res://arts/whiteBg.png" id="3_j8264"]
 [ext_resource type="Script" path="res://scenes/MenuButton.gd" id="3_oyxl4"]
@@ -15,21 +15,33 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -17.0
-offset_top = -56.0
-offset_right = 32.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="TaskList" parent="." instance=ExtResource("4_aftko")]
+layout_mode = 1
+anchors_preset = 9
+anchor_right = 0.0
+offset_top = -309.0
+offset_right = 263.0
+offset_bottom = -38.0
+grow_horizontal = 1
+taskList = {
+1: "task 1",
+2: "task 2"
+}
 
 [node name="TaskButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 64.0
+offset_right = 88.0
 grow_vertical = 2
-icon = ExtResource("1_qgoj2")
-icon_alignment = 1
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+text = "Tasks"
+icon = ExtResource("2_fa27x")
 expand_icon = true
 script = ExtResource("3_oyxl4")
 
@@ -46,18 +58,19 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="HealthBar" type="TextureProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -8.0
+offset_left = -272.0
+offset_top = 7.0
+offset_right = 28.0
+offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 2
+scale = Vector2(0.874434, 0.954044)
 value = 100.0
 nine_patch_stretch = true
 texture_under = ExtResource("3_j8264")
@@ -71,13 +84,14 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -396.0
-offset_top = 3.0
-offset_right = -317.0
-offset_bottom = -6.0
+offset_left = -339.0
+offset_top = 4.0
+offset_right = -260.0
+offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 38
+scale = Vector2(0.736453, 0.736453)
+theme_override_font_sizes/font_size = 31
 text = "HP:"
 horizontal_alignment = 2
 vertical_alignment = 1

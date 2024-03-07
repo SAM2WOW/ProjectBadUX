@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=21 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
@@ -12,11 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="10_mbeyi"]
 [ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="11_qbj6n"]
 [ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
+[ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/ducks/duck.png" id="13_1w4ho"]
 [ext_resource type="PackedScene" uid="uid://c7jcd2xhvuig2" path="res://scenes/windows/crash_cup.tscn" id="13_3o8x1"]
+[ext_resource type="PackedScene" uid="uid://dwg32wpr3ts6c" path="res://scenes/windows/duck.tscn" id="14_5cp0w"]
 [ext_resource type="PackedScene" uid="uid://b11hmmcjsikmg" path="res://scenes/windows/trick_confirm.tscn" id="14_kw5uc"]
 [ext_resource type="PackedScene" uid="uid://d3o7t7plpq8ec" path="res://scenes/windows/downloader.tscn" id="15_1l86a"]
-[ext_resource type="Texture2D" uid="uid://d2k20t827o2kh" path="res://arts/icons/artage-io-48173_1707373470.png" id="17_wvqwt"]
-[ext_resource type="PackedScene" uid="uid://drdp1ecdhxd8t" path="res://scenes/EmailScene/emailIcon.tscn" id="18_ev3lk"]
+[ext_resource type="Texture2D" uid="uid://doiqmgy3d7agt" path="res://arts/icons/Internets.png" id="16_q855k"]
 [ext_resource type="PackedScene" uid="uid://cmv4wtgfnvwbu" path="res://scenes/taskbar.tscn" id="18_n68yv"]
 [ext_resource type="PackedScene" uid="uid://cn6sbyi6q46q0" path="res://scenes/windows/web_browser.tscn" id="18_q7rax"]
 
@@ -70,14 +71,20 @@ theme_override_constants/margin_bottom = 15
 [node name="GridContainer" type="GridContainer" parent="Control/Icons"]
 layout_mode = 2
 
-[node name="TextureButton" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
-visible = false
+[node name="NoteBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2
 text = ""
-icon = null
 icon_texture = ExtResource("6_cglk1")
 icon_name = "Notepad"
 window = ExtResource("7_jkpee")
+
+[node name="WebBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("16_q855k")
+icon_name = "Browser"
+window = ExtResource("18_q7rax")
 
 [node name="TextureButton2" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false
@@ -87,6 +94,14 @@ icon = ExtResource("4_fxont")
 icon_texture = ExtResource("9_mas5o")
 icon_name = "ads"
 window = ExtResource("10_mbeyi")
+
+[node name="DuckBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("13_1w4ho")
+icon_name = "Duck.jpg"
+window = ExtResource("14_5cp0w")
 
 [node name="TextureButton3" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false
@@ -123,17 +138,6 @@ icon_texture = ExtResource("4_fxont")
 icon_name = "Downloader"
 window = ExtResource("15_1l86a")
 
-[node name="TextureButton7" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
-layout_mode = 2
-text = ""
-icon = ExtResource("4_fxont")
-icon_texture = ExtResource("17_wvqwt")
-icon_name = "Browser.exe"
-window = ExtResource("18_q7rax")
-
-[node name="Icon" parent="Control/Icons/GridContainer" instance=ExtResource("18_ev3lk")]
-layout_mode = 2
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
@@ -148,9 +152,5 @@ mouse_filter = 2
 
 [node name="Taskbar" parent="CanvasLayer/Control" instance=ExtResource("18_n68yv")]
 layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
 
 [node name="Windows" type="Node2D" parent="."]

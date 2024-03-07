@@ -7,6 +7,10 @@ var ads = [
 	"res://arts/ads/OIG2.jpg"
 ]
 
+func _process(delta):
+	if $AudioStreamPlayer.is_playing():
+		position += Vector2i(randi_range(-1,1),randi_range(-1,1))
+
 func _ready():
 	super._ready()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b060jtmgkpaqq"]
+[gd_scene load_steps=14 format=3 uid="uid://b060jtmgkpaqq"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_c83mn"]
 [ext_resource type="Script" path="res://scenes/windows/ads.gd" id="2_61gui"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dm8c66hyo85l" path="res://Themes/Classic95/Styles/Window/CloseBtn.png" id="3_gv8ls"]
 [ext_resource type="Texture2D" uid="uid://tyjtjti37h5c" path="res://Themes/Classic95/Styles/Window/CloseBtnH.png" id="4_qxa25"]
 [ext_resource type="Texture2D" uid="uid://c5q3bccdc35i" path="res://Themes/Classic95/Styles/Window/CloseBtnPressed.png" id="5_jaawk"]
-[ext_resource type="VideoStream" path="res://arts/videos/Grandpa Found the Car Keys.ogv" id="6_oivrd"]
+[ext_resource type="AudioStream" uid="uid://e3iysik6xcpm" path="res://sounds/ads/AnnoyingAd1.wav" id="7_7ply8"]
+[ext_resource type="AudioStream" uid="uid://dh23a1nur1uos" path="res://sounds/ads/AnnoyingAd2.wav" id="8_rg4i8"]
+[ext_resource type="AudioStream" uid="uid://smhhlt2gb2so" path="res://sounds/ads/Annoying_Ad3.wav" id="9_26oxm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lbno"]
 texture = ExtResource("3_gv8ls")
@@ -16,6 +18,15 @@ texture = ExtResource("4_qxa25")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2qta"]
 texture = ExtResource("5_jaawk")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dsblx"]
+streams_count = 3
+stream_0/stream = ExtResource("7_7ply8")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("8_rg4i8")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("9_26oxm")
+stream_2/weight = 1.0
 
 [node name="Ads" instance=ExtResource("1_c83mn")]
 position = Vector2i(0, 0)
@@ -39,19 +50,7 @@ texture = ExtResource("2_owjwv")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control" index="3"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stream = ExtResource("6_oivrd")
-expand = true
-loop = true
-
-[node name="Button" type="Button" parent="Control" index="4"]
+[node name="Button" type="Button" parent="Control" index="3"]
 layout_mode = 0
 offset_right = 18.0
 offset_bottom = 16.0
@@ -59,5 +58,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_2lbno")
 theme_override_styles/hover = SubResource("StyleBoxTexture_02xw6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i2qta")
 text = "     "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+stream = SubResource("AudioStreamRandomizer_dsblx")
+volume_db = 3.467
+autoplay = true
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
