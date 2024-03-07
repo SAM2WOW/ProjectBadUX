@@ -18,7 +18,10 @@ func _ready():
 	if bad:
 		$TextureButton.set_default_cursor_shape(0)
 	
-	self.modulate = Color.from_hsv((randi() % 12) / 12.0, 1, 1)
+	var newColor = Color.from_hsv((randi() % 12) / 12.0, 1, 1)
+	$TextureButton.modulate = newColor
+	$Leg.modulate = newColor
+	$Leg2.modulate = newColor
 
 
 func _on_timer_timeout():
@@ -48,13 +51,17 @@ func _on_texture_button_mouse_entered():
 	hovering = true
 	
 	$TextureButton.set_scale(Vector2(1.1, 1.1))
+	
+	if bad:
+		$Label.show()
 
 
 func _on_texture_button_mouse_exited():
 	hovering = false
 	
 	$TextureButton.set_scale(Vector2(1, 1))
-
+	
+	$Label.hide()
 
 func _on_texture_button_pressed():
 	emit_signal("selected")
