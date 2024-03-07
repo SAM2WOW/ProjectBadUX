@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://b2vxnl574nv8x"]
 
-[ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/icons/Download1.webp" id="1_i6gdo"]
 [ext_resource type="Script" path="res://scenes/download_buttons.gd" id="1_pvtx3"]
 [ext_resource type="Texture2D" uid="uid://cvxtiwd3hj63r" path="res://arts/icons/pngimg.com - leg_PNG4804.png" id="2_hxtla"]
+[ext_resource type="Texture2D" uid="uid://b6nbp1hvsoyms" path="res://arts/downloads/Sprite-0007.png" id="3_qexhy"]
 [ext_resource type="AudioStream" uid="uid://bs4cnsbsvy156" path="res://sounds/duck_hunt/Quack5.wav" id="4_mqsqt"]
 
 [sub_resource type="Animation" id="Animation_53e0y"]
@@ -302,7 +302,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
-"values": [Vector2(-81, -250), Vector2(-81, -259), Vector2(-81, -250)]
+"values": [Vector2(-192, -250), Vector2(-187.705, -259), Vector2(-192, -250)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -330,7 +330,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-80, -80), Vector2(-80, -80)]
+"values": [Vector2(-192, -96), Vector2(-192, -96)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -354,7 +354,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(160, 160), Vector2(160, 160)]
+"values": [Vector2(384, 192), Vector2(384, 192)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -454,17 +454,19 @@ texture = ExtResource("2_hxtla")
 flip_h = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -80.0
 offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
+offset_right = 304.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_i6gdo")
+texture_normal = ExtResource("3_qexhy")
 
 [node name="Timer" type="Timer" parent="."]
 

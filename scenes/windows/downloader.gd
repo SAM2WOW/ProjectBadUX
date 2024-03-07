@@ -7,10 +7,10 @@ var download = preload("res://scenes/download_buttons.tscn")
 func _ready():
 	super._ready()
 	
-	var goodx = randi_range(0, 4)
+	var goodx = randi_range(0, 2)
 	var goody = randi_range(0, 4)
 	
-	for x in range(5):
+	for x in range(3):
 		for y in range(5):
 			var isGood = (x == goodx and y == goody)
 			if randi() % 2 or isGood:
@@ -25,7 +25,7 @@ func _ready():
 				
 				$Node2D.add_child(d)
 				#d.set_position(Vector2(randf_range(12, 500), randf_range(12, 500)))
-				d.set_position(Vector2((x * 420 / 5) + 80, (y * 420 / 5) + 80))
+				d.set_position(Vector2((x * 420 / 3) + 80, (y * 420 / 5) + 80))
 
 
 func donwload():

@@ -21,7 +21,7 @@ func _ready():
 	if randi() % 2:
 		bad = true
 		
-		$Sprites/Duck2.set_texture(load("res://arts/ducks/aiduck (%d).png" % randi_range(0, 5)))
+		$Sprites/Duck2.set_texture(load("res://arts/ducks/aiduck (%d).png" % randi_range(1, 5)))
 		
 		$Sprites/Duck.hide()
 		$Sprites/Duck2.show()

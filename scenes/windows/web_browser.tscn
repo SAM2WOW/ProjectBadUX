@@ -319,6 +319,7 @@ mouse_filter = 2
 max_value = 1.0
 
 [node name="DuckReady" type="CenterContainer" parent="Control/ScrollContainer/TabContainer" index="4"]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 
