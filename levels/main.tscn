@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c7jcd2xhvuig2" path="res://scenes/windows/crash_cup.tscn" id="13_3o8x1"]
 [ext_resource type="PackedScene" uid="uid://b11hmmcjsikmg" path="res://scenes/windows/trick_confirm.tscn" id="14_kw5uc"]
 [ext_resource type="PackedScene" uid="uid://d3o7t7plpq8ec" path="res://scenes/windows/downloader.tscn" id="15_1l86a"]
-[ext_resource type="Texture2D" uid="uid://d2k20t827o2kh" path="res://arts/icons/artage-io-48173_1707373470.png" id="17_wvqwt"]
+[ext_resource type="Texture2D" uid="uid://doiqmgy3d7agt" path="res://arts/icons/Internets.png" id="16_q855k"]
 [ext_resource type="PackedScene" uid="uid://cmv4wtgfnvwbu" path="res://scenes/taskbar.tscn" id="18_n68yv"]
 [ext_resource type="PackedScene" uid="uid://cn6sbyi6q46q0" path="res://scenes/windows/web_browser.tscn" id="18_q7rax"]
 
@@ -69,14 +69,21 @@ theme_override_constants/margin_bottom = 15
 [node name="GridContainer" type="GridContainer" parent="Control/Icons"]
 layout_mode = 2
 
-[node name="TextureButton" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
-visible = false
+[node name="NoteBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2
 text = ""
 icon = null
 icon_texture = ExtResource("6_cglk1")
 icon_name = "Notepad"
 window = ExtResource("7_jkpee")
+
+[node name="WebBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("16_q855k")
+icon_name = "Browser"
+window = ExtResource("18_q7rax")
 
 [node name="TextureButton2" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false
@@ -115,20 +122,13 @@ icon_name = "Confirm Shame"
 window = ExtResource("14_kw5uc")
 
 [node name="TextureButton6" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+visible = false
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
 icon_texture = ExtResource("4_fxont")
 icon_name = "Downloader"
 window = ExtResource("15_1l86a")
-
-[node name="TextureButton7" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
-layout_mode = 2
-text = ""
-icon = ExtResource("4_fxont")
-icon_texture = ExtResource("17_wvqwt")
-icon_name = "Browser.exe"
-window = ExtResource("18_q7rax")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2

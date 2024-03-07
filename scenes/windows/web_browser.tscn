@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_qx6jo"]
 [ext_resource type="Script" path="res://scenes/windows/web_browser.gd" id="2_fywun"]
-[ext_resource type="Texture2D" uid="uid://d2k20t827o2kh" path="res://arts/icons/artage-io-48173_1707373470.png" id="2_i72r4"]
 [ext_resource type="Texture2D" uid="uid://mlmygn30vmv1" path="res://arts/McGoogle.webp" id="3_syoli"]
+[ext_resource type="Texture2D" uid="uid://doiqmgy3d7agt" path="res://arts/icons/Internets.png" id="3_y0020"]
 [ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="4_pf1hf"]
 [ext_resource type="Texture2D" uid="uid://dpmcjththyl4e" path="res://arts/ducks/Captcha.jpg" id="6_ofcvg"]
 [ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/ducks/duck.png" id="7_slx8e"]
@@ -55,7 +55,7 @@ size = Vector2i(720, 527)
 unresizable = true
 mouse_passthrough = true
 script = ExtResource("2_fywun")
-window_icon = ExtResource("2_i72r4")
+window_icon = ExtResource("3_y0020")
 window_name = "Web Browser"
 
 [node name="Control" parent="." index="0"]
