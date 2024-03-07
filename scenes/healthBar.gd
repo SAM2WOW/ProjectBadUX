@@ -1,4 +1,4 @@
-extends TextureProgressBar
+extends ProgressBar
 
 var health : float = 100;
 # Called when the node enters the scene tree for the first time.

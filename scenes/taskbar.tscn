@@ -11,10 +11,6 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -17.0
-offset_top = -56.0
-offset_right = 32.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -42,21 +38,20 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="HealthBar" type="TextureProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -310.0
+offset_left = -272.0
 offset_top = 7.0
-offset_right = -10.0
+offset_right = 28.0
 offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 2
+scale = Vector2(0.874434, 0.954044)
 value = 100.0
-nine_patch_stretch = true
-texture_progress = ExtResource("1_qgoj2")
 script = ExtResource("3_0dulu")
 
 [node name="Label" type="Label" parent="."]
@@ -65,13 +60,14 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -396.0
-offset_top = 3.0
-offset_right = -317.0
-offset_bottom = -6.0
+offset_left = -339.0
+offset_top = 4.0
+offset_right = -260.0
+offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 38
+scale = Vector2(0.736453, 0.736453)
+theme_override_font_sizes/font_size = 31
 text = "HP:"
 horizontal_alignment = 2
 vertical_alignment = 1

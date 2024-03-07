@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2vxnl574nv8x"]
+[gd_scene load_steps=10 format=3 uid="uid://b2vxnl574nv8x"]
 
 [ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/icons/Download1.webp" id="1_i6gdo"]
 [ext_resource type="Script" path="res://scenes/download_buttons.gd" id="1_pvtx3"]
 [ext_resource type="Texture2D" uid="uid://cvxtiwd3hj63r" path="res://arts/icons/pngimg.com - leg_PNG4804.png" id="2_hxtla"]
+[ext_resource type="AudioStream" uid="uid://bs4cnsbsvy156" path="res://sounds/duck_hunt/Quack5.wav" id="4_mqsqt"]
 
 [sub_resource type="Animation" id="Animation_53e0y"]
 resource_name = "Idle"
@@ -203,6 +204,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureButton:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 160)]
+}
 
 [sub_resource type="Animation" id="Animation_uk31v"]
 resource_name = "Walking"
@@ -304,11 +317,124 @@ tracks/7/keys = {
 "values": [0.0, 0.0379315, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_6e8if"]
+resource_name = "nothing"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-80, -80), Vector2(-80, -80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureButton:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, 160), Vector2(160, 160)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leg2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(23, -13), Vector2(23, -13)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leg2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.120494, -0.120494]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leg2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.302137, 0.0251513), Vector2(0.302137, 0.0251513)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Leg:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-26, 7.62939e-06), Vector2(-26, 7.62939e-06)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Leg:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.110169, 0.110169]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Leg:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.264688, 0.015368), Vector2(0.264688, 0.015368)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8q2lg"]
 _data = {
 "Idle": SubResource("Animation_53e0y"),
 "RESET": SubResource("Animation_bimyv"),
-"Walking": SubResource("Animation_uk31v")
+"Walking": SubResource("Animation_uk31v"),
+"nothing": SubResource("Animation_6e8if")
 }
 
 [node name="DownloadButtons" type="Node2D"]
@@ -341,15 +467,18 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_i6gdo")
 
 [node name="Timer" type="Timer" parent="."]
-one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_8q2lg")
 }
-autoplay = "Idle"
+autoplay = "nothing"
 playback_default_blend_time = 0.3
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mqsqt")
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -52,15 +52,22 @@ func _on_text_edit_caret_changed():
 func _on_bad_website_1_pressed():
 	SoundPlayer.play("Confirm")
 	
-	for i in range(5):
+	for i in range(4):
 		var w = ads.instantiate()
 		Global.windowsManager.add_window(w)
 
 func _on_bad_website_2_pressed():
-	var w = cup.instantiate()
-	Global.windowsManager.add_window(w)
+	#var w = cup.instantiate()
+	#Global.windowsManager.add_window(w)
 	
-	_on_button_pressed()
+	#_on_button_pressed()
+	
+	SoundPlayer.play("Confirm")
+	
+	for i in range(2):
+		var w = ads.instantiate()
+		Global.windowsManager.add_window(w)
+	
 
 func _on_good_website_pressed():
 	SoundPlayer.play("Confirm")

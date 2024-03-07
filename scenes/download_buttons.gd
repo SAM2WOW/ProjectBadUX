@@ -9,17 +9,23 @@ var hovering = false
 var bad = false
 
 func _ready():
-	$Timer.start(randf_range(1.0, 4.0))
+	#$Timer.start(randf_range(1.0, 4.0))
+	
+	if bad:
+		$TextureButton.set_default_cursor_shape(0)
+	
+	self.modulate = Color.from_hsv((randi() % 12) / 12.0, 1, 1)
 
 
 func _on_timer_timeout():
-	target = Vector2(randf_range(12, 500), randf_range(12, 500))
+	target = Vector2(-50 + (600 * (randi() % 2)), randf_range(12, 500))
 	moving = true
 	$AnimationPlayer.play("Walking")
 
 
 func _process(delta):
-	speed = lerpf(speed, 50 + 80 * int(hovering), delta * 25)
+	#speed = lerpf(speed, 50 + 80 * int(hovering), delta * 25)
+	speed = 150
 	
 	$AnimationPlayer.set_speed_scale(speed / 20)
 	
@@ -29,9 +35,9 @@ func _process(delta):
 		
 		if position.distance_to(target) < 10:
 			moving = false
-			$Timer.start(randf_range(1.0, 4.0))
+			#$Timer.start(randf_range(1.0, 4.0))
 			
-			$AnimationPlayer.play("Idle")
+			$AnimationPlayer.play("nothing")
 
 
 func _on_texture_button_mouse_entered():
@@ -48,3 +54,10 @@ func _on_texture_button_mouse_exited():
 
 func _on_texture_button_pressed():
 	pass # Replace with function body.
+
+
+func _on_texture_button_button_down():
+	if bad:
+		target = Vector2(-50 + (620 * (randi() % 2)), randf_range(12, 500))
+		moving = true
+		$AnimationPlayer.play("Walking")
