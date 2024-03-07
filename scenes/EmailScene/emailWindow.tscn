@@ -1,8 +1,95 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnjmpi2b7pjw0"]
+[gd_scene load_steps=9 format=3 uid="uid://bnjmpi2b7pjw0"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_lwpwy"]
+[ext_resource type="Script" path="res://scenes/EmailScene/emailWindow.gd" id="2_ahsjv"]
+[ext_resource type="Texture2D" uid="uid://l4x62gxv0oar" path="res://arts/icons/Email.png" id="2_shvyh"]
 
-[node name="Window" instance=ExtResource("1_lwpwy")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5tbi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjwci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_otb1f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hwub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ysaj"]
+
+[node name="FemailLogin" instance=ExtResource("1_lwpwy")]
 mode = 3
-size = Vector2i(960, 540)
-window_name = "Email"
+title = "Login to fE-Mail"
+position = Vector2i(0, 0)
+size = Vector2i(400, 400)
+script = ExtResource("2_ahsjv")
+window_icon = ExtResource("2_shvyh")
+window_name = "Login to fE-Mail"
+
+[node name="Label" parent="Control/CenterContainer" index="0"]
+custom_minimum_size = Vector2(261.275, 0)
+text = "Welcome to fE-Mail! To check your email please login"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(261.275, 0)
+layout_mode = 2
+text = "Welcome to fE-Mail! To check your email please login
+ 
+ "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Control/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Email:"
+
+[node name="TextEdit2" type="TextEdit" parent="Control/CenterContainer/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(270.805, 35.78)
+layout_mode = 2
+text = "thisismyemail@femail.com"
+placeholder_text = "honkhonk@femail.com"
+scroll_past_end_of_file = true
+scroll_fit_content_height = true
+
+[node name="Label3" type="Label" parent="Control/CenterContainer/VBoxContainer" index="3"]
+layout_mode = 2
+text = "Password:"
+
+[node name="TextEdit3" type="TextEdit" parent="Control/CenterContainer/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(270.805, 35.78)
+layout_mode = 2
+text = "123456"
+placeholder_text = "Password"
+scroll_past_end_of_file = true
+scroll_fit_content_height = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="NotLogin" type="Button" parent="Control/CenterContainer/VBoxContainer" index="6"]
+layout_mode = 2
+focus_mode = 0
+text = "Not Login"
+
+[node name="Login" type="Button" parent="Control/CenterContainer/VBoxContainer" index="7"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g5tbi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pjwci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_otb1f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0hwub")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ysaj")
+text = "Login to Account"
+alignment = 2
+
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/NotLogin" to="." method="_on_not_login_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/Login" to="." method="_on_login_pressed"]

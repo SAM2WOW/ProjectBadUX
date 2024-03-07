@@ -3,3 +3,40 @@
 [ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="1_ssksj"]
 
 [node name="Icon" instance=ExtResource("1_ssksj")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 0.0
+offset_bottom = 8.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = ""
+script = null
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Sender" type="Label" parent="HBoxContainer" index="1"]
+layout_mode = 2
+text = "Sender"
+
+[node name="Title" type="Label" parent="HBoxContainer" index="2"]
+layout_mode = 2
+text = "Title of the email"
+
+[node name="Content" type="Label" parent="HBoxContainer" index="3"]
+layout_mode = 2
+text = "Hi this is email
+"
+
+[node name="Date" type="Label" parent="HBoxContainer" index="4"]
+layout_mode = 2
+text = "Data
+"
