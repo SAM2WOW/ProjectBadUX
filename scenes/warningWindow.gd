@@ -49,11 +49,11 @@ func _ShowWarning():
 	
 
 func SetDescription(newDesc : String):
-	$ColorRect/Description.clear();
+	$ColorRect/Description.clear();	
 	$ColorRect/Description.add_text(newDesc);
 
 func WindowDisplayRoutine():
-	var tween = create_tween().set_trans(Tween.TRANS_EXPO);
+	var tween = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT);
 	var posShift = size.y;
 	set_position(Vector2(position.x, 50));
 	visible = true;

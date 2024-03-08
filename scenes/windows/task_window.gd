@@ -9,20 +9,20 @@ var initialPos;
 func _ready():
 	Global.taskWindow = self
 	initiate_tasks();
-	visible = false;
 	initialPos = position.y;
+	show_window();
 	
 func show_window():
 	SoundPlayer.play("Confirm")
 	visible = true;
 	set_position(Vector2(position.x, 50));
-	var tween =  create_tween().set_trans(Tween.TRANS_EXPO);
+	var tween =  create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT);
 	tween.tween_property(self, "position", Vector2(position.x, initialPos), 1);
 	await tween.finished;
 
 func hide_window():
 	SoundPlayer.play("Deny")
-	var tween =  create_tween().set_trans(Tween.TRANS_EXPO);
+	var tween =  create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT);
 	tween.tween_property(self, "position", Vector2(position.x, 50), 1);
 	await tween.finished;
 	visible = false;
@@ -42,7 +42,7 @@ func complete_task(taskId : int):
 	for task in $TaskContainer.get_children():
 		if !task is Task || task.id != taskId: continue;
 		task.finish_task();
-	taskCompletion[taskId] = true;
+		taskCompletion[taskId] = true;
 
 func show_warning(warning : String):
 	pass;
