@@ -16,8 +16,9 @@ func _ready():
 	$Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/TextEdit.grab_focus()
 	
 	# shuffle search results
-	for i in $Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3.get_children():
-		$Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3.move_child(i, randi_range(0, 3))
+	for x in range(2, 4):
+		var i = $Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3.get_child(x)
+		$Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3.move_child(i, randi_range(2, 4))
 	
 
 func _process(delta):
