@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=24 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://dwg32wpr3ts6c" path="res://scenes/windows/duck.tscn" id="14_5cp0w"]
 [ext_resource type="PackedScene" uid="uid://b11hmmcjsikmg" path="res://scenes/windows/trick_confirm.tscn" id="14_kw5uc"]
 [ext_resource type="PackedScene" uid="uid://d3o7t7plpq8ec" path="res://scenes/windows/downloader.tscn" id="15_1l86a"]
+[ext_resource type="Texture2D" uid="uid://deaoil3bt8t0e" path="res://arts/icons/Dictionary.png" id="15_a7776"]
+[ext_resource type="PackedScene" uid="uid://cpe6eqkt6umwp" path="res://scenes/windows/dictionary.tscn" id="16_7jdu2"]
 [ext_resource type="Texture2D" uid="uid://doiqmgy3d7agt" path="res://arts/icons/Internets.png" id="16_q855k"]
 [ext_resource type="PackedScene" uid="uid://cmv4wtgfnvwbu" path="res://scenes/taskbar.tscn" id="18_n68yv"]
 [ext_resource type="PackedScene" uid="uid://cn6sbyi6q46q0" path="res://scenes/windows/web_browser.tscn" id="18_q7rax"]
@@ -96,13 +98,20 @@ icon_name = "fE-Mail"
 window = ExtResource("12_wshen")
 
 [node name="DuckBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
-visible = false
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
 icon_texture = ExtResource("13_1w4ho")
 icon_name = "Duck.jpg"
 window = ExtResource("14_5cp0w")
+
+[node name="DictionaryBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("15_a7776")
+icon_name = "Dark UX Dictionary"
+window = ExtResource("16_7jdu2")
 
 [node name="TextureButton3" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false
