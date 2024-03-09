@@ -26,7 +26,8 @@ grow_horizontal = 1
 taskList = {
 1: "Download an image of a duck",
 2: "Clean your email inbox",
-3: "Shop for shampoo online"
+3: "Retrive archived email",
+4: "Shop for shampoo online"
 }
 
 [node name="TaskButton" type="Button" parent="."]

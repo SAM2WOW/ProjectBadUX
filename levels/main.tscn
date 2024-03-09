@@ -98,6 +98,7 @@ icon_name = "fE-Mail"
 window = ExtResource("12_wshen")
 
 [node name="DuckBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+visible = false
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
@@ -141,6 +142,7 @@ icon_name = "Confirm Shame"
 window = ExtResource("14_kw5uc")
 
 [node name="TextureButton6" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+visible = false
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")

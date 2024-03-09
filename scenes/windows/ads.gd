@@ -8,7 +8,11 @@ var ads = [
 	"res://arts/ads/RRp6pTrYz29gqeSS9frXaeWfkW3DSdFedc6sdMVdciA.webp",
 	"res://arts/ads/ZPVYdXk.jpeg",
 	"res://arts/ads/images (1).jpg",
-	"res://arts/ads/images.jpg"
+	"res://arts/ads/images.jpg",
+	"res://arts/ads/aiads (1).jpg",
+	"res://arts/ads/aiads (2).jpg",
+	"res://arts/ads/aiads (3).jpg",
+	"res://arts/ads/aiads (4).jpg",
 ]
 
 func _process(delta):

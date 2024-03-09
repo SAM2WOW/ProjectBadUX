@@ -98,28 +98,30 @@ mouse_filter = 2
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Control" index="1"]
+visible = false
+top_level = true
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Label" type="Label" parent="Control/Panel" index="0"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 467.0
-offset_right = 196.0
-offset_bottom = 487.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.619608, 0.619608, 0.619608, 1)
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.423529, 0.423529, 0.423529, 1)
 theme_override_font_sizes/font_size = 11
-text = "ABS"
+text = "https://www.ducklover123.com
+"
+vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control" index="3"]
 layout_mode = 1
@@ -142,7 +144,6 @@ tab_alignment = 1
 tabs_visible = false
 
 [node name="GoogleFrontPage" type="CenterContainer" parent="Control/ScrollContainer/TabContainer" index="1"]
-visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/TabContainer/GoogleFrontPage" index="0"]
@@ -160,9 +161,10 @@ stretch_mode = 5
 layout_mode = 2
 alignment = 1
 
-[node name="TextEdit" type="TextEdit" parent="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer" index="0"]
-custom_minimum_size = Vector2(234.825, 0)
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+text = "Duck"
 placeholder_text = "Duck"
 
 [node name="SearchButton" type="Button" parent="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer" index="1"]
@@ -183,6 +185,7 @@ texture_normal = SubResource("AnimatedTexture_6imei")
 script = ExtResource("9_dtapg")
 
 [node name="SearchResults" type="CenterContainer" parent="Control/ScrollContainer/TabContainer" index="2"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/TabContainer/SearchResults" index="0"]
@@ -264,8 +267,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_fkg3u")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_1d2ao")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_osnml")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hber1")
-text = "1000+ Ducks Pictures | Download Free Images on ...
-"
 
 [node name="Label3" type="Label" parent="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/VBoxContainer2" index="1"]
 custom_minimum_size = Vector2(500, 0)
@@ -453,7 +454,7 @@ one_shot = true
 [node name="CorruptedMiniGame" type="AudioStreamPlayer" parent="." index="6"]
 stream = ExtResource("15_tqvip")
 
-[connection signal="caret_changed" from="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_text_edit_caret_changed"]
+[connection signal="text_submitted" from="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/HBoxContainer/SearchButton" to="." method="_on_search_button_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/TextureButton" to="Control/ScrollContainer/TabContainer/GoogleFrontPage/VBoxContainer/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/TextureButton" to="Control/ScrollContainer/TabContainer/SearchResults/MarginContainer/VBoxContainer3/TextureButton" method="_on_pressed"]
