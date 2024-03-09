@@ -89,7 +89,7 @@ unresizable = true
 mouse_passthrough = true
 script = ExtResource("2_fywun")
 window_icon = ExtResource("3_y0020")
-window_name = "Web Browser"
+window_name = "McGoogle Search"
 
 [node name="Control" parent="." index="0"]
 mouse_filter = 2
