@@ -31,7 +31,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Bait and Switch" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="1"]
+[node name="Bait and Switch" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="0"]
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Bait and Switch" index="0"]
@@ -40,7 +40,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 fit_content = true
 
-[node name="Bait and Switch2" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="2"]
+[node name="Bait and Switch2" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="1"]
 visible = false
 layout_mode = 2
 
@@ -50,10 +50,30 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 fit_content = true
 
+[node name="Bait and Switch3" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="2"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Bait and Switch3" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+fit_content = true
+
+[node name="Bait and Switch4" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="3"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Bait and Switch4" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+fit_content = true
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" index="1"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+[node name="Prev" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
 layout_mode = 2
 text = "< Prev"
 
@@ -63,10 +83,17 @@ size_flags_horizontal = 3
 text = "1/20"
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="2"]
+[node name="Next" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" index="2"]
 layout_mode = 2
 text = "Next >"
 
 [node name="HSlider" type="HSlider" parent="Control/MarginContainer/VBoxContainer" index="2"]
 layout_mode = 2
+min_value = 1.0
 max_value = 20.0
+value = 1.0
+
+[connection signal="tab_changed" from="Control/MarginContainer/VBoxContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
