@@ -1,8 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnjmpi2b7pjw0"]
+[gd_scene load_steps=13 format=3 uid="uid://bnjmpi2b7pjw0"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_lwpwy"]
 [ext_resource type="Script" path="res://scenes/EmailScene/emailWindow.gd" id="2_ahsjv"]
 [ext_resource type="Texture2D" uid="uid://l4x62gxv0oar" path="res://arts/icons/Email.png" id="2_shvyh"]
+[ext_resource type="Texture2D" uid="uid://psmqyb6qukui" path="res://arts/gif/frame_0_delay-0.15s.jpg" id="4_glq4b"]
+[ext_resource type="Texture2D" uid="uid://dukrww13vruli" path="res://arts/gif/frame_1_delay-0.15s.jpg" id="5_xcnx6"]
+[ext_resource type="Texture2D" uid="uid://cpcu6o7pjf7ht" path="res://arts/gif/frame_2_delay-0.15s.jpg" id="6_ie03v"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_xneb6"]
+frames = 4
+frame_0/texture = ExtResource("4_glq4b")
+frame_0/duration = 0.15
+frame_1/texture = ExtResource("5_xcnx6")
+frame_1/duration = 0.15
+frame_2/texture = ExtResource("6_ie03v")
+frame_2/duration = 0.15
+frame_3/texture = ExtResource("5_xcnx6")
+frame_3/duration = 0.15
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5tbi"]
 
@@ -23,6 +37,9 @@ script = ExtResource("2_ahsjv")
 window_icon = ExtResource("2_shvyh")
 window_name = "Login to fE-Mail"
 
+[node name="ColorRect" parent="Control" index="0"]
+color = Color(1, 0.843137, 0.929412, 1)
+
 [node name="Label" parent="Control/CenterContainer" index="0"]
 custom_minimum_size = Vector2(261.275, 0)
 text = "Welcome to fE-Mail! To check your email please login"
@@ -32,7 +49,12 @@ autowrap_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="0"]
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_xneb6")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(261.275, 0)
 layout_mode = 2
 text = "Welcome to fE-Mail! To check your email please login
@@ -41,11 +63,11 @@ text = "Welcome to fE-Mail! To check your email please login
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Control/CenterContainer/VBoxContainer" index="1"]
+[node name="Label2" type="Label" parent="Control/CenterContainer/VBoxContainer" index="2"]
 layout_mode = 2
 text = "Email:"
 
-[node name="TextEdit2" type="TextEdit" parent="Control/CenterContainer/VBoxContainer" index="2"]
+[node name="TextEdit2" type="TextEdit" parent="Control/CenterContainer/VBoxContainer" index="3"]
 custom_minimum_size = Vector2(270.805, 35.78)
 layout_mode = 2
 text = "thisismyemail@femail.com"
@@ -53,11 +75,11 @@ placeholder_text = "honkhonk@femail.com"
 scroll_past_end_of_file = true
 scroll_fit_content_height = true
 
-[node name="Label3" type="Label" parent="Control/CenterContainer/VBoxContainer" index="3"]
+[node name="Label3" type="Label" parent="Control/CenterContainer/VBoxContainer" index="4"]
 layout_mode = 2
 text = "Password:"
 
-[node name="TextEdit3" type="TextEdit" parent="Control/CenterContainer/VBoxContainer" index="4"]
+[node name="TextEdit3" type="TextEdit" parent="Control/CenterContainer/VBoxContainer" index="5"]
 custom_minimum_size = Vector2(270.805, 35.78)
 layout_mode = 2
 text = "123456"
@@ -65,16 +87,16 @@ placeholder_text = "Password"
 scroll_past_end_of_file = true
 scroll_fit_content_height = true
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/VBoxContainer" index="5"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/VBoxContainer" index="6"]
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
-[node name="NotLogin" type="Button" parent="Control/CenterContainer/VBoxContainer" index="6"]
+[node name="NotLogin" type="Button" parent="Control/CenterContainer/VBoxContainer" index="7"]
 layout_mode = 2
 focus_mode = 0
 text = "Not Login"
 
-[node name="Login" type="Button" parent="Control/CenterContainer/VBoxContainer" index="7"]
+[node name="Login" type="Button" parent="Control/CenterContainer/VBoxContainer" index="8"]
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
