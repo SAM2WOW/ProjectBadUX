@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bgs2n8sq1oivp"]
+[gd_scene load_steps=23 format=3 uid="uid://bgs2n8sq1oivp"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_vw0qd"]
 [ext_resource type="Script" path="res://scenes/windows/femail.gd" id="2_6edev"]
@@ -21,6 +21,16 @@ frame_0/texture = ExtResource("4_egelx")
 frame_0/duration = 0.5
 frame_1/texture = ExtResource("5_4715i")
 frame_1/duration = 0.5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ht1m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rt1hf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yklec"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmq0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lh8uk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi44u"]
 bg_color = Color(1, 1, 1, 1)
@@ -45,6 +55,9 @@ window_name = "fE-Mail"
 
 [node name="ColorRect" parent="Control" index="0"]
 color = Color(1, 0.843137, 0.929412, 1)
+
+[node name="CenterContainer" parent="Control" index="1"]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" index="2"]
 layout_mode = 1
@@ -144,8 +157,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TabContainer" type="TabContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="0"]
-visible = false
+[node name="EmailInbox" type="TabContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -153,44 +165,326 @@ clip_tabs = false
 tabs_visible = false
 all_tabs_in_front = true
 
-[node name="Inbox" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer" index="1"]
+[node name="Inbox" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox" index="1"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Vbox" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox" index="0"]
+[node name="Vbox" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Icon" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="0" instance=ExtResource("4_pk7rf")]
+[node name="Icon" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox" index="0" instance=ExtResource("4_pk7rf")]
 layout_mode = 2
+sender = "Red Cross Foundation"
+sender_email = "outreach@redcross.gov"
+receive_email = "thisisyouremail@femail.com"
+email_title = "Join Us in Making a Difference"
 
-[node name="Icon2" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="1" instance=ExtResource("4_pk7rf")]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon/Content" index="0"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Hello,
 
-[node name="Icon3" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="2" instance=ExtResource("4_pk7rf")]
+I hope this message finds you well. As we continue our efforts to raise money for the recent  devastating earthquake, I wanted to reach out to you with an opportunity to make a meaningful impact.  
+
+At Red Cross, we are dedicated to providing immediate relief to areas that need it the most. We’ve seen firsthand the positive changes that can happen when people come together to support a common cause.
+
+Your contribution, no matter the size, can help us. To donate simply click on the link "
+fit_content = true
+
+[node name="Link" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon/Content" index="1"]
 layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ht1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rt1hf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yklec")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmq0h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lh8uk")
+text = "here"
 
-[node name="Icon4" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="3" instance=ExtResource("4_pk7rf")]
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon/Content" index="2"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "or visit our website at "
+fit_content = true
 
-[node name="Icon5" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Inbox/Vbox" index="4" instance=ExtResource("4_pk7rf")]
+[node name="Link2" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon/Content" index="3"]
 layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ht1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rt1hf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yklec")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmq0h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lh8uk")
+text = "www.redcrossfoundation.gov"
 
-[node name="Archive" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer" index="2"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon/Content" index="4"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Every dollar counts and brings us closer to our goal.
+
+Thank you for considering this opportunity to support our cause. Together, we can create a brighter future for all.
+
+Best,
+The Red Cross Foundation"
+fit_content = true
+
+[node name="Icon2" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox" index="1" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+bad = true
+sender = "Granny Dearest"
+sender_email = "grannydearest767@femail.com"
+receive_email = "thisisyouremail@femail.com"
+email_title = "Family emergency"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon2/Content" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Hi Dear,
+
+I’m in trouble! I fell off my chair and ended up at the ER yesterday. The bill is about $1,000 and I’m low on cash. Would you be able to send some cash to me through Wenmo? Here is my profile link: "
+fit_content = true
+
+[node name="Link3" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon2/Content" index="1"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ht1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rt1hf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yklec")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmq0h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lh8uk")
+text = "https://Wenmo-site.com/GrandmaDearest-767"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon2/Content" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "I miss you, please come visit me. Love you.
+
+Best,
+Your Granny"
+fit_content = true
+
+[node name="Icon3" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox" index="2" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+bad = true
+sender = "Red Cross Foundation"
+sender_email = "redcrossfoundation@femail.com"
+receive_email = "thisisyouremail@femail.com"
+email_title = "Join us in Making a Difference"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Hello,
+
+I hope this message finds you well. As we continue our efforts to raise money for the recent  devastating earthquake, I wanted to reach out to you with an opportunity to make a meaningful impact.  
+
+At Red Cross, we are dedicated to providing immediate relief to areas that need it the most. We’ve seen firsthand the positive changes that can happen when people come together to support a common cause.
+
+Your contribution, no matter the size, can help us. To donate simply click on the link "
+fit_content = true
+
+[node name="Link" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content" index="1"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ht1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rt1hf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yklec")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmq0h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lh8uk")
+text = "here"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "or visit our website at "
+fit_content = true
+
+[node name="Link2" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content" index="3"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ht1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rt1hf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yklec")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmq0h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lh8uk")
+text = "www.redcrossfoundation.com"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content" index="4"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Every dollar counts and brings us closer to our goal.
+
+Thank you for considering this opportunity to support our cause. Together, we can create a brighter future for all.
+
+Best,
+The Red Cross Foundation"
+fit_content = true
+
+[node name="Icon4" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox" index="3" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+sender = "IGM Company"
+sender_email = "recruit@IGM.com"
+receive_email = "thisisyouremail@femail.com"
+email_title = "Invitation to Interview for Product Manager at IGM"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon4/Content" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Dear Candidate,
+
+I hope this email finds you well. I am writing to express our appreciation for your interest in the Product Manager role at IGM. After reviewing your application, we are impressed with your qualifications and believe that your skills and experience align well with what we are looking for in our ideal candidate. We would like to invite you to an interview to discuss the position further and to learn more about your background and expertise. 
+
+Please make a video appointment using our"
+fit_content = true
+
+[node name="Link" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon4/Content" index="1"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ht1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rt1hf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yklec")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmq0h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lh8uk")
+text = "Moogle Calendar"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon4/Content" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "here.
+
+We Look forward to meeting you and discussing how you can contribute to our team!
+
+Best,
+IGM Human Resources"
+fit_content = true
+
+[node name="Icon5" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox" index="4" instance=ExtResource("4_pk7rf")]
+layout_mode = 2
+bad = true
+sender = "Fe-Mail Account Team"
+sender_email = "dept-femail@femail.com"
+receive_email = "thisisyouremail@femail.com"
+email_title = "Unusual Account Activity"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon5/Content" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Hello,
+
+Someone recently used your password to try to sign in to your account. Please see below for the sign-in details:
+
+Thursday, July 10, 2008 05:45:14 PM UTC
+IP Address: 65.89.56.144
+Location: Boulder, Colorado
+
+We prevented the sign-in attempt in case this was not you. Please sign in to your and reset your password here"
+fit_content = true
+
+[node name="Link" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon5/Content" index="1"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.101961, 0.0509804, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_colors/font_hover_color = Color(0.152941, 0.0901961, 0.913725, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.113725, 0.658824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ht1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rt1hf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yklec")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmq0h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lh8uk")
+text = "www.fe-maill.com/reset_password/3t3252y687952"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon5/Content" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "
+Best,
+Fe-Mail Security Dept"
+fit_content = true
+
+[node name="Archive" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox" index="2"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Vbox" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Archive" index="0"]
+[node name="Vbox" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Icon" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TabContainer/Archive/Vbox" index="0" instance=ExtResource("4_pk7rf")]
+[node name="Icon" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox" index="0" instance=ExtResource("4_pk7rf")]
 layout_mode = 2
+sender = "Targot Management"
+sender_email = "targot-manage@targot.us"
+receive_email = "thisisyouremail@femail.com"
+email_title = "IMPORTANT EMPLOYMENT INFO"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon/Content" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Dear Team,
+
+I wanted to touch base regarding our upcoming team meeting scheduled for this Friday at 10:00 AM in the conference room.
+
+Please come prepared to share updates on your respective tasks and any relevant information you think the team should be aware of.
+
+If you have any agenda items you'd like to add, please let me know by Thursday so we can incorporate them into the meeting.
+
+Looking forward to a productive discussion.
+
+Best regards,
+Sheila Bard
+Targot Management Team"
+fit_content = true
 
 [node name="EmailBtns" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="1"]
+visible = false
 layout_mode = 2
 
 [node name="Back" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns" index="0"]
@@ -211,6 +505,7 @@ icon = ExtResource("9_bjsw6")
 expand_icon = true
 
 [node name="Read" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns" index="3"]
+visible = false
 custom_minimum_size = Vector2(79.65, 32.88)
 layout_mode = 2
 focus_mode = 0
@@ -219,6 +514,7 @@ icon = ExtResource("10_sh33c")
 expand_icon = true
 
 [node name="EmailList" type="TabContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="2"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -240,7 +536,7 @@ text = "   From:       "
 layout_mode = 2
 text = "Bob the Builder"
 
-[node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer" index="2"]
+[node name="FromMail" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer" index="2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.52549, 0.52549, 0.52549, 1)
 text = "BobtheBuilder@femail.com"
@@ -285,12 +581,18 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_bi44u")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/Panel" index="0"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/Panel/ScrollContainer" index="0"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="TextureButton" type="TextureButton" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="3"]
 layout_mode = 2
@@ -303,4 +605,17 @@ script = ExtResource("6_v6a1y")
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Inbox" to="." method="_on_inbox_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Archive" to="." method="_on_archive_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon2/Content/Link3" to="." method="_on_virus_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content/Link" to="." method="_on_bad_link_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content/Link2" to="." method="_on_bad_link_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon5/Content/Link" to="." method="_on_dvd_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns/Delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" method="_on_pressed"]
+
+[editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon"]
+[editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon2"]
+[editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3"]
+[editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon4"]
+[editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon5"]
+[editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon"]

@@ -1,6 +1,6 @@
 extends "res://scenes/window.gd"
 
-var velocity = Vector2(200, 200)  # Initial velocity
+var velocity = Vector2(100, 100)  # Initial velocity
 var sprite_size = Vector2.ZERO
 
 func _ready():

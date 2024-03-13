@@ -1,11 +1,30 @@
-[gd_scene load_steps=10 format=3 uid="uid://bo5n4f42rhea0"]
+[gd_scene load_steps=17 format=3 uid="uid://bo5n4f42rhea0"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_2s4pe"]
 [ext_resource type="Script" path="res://scenes/windows/dvd.gd" id="2_h6qfk"]
 [ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="2_ltt71"]
-[ext_resource type="Texture2D" uid="uid://dm8c66hyo85l" path="res://Themes/Classic95/Styles/Window/CloseBtn.png" id="4_iedv1"]
-[ext_resource type="Texture2D" uid="uid://tyjtjti37h5c" path="res://Themes/Classic95/Styles/Window/CloseBtnH.png" id="5_qoo8e"]
+[ext_resource type="Texture2D" uid="uid://dk0pa34w8su3u" path="res://Themes/Classic95/Styles/Window/CloseBtn.png" id="4_iedv1"]
+[ext_resource type="Texture2D" uid="uid://cq2ljc3wfo3vb" path="res://arts/gif/blood (1).jpg" id="4_xog7r"]
+[ext_resource type="Texture2D" uid="uid://bm5f8jqi8i8hb" path="res://Themes/Classic95/Styles/Window/CloseBtnH.png" id="5_qoo8e"]
+[ext_resource type="Texture2D" uid="uid://yy3h84fdmy77" path="res://arts/gif/blood (2).jpg" id="5_yvn2q"]
 [ext_resource type="Texture2D" uid="uid://c5q3bccdc35i" path="res://Themes/Classic95/Styles/Window/CloseBtnPressed.png" id="6_bblga"]
+[ext_resource type="Texture2D" uid="uid://dgcyueqqjgusu" path="res://arts/gif/blood (3).jpg" id="6_wdwm7"]
+[ext_resource type="Texture2D" uid="uid://db1q7ymm5fk50" path="res://arts/gif/blood (4).jpg" id="7_ef5if"]
+[ext_resource type="Texture2D" uid="uid://uc5ym53lq3a8" path="res://arts/gif/blood (5).jpg" id="8_4tn6s"]
+[ext_resource type="Texture2D" uid="uid://djxyrlsawv522" path="res://arts/download.jpg" id="9_x4hh0"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gh06k"]
+frames = 5
+frame_0/texture = ExtResource("4_xog7r")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("5_yvn2q")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("6_wdwm7")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("7_ef5if")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("8_4tn6s")
+frame_4/duration = 0.2
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lbno"]
 texture = ExtResource("4_iedv1")
@@ -19,31 +38,67 @@ texture = ExtResource("6_bblga")
 [node name="DVD" instance=ExtResource("1_2s4pe")]
 transparent_bg = true
 position = Vector2i(0, 0)
-size = Vector2i(191, 117)
+size = Vector2i(512, 512)
 borderless = true
 transparent = true
 script = ExtResource("2_h6qfk")
 window_icon = ExtResource("2_ltt71")
 window_name = "DVD.exe"
 
-[node name="CenterContainer" parent="Control" index="1"]
-visible = false
+[node name="ColorRect" parent="Control" index="0"]
+color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="Control" index="2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_ltt71")
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+
+[node name="Blood" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_gh06k")
 expand_mode = 2
-stretch_mode = 4
+stretch_mode = 2
 
-[node name="Button" type="Button" parent="Control" index="3"]
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.0156863, 1)
+theme_override_font_sizes/font_size = 31
+text = "do not trust fe-mail"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("9_x4hh0")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Blood2" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="3"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_gh06k")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="Control/CenterContainer/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.0156863, 1)
+theme_override_font_sizes/font_size = 31
+text = "THEY ARE STEALING OUR INFO"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="Control/CenterContainer/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.0156863, 1)
+theme_override_font_sizes/font_size = 31
+text = "PROTEST NOW!!!!!"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="Control" index="2"]
 layout_mode = 0
-offset_right = 18.0
-offset_bottom = 16.0
+offset_right = 40.0
+offset_bottom = 40.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_2lbno")
 theme_override_styles/hover = SubResource("StyleBoxTexture_02xw6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i2qta")
