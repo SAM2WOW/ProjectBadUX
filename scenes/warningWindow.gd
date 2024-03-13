@@ -58,8 +58,18 @@ func WindowDisplayRoutine():
 	set_position(Vector2(position.x, 50));
 	visible = true;
 	tween.tween_property(self, "position", Vector2(position.x, initialPos), 1);
-	await get_tree().create_timer(6).timeout;
-	tween = create_tween().set_trans(Tween.TRANS_EXPO);
+	$Timer.start();
+	while !$Timer.is_stopped():
+		await get_tree().process_frame;
+	await close();
+
+func close():
+	print("close");
+	var tween = create_tween().set_trans(Tween.TRANS_EXPO);
 	tween.tween_property(self, "position", Vector2(position.x, 50), 1);
 	await get_tree().create_timer(1).timeout;
 	visible=false;
+
+
+func _on_close_button_button_down():
+	$Timer.stop();

@@ -16,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="TaskList" parent="." instance=ExtResource("4_aftko")]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 9
 anchor_right = 0.0
@@ -93,6 +94,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="WarningWindow" parent="." instance=ExtResource("8_whrwn")]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -106,7 +108,8 @@ grow_vertical = 0
 warningList = {
 0: "Watch out for websites that hide behind a false address. (Tip: hover above the site before you click).",
 1: "Careful not to hit a real duck! AI is becoming increasingly better at emulating the world around us.",
-2: "Oops wrong button. Make sure to check if the button is an advertisement in disguise"
+2: "Oops wrong button. Make sure to check if the button is an advertisement in disguise",
+3: "Get fucking owned nerd hope you like shampoo subscriptions"
 }
 
 [connection signal="pressed" from="TaskButton" to="TaskButton" method="_on_pressed"]

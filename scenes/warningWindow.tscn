@@ -38,6 +38,15 @@ text = "WARNING"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CloseButton" type="Button" parent="ColorRect/ColorRect2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -21.0
+offset_bottom = 21.0
+grow_horizontal = 0
+
 [node name="Description" type="RichTextLabel" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 15
@@ -54,3 +63,9 @@ theme_override_font_sizes/normal_font_size = 12
 text = "yo mama is so fat..."
 scroll_active = false
 scroll_following = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="button_down" from="ColorRect/ColorRect2/CloseButton" to="." method="_on_close_button_button_down"]
