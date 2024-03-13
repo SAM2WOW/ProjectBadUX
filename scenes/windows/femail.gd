@@ -149,5 +149,17 @@ func _on_continue_pressed():
 
 
 func _on_continue2_pressed():
-	SoundPlayer.play("Confirm")
-	recover_tab.set_current_tab(3)
+	var password = $Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer/LineEdit.get_text()
+	
+	if password == "251234":
+		SoundPlayer.play("Confirm")
+		recover_tab.set_current_tab(3)
+	else:
+		SoundPlayer.play("Deny")
+
+
+func _on_recover_pressed():
+	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon.queue_free()
+	Global.taskWindow.complete_task(3)
+	
+	return_to_inbox()

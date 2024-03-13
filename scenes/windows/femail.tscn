@@ -51,12 +51,12 @@ frame_3/texture = ExtResource("7_i0y5b")
 frame_3/duration = 1.0
 
 [node name="Femail" instance=ExtResource("1_vw0qd")]
-title = "fE-Mail"
+title = "fE-Mail - Your Favorite Email Client"
 position = Vector2i(0, 22)
 size = Vector2i(720, 527)
 script = ExtResource("2_6edev")
 window_icon = ExtResource("3_j26nj")
-window_name = "fE-Mail"
+window_name = "fE-Mail - Your Favorite Email Client"
 
 [node name="ColorRect" parent="Control" index="0"]
 color = Color(1, 0.843137, 0.929412, 1)
@@ -294,7 +294,7 @@ alignment = 1
 self_modulate = Color(1, 0.4, 0.411765, 1)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Delete"
+text = "Archive"
 
 [node name="UnRecover" type="Button" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
 self_modulate = Color(0, 0.945098, 0.247059, 1)
@@ -866,6 +866,9 @@ script = ExtResource("6_v6a1y")
 [connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="return_to_inbox"]
 [connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer/HBoxContainer/Continue" to="." method="_on_continue2_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="return_to_inbox"]
+[connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer/HBoxContainer/Delete" to="." method="return_to_inbox"]
+[connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer/HBoxContainer/UnRecover" to="." method="return_to_inbox"]
+[connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer/Recover" to="." method="_on_recover_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Inbox" to="." method="_on_inbox_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Archive" to="." method="_on_archive_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" method="_on_pressed"]
