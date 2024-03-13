@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://drdwgq3vfr6ip"]
+[gd_scene load_steps=6 format=3 uid="uid://drdwgq3vfr6ip"]
 
-[ext_resource type="Texture2D" uid="uid://bqlbau2or2ypx" path="res://arts/Popular-Scam-Shopping-Sites-Jan-2023_MyFaceBoxer.com_20230113-1024x487.jpg" id="1_lsvb1"]
+[ext_resource type="Script" path="res://scenes/omazon.gd" id="1_t28q0"]
 [ext_resource type="Texture2D" uid="uid://e477jmxvr3pk" path="res://arts/icon.svg" id="2_82f8k"]
+[ext_resource type="Script" path="res://scenes/subTrick.gd" id="3_qh38m"]
+[ext_resource type="Texture2D" uid="uid://7os4wvbnv5j4" path="res://arts/ads/sadPuppy.jpg" id="4_6vwet"]
+[ext_resource type="Script" path="res://scenes/ManageSub.gd" id="5_8sdxd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_t28q0")
 
 [node name="ColorRect4" type="ColorRect" parent="."]
 layout_mode = 1
@@ -18,30 +22,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_lsvb1")
-
-[node name="CenterContainer2" type="CenterContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="CenterContainer2"]
-visible = false
-layout_mode = 2
-text = "HI YOU GOT SCAMMED"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -67,7 +47,7 @@ theme_override_font_sizes/font_size = 32
 text = "Omazon"
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/ColorRect5"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer/ColorRect5"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -82,7 +62,7 @@ grow_vertical = 2
 icon = ExtResource("2_82f8k")
 expand_icon = true
 
-[node name="Button2" type="Button" parent="VBoxContainer/ColorRect5"]
+[node name="CartButton" type="Button" parent="VBoxContainer/ColorRect5"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -429,3 +409,513 @@ theme_override_constants/margin_left = 5
 [node name="TextureRect" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="SubBar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -274.0
+offset_top = 47.0
+offset_right = -11.0
+offset_bottom = 98.0
+grow_horizontal = 0
+text = "Manage Subscriptions"
+
+[node name="SubTrick" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.478431)
+script = ExtResource("3_qh38m")
+
+[node name="SubPrompt" type="ColorRect" parent="SubTrick"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 351.0
+offset_top = 166.0
+offset_right = -342.0
+offset_bottom = -173.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubTrick/SubPrompt"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubTrick/SubPrompt/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Do you want 10% off?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="SubTrick/SubPrompt/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = " 
+Sign up for a subscription and get 10% off your first purchase!
+ 
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubTrick/SubPrompt/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="SubTrick/SubPrompt/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="SignUp" type="Button" parent="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer"]
+modulate = Color(0.607843, 1, 0.560784, 1)
+layout_mode = 2
+text = "Sign Up"
+
+[node name="MarginContainer2" type="MarginContainer" parent="SubTrick/SubPrompt/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="Subscribe" type="Button" parent="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer2"]
+self_modulate = Color(1, 0.447059, 0.486275, 1)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.243137, 0.243137, 0.243137, 1)
+text = "Subscribe"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SubTrick/SubPrompt/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Control" type="Control" parent="SubTrick/SubPrompt/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NoButton" type="Button" parent="SubTrick/SubPrompt/VBoxContainer/HBoxContainer2"]
+self_modulate = Color(1, 0.447059, 0.486275, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.415686)
+text = "No, I hate money"
+flat = true
+
+[node name="SubscribeScreen" type="ColorRect" parent="SubTrick"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 351.0
+offset_top = 166.0
+offset_right = -342.0
+offset_bottom = -173.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubTrick/SubscribeScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubTrick/SubscribeScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
+text = "Thanks! You are now subscribed to our monthly subscription!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="SubTrick/SubscribeScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 18
+text = "If you would like to change your subscription, please go to your account settings"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="SubTrick/SubscribeScreen"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -36.0
+offset_top = 11.0
+offset_right = -11.0
+offset_bottom = 36.0
+grow_horizontal = 0
+
+[node name="SubscribeScreen2" type="ColorRect" parent="SubTrick"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 338.0
+offset_top = 65.0
+offset_right = -316.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubTrick/SubscribeScreen2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubTrick/SubscribeScreen2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_font_sizes/font_size = 32
+text = "WARNING!!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="SubTrick/SubscribeScreen2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 18
+text = "We use YOUR subscription money in order to save countless puppies from abuse. By choosing not to subscribe, you are actively abusing puppies, which will decrease your odds of earing the favor of god."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="SubTrick/SubscribeScreen2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="TextureRect" type="TextureRect" parent="SubTrick/SubscribeScreen2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.77
+texture = ExtResource("4_6vwet")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubTrick/SubscribeScreen2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="SignUp" type="Button" parent="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer"]
+modulate = Color(0.607843, 1, 0.560784, 1)
+layout_mode = 2
+text = "I love puppies!"
+
+[node name="MarginContainer2" type="MarginContainer" parent="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="NoSub" type="Button" parent="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer2"]
+self_modulate = Color(1, 0.447059, 0.486275, 1)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.243137, 0.243137, 0.243137, 1)
+text = "I hate puppies."
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="ManageSub" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.32549)
+script = ExtResource("5_8sdxd")
+
+[node name="SubDropDowns" type="ColorRect" parent="ManageSub"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 141.0
+offset_right = -246.0
+offset_bottom = -193.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ManageSub/SubDropDowns"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = -27.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ManageSub/SubDropDowns/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Manage Your Subscriptions
+ 
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ManageSub/SubDropDowns/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="sub1" type="Button" parent="ManageSub/SubDropDowns/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "- Your Subscriptions"
+flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="ManageSub/SubDropDowns/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+
+[node name="sub2" type="Button" parent="ManageSub/SubDropDowns/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 18
+text = "- Change Your Subscriptions"
+flat = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="ManageSub/SubDropDowns/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+
+[node name="sub3" type="Button" parent="ManageSub/SubDropDowns/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 14
+text = "- Subscription Options"
+flat = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="ManageSub/SubDropDowns/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 150
+
+[node name="sub4" type="Button" parent="ManageSub/SubDropDowns/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "- Cancel Cancelling Your Subscription"
+flat = true
+
+[node name="MarginContainer5" type="MarginContainer" parent="ManageSub/SubDropDowns/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 200
+
+[node name="sub5" type="Button" parent="ManageSub/SubDropDowns/VBoxContainer/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 10
+text = "- Cancel Subscription"
+flat = true
+
+[node name="MarginContainer6" type="MarginContainer" parent="ManageSub/SubDropDowns/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 250
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ManageSub/SubDropDowns/VBoxContainer/MarginContainer6"]
+layout_mode = 2
+
+[node name="ad1" type="Button" parent="ManageSub/SubDropDowns/VBoxContainer/MarginContainer6/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.415686, 0.709804, 1, 1)
+theme_override_font_sizes/font_size = 8
+text = "Click here for a sponsored ad. don't"
+flat = true
+
+[node name="ad2" type="Button" parent="ManageSub/SubDropDowns/VBoxContainer/MarginContainer6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.184314, 0.921569, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "CLICK HERE to"
+flat = true
+
+[node name="cancel" type="Button" parent="ManageSub/SubDropDowns/VBoxContainer/MarginContainer6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.184314, 0.921569, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "cancel"
+flat = true
+
+[node name="CloseButton" type="Button" parent="ManageSub/SubDropDowns"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_top = 11.0
+offset_right = -13.0
+offset_bottom = 42.0
+grow_horizontal = 0
+
+[node name="SubDropDowns2" type="ColorRect" parent="ManageSub"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 141.0
+offset_right = -246.0
+offset_bottom = -193.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ManageSub/SubDropDowns2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = -27.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ManageSub/SubDropDowns2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Manage Your Subscriptions
+ 
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="ManageSub/SubDropDowns2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Please wait while we process your request"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ManageSub/SubDropDowns2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 20.0
+text = "..."
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ManageSub/SubDropDowns2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="close" type="Button" parent="ManageSub/SubDropDowns2/VBoxContainer/MarginContainer"]
+modulate = Color(0.607843, 1, 0.560784, 1)
+layout_mode = 2
+text = "Close"
+
+[node name="Label4" type="Label" parent="ManageSub/SubDropDowns2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.63
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ManageSub/SubDropDowns2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="cancelSub1" type="Button" parent="ManageSub/SubDropDowns2/VBoxContainer/MarginContainer2"]
+self_modulate = Color(1, 0.447059, 0.486275, 1)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.243137, 0.243137, 0.243137, 1)
+text = "Unsubscribe"
+
+[node name="CloseButton" type="Button" parent="ManageSub/SubDropDowns2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_top = 11.0
+offset_right = -13.0
+offset_bottom = 42.0
+grow_horizontal = 0
+
+[node name="Timer" type="Timer" parent="ManageSub"]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="button_down" from="VBoxContainer/ColorRect5/SettingsButton" to="ManageSub" method="_on_settings_button_button_down"]
+[connection signal="button_down" from="SubBar" to="ManageSub" method="_on_sub_bar_button_down"]
+[connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer/SignUp" to="SubTrick" method="subscribe"]
+[connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer2/Subscribe" to="SubTrick" method="subscribe"]
+[connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer2/NoButton" to="SubTrick" method="no_subscribe"]
+[connection signal="mouse_entered" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer2/NoButton" to="SubTrick" method="_on_no_label_mouse_entered"]
+[connection signal="button_down" from="SubTrick/SubscribeScreen/Button" to="SubTrick" method="close"]
+[connection signal="button_down" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer/SignUp" to="SubTrick" method="subscribe2"]
+[connection signal="button_down" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="SubTrick" method="close"]
+[connection signal="mouse_entered" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="SubTrick" method="_on_no_sub_mouse_entered"]
+[connection signal="mouse_exited" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="SubTrick" method="_on_no_sub_mouse_exited"]
+[connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer/sub1" to="ManageSub" method="_on_sub_1_button_down"]
+[connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer2/sub2" to="ManageSub" method="_on_sub_2_button_down"]
+[connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer3/sub3" to="ManageSub" method="_on_sub_3_button_down"]
+[connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer4/sub4" to="ManageSub" method="_on_sub_4_button_down"]
+[connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer5/sub5" to="ManageSub" method="_on_sub_5_button_down"]
+[connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer6/HBoxContainer/cancel" to="ManageSub" method="_on_cancel_button_down"]
+[connection signal="button_down" from="ManageSub/SubDropDowns2/VBoxContainer/MarginContainer/close" to="ManageSub" method="close"]
+[connection signal="button_down" from="ManageSub/SubDropDowns2/VBoxContainer/MarginContainer2/cancelSub1" to="ManageSub" method="_on_cancel_sub_1_button_down"]
