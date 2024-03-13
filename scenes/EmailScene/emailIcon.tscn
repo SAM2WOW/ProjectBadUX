@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://drdp1ecdhxd8t"]
+[gd_scene load_steps=3 format=3 uid="uid://drdp1ecdhxd8t"]
 
 [ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="1_ssksj"]
+[ext_resource type="Script" path="res://scenes/EmailScene/emailIcon.gd" id="2_po4n8"]
 
 [node name="Icon" instance=ExtResource("1_ssksj")]
 anchors_preset = 10
@@ -10,7 +11,14 @@ offset_bottom = 8.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 text = ""
-script = null
+script = ExtResource("2_po4n8")
+bad = false
+read = false
+sender = ""
+sender_email = ""
+receive_email = ""
+email_title = ""
+date = ""
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." index="0"]
 layout_mode = 1
@@ -19,25 +27,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="CheckBox" type="CheckBox" parent="HBoxContainer" index="0"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
 button_mask = 0
 
 [node name="Sender" type="Label" parent="HBoxContainer" index="1"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.301961, 0.301961, 0.301961, 1)
 text = "Sender"
+horizontal_alignment = 1
+justification_flags = 227
+text_overrun_behavior = 4
 
 [node name="Title" type="Label" parent="HBoxContainer" index="2"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Title of the email"
+horizontal_alignment = 1
+justification_flags = 227
+text_overrun_behavior = 4
 
 [node name="Content" type="Label" parent="HBoxContainer" index="3"]
+visible = false
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Hi this is email
 "
 
 [node name="Date" type="Label" parent="HBoxContainer" index="4"]
+visible = false
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Data
 "
+
+[node name="Content" type="VBoxContainer" parent="." index="1"]
+visible = false
+layout_mode = 0
+mouse_filter = 2

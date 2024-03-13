@@ -1,6 +1,6 @@
 extends "res://scenes/window.gd"
 
-var velocity = Vector2(200, 200)  # Initial velocity
+var velocity = Vector2(0, 0)  # Initial velocity
 var sprite_size = Vector2.ZERO
 
 func _ready():
@@ -8,6 +8,10 @@ func _ready():
     sprite_size = get_size()
 
 func _process(delta):
+    if $AudioStreamPlayer.is_playing():
+        position += Vector2i(randi_range(-1,1),randi_range(-1,1))
+    return
+    
     # Move the DVD logo
     position = Vector2i(Vector2(position) + velocity * delta * 2)
     
