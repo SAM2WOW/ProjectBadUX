@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bgs2n8sq1oivp"]
+[gd_scene load_steps=25 format=3 uid="uid://bgs2n8sq1oivp"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_vw0qd"]
 [ext_resource type="Script" path="res://scenes/windows/femail.gd" id="2_6edev"]
@@ -14,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://b4ib7fichebvo" path="res://arts/ads/frame_3_delay-s.jpg" id="7_i0y5b"]
 [ext_resource type="Texture2D" uid="uid://258b36qkvox4" path="res://arts/icons/Trashbin.png" id="9_bjsw6"]
 [ext_resource type="Texture2D" uid="uid://ra1kj16eof7e" path="res://arts/icons/Emailopened.png" id="10_sh33c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cw1f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yse8t"]
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_p44hs"]
 frames = 2
@@ -56,10 +61,202 @@ window_name = "fE-Mail"
 [node name="ColorRect" parent="Control" index="0"]
 color = Color(1, 0.843137, 0.929412, 1)
 
-[node name="CenterContainer" parent="Control" index="1"]
+[node name="TabContainer" type="TabContainer" parent="Control/CenterContainer" index="1"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1cw1f")
+tabs_visible = false
+
+[node name="Panel1" type="Panel" parent="Control/CenterContainer/TabContainer" index="1"]
 visible = false
+custom_minimum_size = Vector2(400, 244.105)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/CenterContainer/TabContainer/Panel1" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/TabContainer/Panel1/CenterContainer" index="0"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "To read this email, you must unarchive it. Are you sure you want to recover this email? "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.380392, 0.380392, 1)
+theme_override_font_sizes/font_size = 11
+text = "Some spam emails can be dangerous for your computer"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer" index="2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Yes" type="Button" parent="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+self_modulate = Color(0, 0.945098, 0.247059, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Yes"
+
+[node name="No" type="Button" parent="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
+self_modulate = Color(1, 0.4, 0.411765, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No"
+
+[node name="Panel2" type="Panel" parent="Control/CenterContainer/TabContainer" index="2"]
+visible = false
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/CenterContainer/TabContainer/Panel2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer" index="0"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Okay, please agree to the following terms and conditions before we continue to recovering the email:"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Panel" type="Panel" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(300, 275.09)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yse8t")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Label" type="Label" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/Panel/ScrollContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Welcome to Fe-Mail! These terms and conditions outline the rules and regulations for the use of Fe-Mail's Website.
+Fe-Mail’s Privacy Policy.
+Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
+License Unless otherwise stated, [Your Company Name] and/or its licensors own the intellectual property rights for all material on [Your Company Name]. All intellectual property rights are reserved. You may access this from [Your Company Name] for your own personal use subjected to restrictions set in these terms and conditions."
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer" index="4"]
+layout_mode = 2
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+text = "I do not accept the Terms & Conditions."
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer" index="6"]
+layout_mode = 2
+alignment = 1
+
+[node name="Continue" type="Button" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+self_modulate = Color(1, 0.4, 0.411765, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Continue"
+
+[node name="Cancel" type="Button" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
+self_modulate = Color(0, 0.945098, 0.247059, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"
+
+[node name="Panel3" type="Panel" parent="Control/CenterContainer/TabContainer" index="3"]
+custom_minimum_size = Vector2(400, 244.105)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/CenterContainer/TabContainer/Panel3" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/TabContainer/Panel3/CenterContainer" index="0"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Please re-enter your password to confirm recovery."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label2" type="Label" parent="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.380392, 0.380392, 1)
+theme_override_font_sizes/font_size = 11
+text = "Password:"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer" index="5"]
+layout_mode = 2
+alignment = 1
+
+[node name="Continue" type="Button" parent="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+self_modulate = Color(1, 0.4, 0.411765, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Continue"
+
+[node name="Cancel" type="Button" parent="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
+self_modulate = Color(0, 0.945098, 0.247059, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" index="2"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -532,7 +729,8 @@ layout_mode = 2
 layout_mode = 2
 text = "   From:       "
 
-[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer" index="1"]
+[node name="Sender" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer" index="1"]
+visible = false
 layout_mode = 2
 text = "Bob the Builder"
 
@@ -609,6 +807,7 @@ script = ExtResource("6_v6a1y")
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content/Link" to="." method="_on_bad_link_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content/Link2" to="." method="_on_bad_link_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon5/Content/Link" to="." method="_on_dvd_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon" to="." method="_on_icon_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns/Delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" method="_on_pressed"]

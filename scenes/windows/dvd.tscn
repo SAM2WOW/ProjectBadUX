@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo5n4f42rhea0"]
+[gd_scene load_steps=21 format=3 uid="uid://bo5n4f42rhea0"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_2s4pe"]
 [ext_resource type="Script" path="res://scenes/windows/dvd.gd" id="2_h6qfk"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://db1q7ymm5fk50" path="res://arts/gif/blood (4).jpg" id="7_ef5if"]
 [ext_resource type="Texture2D" uid="uid://uc5ym53lq3a8" path="res://arts/gif/blood (5).jpg" id="8_4tn6s"]
 [ext_resource type="Texture2D" uid="uid://djxyrlsawv522" path="res://arts/download.jpg" id="9_x4hh0"]
+[ext_resource type="AudioStream" uid="uid://e3iysik6xcpm" path="res://sounds/ads/AnnoyingAd1.wav" id="13_0p7wc"]
+[ext_resource type="AudioStream" uid="uid://dh23a1nur1uos" path="res://sounds/ads/AnnoyingAd2.wav" id="14_dplho"]
+[ext_resource type="AudioStream" uid="uid://smhhlt2gb2so" path="res://sounds/ads/Annoying_Ad3.wav" id="15_62xnm"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_gh06k"]
 frames = 5
@@ -34,6 +37,15 @@ texture = ExtResource("5_qoo8e")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2qta"]
 texture = ExtResource("6_bblga")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_flm1d"]
+streams_count = 3
+stream_0/stream = ExtResource("13_0p7wc")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("14_dplho")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("15_62xnm")
+stream_2/weight = 1.0
 
 [node name="DVD" instance=ExtResource("1_2s4pe")]
 transparent_bg = true
@@ -103,5 +115,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_2lbno")
 theme_override_styles/hover = SubResource("StyleBoxTexture_02xw6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i2qta")
 text = "     "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+stream = SubResource("AudioStreamRandomizer_flm1d")
+volume_db = 3.467
+autoplay = true
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

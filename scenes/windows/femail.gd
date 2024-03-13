@@ -21,8 +21,9 @@ func _ready():
 	# connect all the email icons
 	for i in inbox_box.get_children():
 		i.connect("btn_pressed", _on_email_button_pressed)
-	for i in archive_box.get_children():
-		i.connect("btn_pressed", _on_email_button_pressed)
+	
+	#for i in archive_box.get_children():
+	#	i.connect("btn_pressed", _on_email_button_pressed)
 
 
 func _process(delta):
@@ -46,10 +47,10 @@ func _on_email_button_pressed(btn):
 	email_btn.show()
 	email_list.show()
 	
-	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer/From.set_text("   From:       " + btn.sender)
+	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer/Sender.set_text(btn.sender)
 	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer/FromMail.set_text(btn.sender_email)
-	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer2/To.set_text("   To:            " + btn.receive_email)
-	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer3/Subject.set_text("   Subject:   " + btn.email_title)
+	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer2/Label2.set_text(btn.receive_email)
+	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList/VBoxContainer/HBoxContainer3/Label.set_text(btn.email_title)
 	
 	for i in btn.get_node("Content").get_children():
 		var new_node = i.duplicate()
@@ -114,3 +115,7 @@ func _on_dvd_pressed():
 	
 	var w = dvd.instantiate()
 	Global.windowsManager.add_window(w)
+
+
+func _on_icon_pressed():
+	pass # Replace with function body.
