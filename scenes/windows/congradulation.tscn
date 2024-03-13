@@ -1,8 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2su87kxv6ukc"]
+[gd_scene load_steps=9 format=3 uid="uid://b2su87kxv6ukc"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_2tvth"]
 [ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/icons/artage-io-48177_1707373402.png" id="2_3bslj"]
+[ext_resource type="Texture2D" uid="uid://c5eg2dhillllt" path="res://arts/gif/thankyou (1).png" id="3_4ttda"]
 [ext_resource type="Texture2D" uid="uid://x8uxa6b4m00l" path="res://arts/gif/congrats.jpg" id="3_ynlug"]
+[ext_resource type="Texture2D" uid="uid://c532wvuqb22an" path="res://arts/gif/thankyou (2).png" id="4_onv4h"]
+[ext_resource type="Texture2D" uid="uid://bqo8ipriu0gyu" path="res://arts/gif/thankyou (3).png" id="5_0731m"]
+[ext_resource type="Texture2D" uid="uid://bwso7jbx0qjr3" path="res://arts/gif/thankyou (4).png" id="6_34fa3"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_yvrd6"]
+frames = 6
+frame_0/texture = ExtResource("3_4ttda")
+frame_0/duration = 0.15
+frame_1/texture = ExtResource("4_onv4h")
+frame_1/duration = 0.15
+frame_2/texture = ExtResource("5_0731m")
+frame_2/duration = 0.15
+frame_3/texture = ExtResource("6_34fa3")
+frame_3/duration = 0.15
+frame_4/texture = ExtResource("5_0731m")
+frame_4/duration = 0.15
+frame_5/texture = ExtResource("4_onv4h")
+frame_5/duration = 0.15
 
 [node name="Congradulation" instance=ExtResource("1_2tvth")]
 title = "Congradulation!"
@@ -26,12 +45,15 @@ You have finished the dark UX test!
  
  Beware of what the internet have brought to you
 in the future...
- 
- 
-"
+ "
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="1"]
+[node name="TextureRect2" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_yvrd6")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="2"]
 layout_mode = 2
 texture = ExtResource("3_ynlug")
 stretch_mode = 5

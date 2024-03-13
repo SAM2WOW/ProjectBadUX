@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbnl6kfo6opvj"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_uchay"]
+[ext_resource type="Texture2D" uid="uid://mlmygn30vmv1" path="res://arts/McGoogle.webp" id="2_gousn"]
+[ext_resource type="Texture2D" uid="uid://c5eg2dhillllt" path="res://arts/gif/thankyou (1).png" id="3_s1m6u"]
+[ext_resource type="Texture2D" uid="uid://c532wvuqb22an" path="res://arts/gif/thankyou (2).png" id="4_aksrn"]
+[ext_resource type="Texture2D" uid="uid://bqo8ipriu0gyu" path="res://arts/gif/thankyou (3).png" id="5_sx2q6"]
+[ext_resource type="Texture2D" uid="uid://bwso7jbx0qjr3" path="res://arts/gif/thankyou (4).png" id="6_d3kv0"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_6osa8"]
+frames = 6
+frame_0/texture = ExtResource("3_s1m6u")
+frame_0/duration = 0.15
+frame_1/texture = ExtResource("4_aksrn")
+frame_1/duration = 0.15
+frame_2/texture = ExtResource("5_sx2q6")
+frame_2/duration = 0.15
+frame_3/texture = ExtResource("6_d3kv0")
+frame_3/duration = 0.15
+frame_4/texture = ExtResource("5_sx2q6")
+frame_4/duration = 0.15
+frame_5/texture = ExtResource("4_aksrn")
+frame_5/duration = 0.15
+
+[node name="ThankYou" instance=ExtResource("1_uchay")]
+title = "Moogle Calendar"
+position = Vector2i(0, 22)
+size = Vector2i(321, 232)
+window_icon = ExtResource("2_gousn")
+window_name = "Moogle Calendar"
+
+[node name="ColorRect" parent="Control" index="0"]
+color = Color(0.596078, 0.85098, 1, 1)
+
+[node name="Label" parent="Control/CenterContainer" index="0"]
+visible = true
+text = ""
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Your interview have been scheduled! 
+ 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_6osa8")
+expand_mode = 2
+stretch_mode = 3

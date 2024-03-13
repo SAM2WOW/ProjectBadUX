@@ -11,6 +11,8 @@ var ads = preload("res://scenes/windows/ads.tscn")
 var ads_video = preload("res://scenes/windows/ads_video.tscn")
 var cup = preload("res://scenes/windows/crash_cup.tscn")
 var dvd = preload("res://scenes/windows/dvd.tscn")
+var thankyou = preload("res://scenes/windows/thankyou.tscn")
+var thankyou2 = preload("res://scenes/windows/thankyou2.tscn")
 
 var current_email
 
@@ -21,10 +23,14 @@ func _ready():
 	
 	# connect all the email icons
 	for i in inbox_box.get_children():
-		i.connect("btn_pressed", _on_email_button_pressed)
+		if i.sender_email in Global.deleted_emails:
+			i.queue_free()
+		else:
+			i.connect("btn_pressed", _on_email_button_pressed)
 	
-	#for i in archive_box.get_children():
-	#	i.connect("btn_pressed", _on_email_button_pressed)
+	for i in archive_box.get_children():
+		if i.sender_email in Global.deleted_emails:
+			i.queue_free()
 
 
 func _process(delta):
@@ -60,15 +66,15 @@ func _on_email_button_pressed(btn):
 
 func _on_archive_pressed():
 	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox.set_current_tab(1)
-	
 	_on_back_pressed()
 
 func _on_inbox_pressed():
 	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox.set_current_tab(0)
-
 	_on_back_pressed()
 
 func _on_back_pressed():
+	SoundPlayer.play("Confirm")
+	
 	current_email = null
 	
 	email_inbox.show()
@@ -80,6 +86,9 @@ func _on_back_pressed():
 
 
 func _on_delete_pressed():
+	SoundPlayer.play("Fail")
+	
+	Global.deleted_emails.append(current_email.sender_email)
 	current_email.queue_free()
 	
 	if current_email.bad:
@@ -100,6 +109,7 @@ func _on_virus_pressed():
 	
 	Global.healthBar.take_damage(10)
 	Global.warningWindow.AddWarning(0)
+
 
 func _on_bad_link_pressed():
 	for i in range(2):
@@ -159,7 +169,47 @@ func _on_continue2_pressed():
 
 
 func _on_recover_pressed():
-	$Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon.queue_free()
+	$Control/CenterContainer.hide()
+	
+	$CorruptedMiniGame.play()
+	
+	$RecoveryGame.show()
+	$RecoveryGame.set_process_mode(Node.PROCESS_MODE_INHERIT)
+
+
+func _on_recovery_game_dead():
+	SoundPlayer.play("Deny")
+	$Control/CenterContainer.show()
+	
+	$CorruptedMiniGame.stop()
+	
+	$RecoveryGame.hide()
+	$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
+
+
+func _on_recovery_game_win():
+	$CorruptedMiniGame.stop()
+	
+	$RecoveryGame.hide()
+	$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
+	
+	# delete the email
+	var email = $Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon
+	email.queue_free()
+	Global.deleted_emails.append(email.sender_email)
+	
 	Global.taskWindow.complete_task(3)
 	
 	return_to_inbox()
+
+
+func _on_redcross_pressed():
+	SoundPlayer.play("Confirm")
+	var w = thankyou.instantiate()
+	Global.windowsManager.add_window(w)
+
+
+func _on_moogle_pressed():
+	SoundPlayer.play("Confirm")
+	var w = thankyou2.instantiate()
+	Global.windowsManager.add_window(w)

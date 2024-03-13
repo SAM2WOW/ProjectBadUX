@@ -1,0 +1,258 @@
+[gd_scene load_steps=8 format=3 uid="uid://urvucgyy7lmi"]
+
+[ext_resource type="Script" path="res://scenes/recovery_game.gd" id="1_nfk8w"]
+[ext_resource type="Texture2D" uid="uid://df2r26s4pnacf" path="res://arts/ducks/crosshair068.png" id="2_ri0qy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsrjy"]
+size = Vector2(27.49, 641)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp8xy"]
+size = Vector2(785.25, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qgc7o"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v47kw"]
+size = Vector2(126, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0657p"]
+size = Vector2(64, 30)
+
+[node name="RecoveryGame" type="Node2D"]
+script = ExtResource("1_nfk8w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 8.0
+offset_right = 488.0
+offset_bottom = 496.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 107.0
+offset_top = 30.0
+offset_right = 284.0
+offset_bottom = 50.0
+scale = Vector2(1.53335, 1.53335)
+text = "Recover your email!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 201.0
+offset_top = 452.0
+offset_right = 378.0
+offset_bottom = 472.0
+scale = Vector2(1.27637, 1.27637)
+theme_override_colors/font_color = Color(0.215686, 0.721569, 0, 1)
+text = "RECOVER"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 344.0
+offset_top = 452.0
+offset_right = 521.0
+offset_bottom = 472.0
+scale = Vector2(1.27637, 1.27637)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "ARCHIVE"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 57.0001
+offset_top = 452.0
+offset_right = 234.0
+offset_bottom = 472.0
+scale = Vector2(1.27637, 1.27637)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "ARCHIVE"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-3.5, 310.5)
+shape = SubResource("RectangleShape2D_fsrjy")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(508.49, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-10.745, 310.5)
+shape = SubResource("RectangleShape2D_fsrjy")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(131.375, -1.625)
+shape = SubResource("RectangleShape2D_jp8xy")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(0, 510.57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(131.375, -9.5)
+shape = SubResource("RectangleShape2D_jp8xy")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(168, 464)
+scale = Vector2(1.0776, 1.0776)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D5"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-12, 25, 1, -57, 15, 24)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
+polygon = PackedVector2Array(-12, 25, 1, -57, 15, 24)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(317, 464)
+scale = Vector2(1.0776, 1.0776)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D6"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-12, 25, 1, -57, 15, 24)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D6"]
+polygon = PackedVector2Array(-12, 25, 1, -57, 15, 24)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(472, 461)
+rotation = 0.156241
+scale = Vector2(1.76203, 1.41782)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D7"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-12, 25, 1, -57, 15, 24)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D7"]
+polygon = PackedVector2Array(-12, 25, 1, -57, 15, 24)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(16, 456)
+rotation = -0.261799
+scale = Vector2(1.77086, 1.85189)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D8"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-12, 25, 1, -57, 15, 24)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D8"]
+polygon = PackedVector2Array(-12, 25, 1, -57, 15, 24)
+
+[node name="Bumpper" type="StaticBody2D" parent="."]
+position = Vector2(107, 198)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpper"]
+shape = SubResource("CircleShape2D_qgc7o")
+
+[node name="Crosshair068" type="Sprite2D" parent="Bumpper"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.537351, 0.537351)
+texture = ExtResource("2_ri0qy")
+
+[node name="Bumpper2" type="StaticBody2D" parent="."]
+position = Vector2(245, 198)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpper2"]
+shape = SubResource("CircleShape2D_qgc7o")
+
+[node name="Crosshair068" type="Sprite2D" parent="Bumpper2"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.537351, 0.537351)
+texture = ExtResource("2_ri0qy")
+
+[node name="Bumpper3" type="StaticBody2D" parent="."]
+position = Vector2(378, 198)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpper3"]
+shape = SubResource("CircleShape2D_qgc7o")
+
+[node name="Crosshair068" type="Sprite2D" parent="Bumpper3"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.537351, 0.537351)
+texture = ExtResource("2_ri0qy")
+
+[node name="Bumpper4" type="StaticBody2D" parent="."]
+position = Vector2(107, 347)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpper4"]
+shape = SubResource("CircleShape2D_qgc7o")
+
+[node name="Crosshair068" type="Sprite2D" parent="Bumpper4"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.537351, 0.537351)
+texture = ExtResource("2_ri0qy")
+
+[node name="Bumpper5" type="StaticBody2D" parent="."]
+position = Vector2(245, 347)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpper5"]
+shape = SubResource("CircleShape2D_qgc7o")
+
+[node name="Crosshair068" type="Sprite2D" parent="Bumpper5"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.537351, 0.537351)
+texture = ExtResource("2_ri0qy")
+
+[node name="Bumpper6" type="StaticBody2D" parent="."]
+position = Vector2(378, 347)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpper6"]
+shape = SubResource("CircleShape2D_qgc7o")
+
+[node name="Crosshair068" type="Sprite2D" parent="Bumpper6"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.537351, 0.537351)
+texture = ExtResource("2_ri0qy")
+
+[node name="Bumpper7" type="StaticBody2D" parent="."]
+position = Vector2(177, 269)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpper7"]
+shape = SubResource("CircleShape2D_qgc7o")
+
+[node name="Crosshair068" type="Sprite2D" parent="Bumpper7"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.537351, 0.537351)
+texture = ExtResource("2_ri0qy")
+
+[node name="Bumpper8" type="StaticBody2D" parent="."]
+position = Vector2(315, 269)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpper8"]
+shape = SubResource("CircleShape2D_qgc7o")
+
+[node name="Crosshair068" type="Sprite2D" parent="Bumpper8"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.537351, 0.537351)
+texture = ExtResource("2_ri0qy")
+
+[node name="Win" type="Area2D" parent="."]
+position = Vector2(245, 474)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win"]
+shape = SubResource("RectangleShape2D_v47kw")
+
+[node name="Dead" type="Area2D" parent="."]
+position = Vector2(395, 474)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dead"]
+shape = SubResource("RectangleShape2D_v47kw")
+
+[node name="Dead2" type="Area2D" parent="."]
+position = Vector2(98, 474)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dead2"]
+shape = SubResource("RectangleShape2D_v47kw")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(8, 16, 480, 16, 480, 488, 8, 488, 8, 32, -16, 32, -16, 512, 512, 512, 512, -8, -16, -8, -16, 72, 8, 72)
+
+[node name="CursorBody" type="RigidBody2D" parent="."]
+position = Vector2(215, 96)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorBody"]
+position = Vector2(31.445, 14.185)
+shape = SubResource("RectangleShape2D_0657p")
+
+[node name="Button" type="Button" parent="CursorBody"]
+offset_right = 8.0
+offset_bottom = 8.0
+button_mask = 0
+text = "EMAIL"

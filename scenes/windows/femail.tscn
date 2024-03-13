@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bgs2n8sq1oivp"]
+[gd_scene load_steps=27 format=3 uid="uid://bgs2n8sq1oivp"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_vw0qd"]
 [ext_resource type="Script" path="res://scenes/windows/femail.gd" id="2_6edev"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://b4ib7fichebvo" path="res://arts/ads/frame_3_delay-s.jpg" id="7_i0y5b"]
 [ext_resource type="Texture2D" uid="uid://258b36qkvox4" path="res://arts/icons/Trashbin.png" id="9_bjsw6"]
 [ext_resource type="Texture2D" uid="uid://ra1kj16eof7e" path="res://arts/icons/Emailopened.png" id="10_sh33c"]
+[ext_resource type="PackedScene" uid="uid://urvucgyy7lmi" path="res://scenes/recovery_game.tscn" id="15_kpqrp"]
+[ext_resource type="AudioStream" uid="uid://bw4d6fy55ikxm" path="res://sounds/CorruptedMiniGame3.wav" id="16_dj14j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cw1f"]
 
@@ -860,6 +862,14 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_wf5ga")
 script = ExtResource("6_v6a1y")
 
+[node name="RecoveryGame" parent="." index="1" instance=ExtResource("15_kpqrp")]
+process_mode = 4
+visible = false
+position = Vector2(107.825, 13.29)
+
+[node name="CorruptedMiniGame" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("16_dj14j")
+
 [connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer/HBoxContainer/No" to="." method="return_to_inbox"]
 [connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
@@ -872,14 +882,19 @@ script = ExtResource("6_v6a1y")
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Inbox" to="." method="_on_inbox_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Archive" to="." method="_on_archive_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon/Content/Link" to="." method="_on_redcross_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon/Content/Link2" to="." method="_on_redcross_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon2/Content/Link3" to="." method="_on_virus_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content/Link" to="." method="_on_bad_link_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content/Link2" to="." method="_on_bad_link_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon4/Content/Link" to="." method="_on_moogle_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon5/Content/Link" to="." method="_on_dvd_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon" to="." method="_on_icon_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns/Delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" method="_on_pressed"]
+[connection signal="dead" from="RecoveryGame" to="." method="_on_recovery_game_dead"]
+[connection signal="win" from="RecoveryGame" to="." method="_on_recovery_game_win"]
 
 [editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon"]
 [editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon2"]

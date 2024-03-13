@@ -15,3 +15,5 @@ var crash_reason = ""
 
 
 var notepad_content = ""
+
+var deleted_emails = []

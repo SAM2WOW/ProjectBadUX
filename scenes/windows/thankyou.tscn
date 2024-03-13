@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://davao7cfm0w7w"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_2yaii"]
+[ext_resource type="Texture2D" uid="uid://bxlc0w4yxltg4" path="res://arts/redcup.png" id="2_70cef"]
+[ext_resource type="Texture2D" uid="uid://crhiddvukvgle" path="res://arts/thankyou.png" id="3_d7otv"]
+
+[node name="ThankYou" instance=ExtResource("1_2yaii")]
+title = "Thank you for the donation!"
+position = Vector2i(0, 22)
+size = Vector2i(436, 222)
+window_icon = ExtResource("2_70cef")
+window_name = "Thank you for the donation!"
+
+[node name="ColorRect" parent="Control" index="0"]
+color = Color(0.933333, 0.196078, 0.141176, 1)
+
+[node name="Label" parent="Control/CenterContainer" index="0"]
+visible = true
+text = ""
+
+[node name="TextureRect" type="TextureRect" parent="Control" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_d7otv")
+expand_mode = 2
+stretch_mode = 5
