@@ -5,6 +5,7 @@ extends "res://scenes/window.gd"
 @onready var email_inbox = $Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox
 @onready var email_btn = $Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns
 @onready var email_list = $Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailList
+@onready var recover_tab = $Control/CenterContainer/TabContainer
 
 var ads = preload("res://scenes/windows/ads.tscn")
 var ads_video = preload("res://scenes/windows/ads_video.tscn")
@@ -118,4 +119,35 @@ func _on_dvd_pressed():
 
 
 func _on_icon_pressed():
-	pass # Replace with function body.
+	recover_tab.set_current_tab(0)
+	
+	$Control/CenterContainer.show()
+	$Control/MarginContainer.hide()
+
+
+func return_to_inbox():
+	SoundPlayer.play("Confirm")
+	
+	$Control/CenterContainer.hide()
+	$Control/MarginContainer.show()
+
+
+func _on_yes_pressed():
+	SoundPlayer.play("Confirm")
+	recover_tab.set_current_tab(1)
+
+
+func _on_continue_pressed():
+	var state = $Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer2/CheckBox.is_pressed()
+	
+	if state:
+		return_to_inbox()
+		
+	else:
+		SoundPlayer.play("Confirm")
+		recover_tab.set_current_tab(2)
+
+
+func _on_continue2_pressed():
+	SoundPlayer.play("Confirm")
+	recover_tab.set_current_tab(3)

@@ -20,13 +20,6 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yse8t"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_p44hs"]
-frames = 2
-frame_0/texture = ExtResource("4_egelx")
-frame_0/duration = 0.5
-frame_1/texture = ExtResource("5_4715i")
-frame_1/duration = 0.5
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ht1m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rt1hf"]
@@ -36,6 +29,13 @@ frame_1/duration = 0.5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmq0h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lh8uk"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_p44hs"]
+frames = 2
+frame_0/texture = ExtResource("4_egelx")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("5_4715i")
+frame_1/duration = 0.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi44u"]
 bg_color = Color(1, 1, 1, 1)
@@ -61,13 +61,15 @@ window_name = "fE-Mail"
 [node name="ColorRect" parent="Control" index="0"]
 color = Color(1, 0.843137, 0.929412, 1)
 
+[node name="CenterContainer" parent="Control" index="1"]
+visible = false
+
 [node name="TabContainer" type="TabContainer" parent="Control/CenterContainer" index="1"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_1cw1f")
 tabs_visible = false
 
 [node name="Panel1" type="Panel" parent="Control/CenterContainer/TabContainer" index="1"]
-visible = false
 custom_minimum_size = Vector2(400, 244.105)
 layout_mode = 2
 
@@ -173,6 +175,7 @@ alignment = 1
 
 [node name="CheckBox" type="CheckBox" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer2" index="0"]
 layout_mode = 2
+button_pressed = true
 
 [node name="Label" type="Label" parent="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer2" index="1"]
 layout_mode = 2
@@ -200,6 +203,7 @@ size_flags_horizontal = 3
 text = "Cancel"
 
 [node name="Panel3" type="Panel" parent="Control/CenterContainer/TabContainer" index="3"]
+visible = false
 custom_minimum_size = Vector2(400, 244.105)
 layout_mode = 2
 
@@ -255,8 +259,64 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Cancel"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control" index="2"]
+[node name="Panel4" type="Panel" parent="Control/CenterContainer/TabContainer" index="4"]
 visible = false
+custom_minimum_size = Vector2(400, 244.105)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/CenterContainer/TabContainer/Panel4" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer" index="0"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Please confirm what you would like to do with the email."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Delete" type="Button" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+self_modulate = Color(1, 0.4, 0.411765, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Delete"
+
+[node name="UnRecover" type="Button" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
+self_modulate = Color(0, 0.945098, 0.247059, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Un-Recover"
+
+[node name="Recover" type="Button" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.607843, 0.627451, 0.65098, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ht1m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rt1hf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yklec")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmq0h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lh8uk")
+text = "recover"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" index="2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -800,6 +860,12 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_wf5ga")
 script = ExtResource("6_v6a1y")
 
+[connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer/HBoxContainer/No" to="." method="return_to_inbox"]
+[connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel2/CenterContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="return_to_inbox"]
+[connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer/HBoxContainer/Continue" to="." method="_on_continue2_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel3/CenterContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="return_to_inbox"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Inbox" to="." method="_on_inbox_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Archive" to="." method="_on_archive_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/TextureButton" method="_on_pressed"]
