@@ -14,6 +14,7 @@ var crash_reason = ""
 # warningWindow.AddWarning(id) to show a warning
 
 var subscriptions = [];
+var deleted_emails = []
 var notepad_content = ""
 
 func _process(delta):

@@ -15,4 +15,9 @@ func _on_pressed():
 	
 	var w = window.instantiate()
 	
+	# don't spawn if window already open, only focus
+	if Global.windowsManager.does_window_exist(w.name):
+		w.queue_free()
+		return
+	
 	Global.windowsManager.add_window(w)

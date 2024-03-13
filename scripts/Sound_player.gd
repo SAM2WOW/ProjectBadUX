@@ -5,6 +5,9 @@ var sounds = {
 	"Confirm": "Click_Confirm.wav",
 	"Deny": "Click_Deny.wav",
 	"Crash": "ComputerCrashing.wav",
+	"Fail": "FailNoise.wav",
+	"Fail2": "FailNoise2.wav",
+	"Success": "Success.wav"
 }
 
 

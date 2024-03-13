@@ -5,8 +5,20 @@ var opened_windows = {}
 
 var icon_btn = preload("res://scenes/windowicon.tscn")
 
+
 func _ready():
 	Global.windowsManager = self
+
+
+func does_window_exist(window_name):
+	if window_name in opened_windows.keys():
+		# auto focus new window
+		opened_windows[window_name].window.popup()
+		opened_windows[window_name].window.grab_focus()
+		
+		return true
+	else:
+		return false
 
 
 func add_window(window):

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cycf7w7p0b2q4"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_ddey2"]
+[ext_resource type="Texture2D" uid="uid://cye1pdsjf00si" path="res://arts/icons/artage-io-48140_1707444770.png" id="2_x7co5"]
+[ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="3_3ji7f"]
+[ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="4_gl5h5"]
+[ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="5_jjidi"]
+
+[node name="Notepad2" instance=ExtResource("1_ddey2")]
+title = "Notepad"
+position = Vector2i(0, 0)
+size = Vector2i(256, 317)
+window_icon = ExtResource("2_x7co5")
+window_name = "Password.txt"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Control/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "my femail account
+
+accoutn:
+thisismyemail@femail.com
+
+password:
+251234
+"
+wrap_mode = 1
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Panel" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "Last Edited 13:34"
+
+[node name="Icon" parent="Control/VBoxContainer" index="2" instance=ExtResource("3_3ji7f")]
+visible = false
+layout_mode = 2
+icon_texture = ExtResource("4_gl5h5")
+icon_name = "Ads"
+window = ExtResource("5_jjidi")

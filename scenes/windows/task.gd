@@ -23,3 +23,5 @@ func finish_task():
 	set("theme_override_colors/font_color",Color("00ec56"))
 	
 	text = "🗹 %s" % taskText
+	
+	SoundPlayer.play("Success")
