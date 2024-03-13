@@ -1,0 +1,431 @@
+[gd_scene load_steps=3 format=3 uid="uid://drdwgq3vfr6ip"]
+
+[ext_resource type="Texture2D" uid="uid://bqlbau2or2ypx" path="res://arts/Popular-Scam-Shopping-Sites-Jan-2023_MyFaceBoxer.com_20230113-1024x487.jpg" id="1_lsvb1"]
+[ext_resource type="Texture2D" uid="uid://e477jmxvr3pk" path="res://arts/icon.svg" id="2_82f8k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lsvb1")
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer2"]
+visible = false
+layout_mode = 2
+text = "HI YOU GOT SCAMMED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect5" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.16
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect5"]
+layout_mode = 1
+offset_left = 23.0
+offset_right = 274.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Omazon"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/ColorRect5"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = 13.0
+offset_right = -11.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("2_82f8k")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="VBoxContainer/ColorRect5"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = 13.0
+offset_right = -56.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.68
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+color = Color(0.835294, 0.835294, 0.835294, 1)
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ColorRect6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Sign up for our Monthly Subscription!
+Free fast shipping for $5.99/month*"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/ColorRect6"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 437.0
+offset_top = -81.0
+offset_right = -440.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "one-click-signup"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.68
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+color = Color(0.835294, 0.835294, 0.835294, 1)
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/MarginContainer/ColorRect6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Sign up for our Monthly Subscription!
+Free fast shipping for $5.99/month*"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/MarginContainer/ColorRect6"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 437.0
+offset_top = -60.0
+offset_right = -440.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "one-click-signup"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 20
+
+[node name="ColorRect7" type="ColorRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.835294, 0.835294, 0.835294, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer/ColorRect7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = -18.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer/ColorRect7/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Spring Deals"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer/ColorRect7/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer/ColorRect7/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "aiyaiaiaiaiai"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer/ColorRect7/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer/ColorRect7/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "aiyaiaiaiaiai"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 20
+
+[node name="ColorRect8" type="ColorRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.835294, 0.835294, 0.835294, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = -18.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Best Sellers"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "aiyaiaiaiaiai"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "aiyaiaiaiaiai"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.57
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect9" type="ColorRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.835294, 0.835294, 0.835294, 1)
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 4.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Trending"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 34.0
+offset_right = -33.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 5
+
+[node name="TextureRect" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureRect" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+
+[node name="TextureRect" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 5
+
+[node name="ColorRect9" type="ColorRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.835294, 0.835294, 0.835294, 1)
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Basics that you should have"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 34.0
+offset_right = -33.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 5
+
+[node name="TextureRect" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureRect" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+
+[node name="TextureRect" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3

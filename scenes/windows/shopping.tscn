@@ -1,19 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://wghcfpmgul3v"]
+[gd_scene load_steps=6 format=3 uid="uid://wghcfpmgul3v"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_hpm2e"]
 [ext_resource type="Script" path="res://scenes/windows/shopping.gd" id="2_ukx01"]
 [ext_resource type="Texture2D" uid="uid://eacgxqex4k3u" path="res://arts/icons/artage-io-48155_1707373438.png" id="3_0krrp"]
+[ext_resource type="PackedScene" uid="uid://drdwgq3vfr6ip" path="res://scenes/omazon.tscn" id="4_p0ocn"]
 [ext_resource type="Texture2D" uid="uid://bqlbau2or2ypx" path="res://arts/Popular-Scam-Shopping-Sites-Jan-2023_MyFaceBoxer.com_20230113-1024x487.jpg" id="4_wanmf"]
 
 [node name="Shopping" instance=ExtResource("1_hpm2e")]
 title = "Omazon Shopping"
 position = Vector2i(0, 0)
-size = Vector2i(720, 527)
+size = Vector2i(1000, 720)
 script = ExtResource("2_ukx01")
 window_icon = ExtResource("3_0krrp")
 window_name = "Omazon Shopping"
 
-[node name="TextureRect" type="TextureRect" parent="Control" index="1"]
+[node name="Control" parent="Control" index="0" instance=ExtResource("4_p0ocn")]
+layout_mode = 1
+
+[node name="ColorRect" parent="Control" index="1"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Control" index="2"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,3 +29,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_wanmf")
+
+[node name="CenterContainer" parent="Control" index="3"]
+visible = false
