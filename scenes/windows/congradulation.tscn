@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2su87kxv6ukc"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_2tvth"]
+[ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/icons/artage-io-48177_1707373402.png" id="2_3bslj"]
+[ext_resource type="Texture2D" uid="uid://x8uxa6b4m00l" path="res://arts/gif/congrats.jpg" id="3_ynlug"]
+
+[node name="Congradulation" instance=ExtResource("1_2tvth")]
+title = "Congradulation!"
+position = Vector2i(0, 22)
+size = Vector2i(541, 387)
+window_icon = ExtResource("2_3bslj")
+window_name = "Congradulation!"
+
+[node name="Label" parent="Control/CenterContainer" index="0"]
+visible = true
+text = ""
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Congradulation!
+ 
+You have finished the dark UX test!
+ 
+ Beware of what the internet have brought to you
+in the future...
+ 
+ 
+"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("3_ynlug")
+stretch_mode = 5

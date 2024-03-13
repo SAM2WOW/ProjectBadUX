@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="5_vgsp1"]
 
 [node name="Notepad" instance=ExtResource("1_wfr3h")]
-title = "Notepad"
+title = "Memo.txt"
 position = Vector2i(0, 0)
 size = Vector2i(256, 317)
 window_icon = ExtResource("2_0ttwu")
+window_name = "Memo.txt"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" index="2"]
 layout_mode = 1
@@ -23,7 +24,7 @@ grow_vertical = 2
 [node name="TextEdit" type="TextEdit" parent="Control/VBoxContainer" index="0"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Hi son!
+text = "Hey Jason!
 
 My computer have been acting weird and I couldn't check nana's email anymore. 
 

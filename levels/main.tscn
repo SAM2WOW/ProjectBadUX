@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=27 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
@@ -8,13 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/icons/Download1.webp" id="4_fxont"]
 [ext_resource type="Texture2D" uid="uid://cye1pdsjf00si" path="res://arts/icons/artage-io-48140_1707444770.png" id="6_cglk1"]
 [ext_resource type="PackedScene" uid="uid://bydua10qenqlu" path="res://scenes/windows/notepad.tscn" id="7_jkpee"]
-[ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="9_mas5o"]
+[ext_resource type="PackedScene" uid="uid://cycf7w7p0b2q4" path="res://scenes/windows/notepad2.tscn" id="8_3ay7u"]
 [ext_resource type="Texture2D" uid="uid://l4x62gxv0oar" path="res://arts/icons/Email.png" id="11_pdjg2"]
 [ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="11_qbj6n"]
 [ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
 [ext_resource type="PackedScene" uid="uid://bnjmpi2b7pjw0" path="res://scenes/EmailScene/emailWindow.tscn" id="12_wshen"]
 [ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/ducks/duck.png" id="13_1w4ho"]
-[ext_resource type="PackedScene" uid="uid://c7jcd2xhvuig2" path="res://scenes/windows/crash_cup.tscn" id="13_3o8x1"]
 [ext_resource type="Texture2D" uid="uid://eacgxqex4k3u" path="res://arts/icons/artage-io-48155_1707373438.png" id="13_l6ye5"]
 [ext_resource type="PackedScene" uid="uid://dwg32wpr3ts6c" path="res://scenes/windows/duck.tscn" id="14_5cp0w"]
 [ext_resource type="PackedScene" uid="uid://b11hmmcjsikmg" path="res://scenes/windows/trick_confirm.tscn" id="14_kw5uc"]
@@ -25,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://doiqmgy3d7agt" path="res://arts/icons/Internets.png" id="16_q855k"]
 [ext_resource type="PackedScene" uid="uid://cmv4wtgfnvwbu" path="res://scenes/taskbar.tscn" id="18_n68yv"]
 [ext_resource type="PackedScene" uid="uid://cn6sbyi6q46q0" path="res://scenes/windows/web_browser.tscn" id="18_q7rax"]
+[ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/icons/artage-io-48177_1707373402.png" id="22_c4seq"]
+[ext_resource type="PackedScene" uid="uid://b2su87kxv6ukc" path="res://scenes/windows/congradulation.tscn" id="23_i12wd"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -80,8 +81,15 @@ layout_mode = 2
 layout_mode = 2
 text = ""
 icon_texture = ExtResource("6_cglk1")
-icon_name = "Notepad"
+icon_name = "Memo.txt"
 window = ExtResource("7_jkpee")
+
+[node name="NoteBtn2" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon_texture = ExtResource("6_cglk1")
+icon_name = "Password.txt"
+window = ExtResource("8_3ay7u")
 
 [node name="WebBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2
@@ -134,13 +142,12 @@ icon_name = "DVD"
 window = ExtResource("12_q22pg")
 
 [node name="TextureButton4" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
-visible = false
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
-icon_texture = ExtResource("9_mas5o")
-icon_name = "CUP_TRICK.exe"
-window = ExtResource("13_3o8x1")
+icon_texture = ExtResource("22_c4seq")
+icon_name = "Congradulation"
+window = ExtResource("23_i12wd")
 
 [node name="TextureButton5" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false

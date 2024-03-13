@@ -82,7 +82,7 @@ text = "Password:"
 [node name="TextEdit3" type="TextEdit" parent="Control/CenterContainer/VBoxContainer" index="5"]
 custom_minimum_size = Vector2(270.805, 35.78)
 layout_mode = 2
-text = "123456"
+text = "251234"
 placeholder_text = "Password"
 scroll_past_end_of_file = true
 scroll_fit_content_height = true
