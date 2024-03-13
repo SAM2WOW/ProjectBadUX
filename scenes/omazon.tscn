@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://drdwgq3vfr6ip"]
+[gd_scene load_steps=8 format=3 uid="uid://drdwgq3vfr6ip"]
 
 [ext_resource type="Script" path="res://scenes/omazon.gd" id="1_t28q0"]
+[ext_resource type="Script" path="res://resources/subscription.gd" id="2_2qgc2"]
 [ext_resource type="Texture2D" uid="uid://e477jmxvr3pk" path="res://arts/icon.svg" id="2_82f8k"]
 [ext_resource type="Script" path="res://scenes/subTrick.gd" id="3_qh38m"]
 [ext_resource type="Texture2D" uid="uid://7os4wvbnv5j4" path="res://arts/ads/sadPuppy.jpg" id="4_6vwet"]
 [ext_resource type="Script" path="res://scenes/ManageSub.gd" id="5_8sdxd"]
+
+[sub_resource type="Resource" id="Resource_oj6ci"]
+script = ExtResource("2_2qgc2")
+id = 0
+tickRate = 5.0
+damagePerTick = 5.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t28q0")
+subscription = SubResource("Resource_oj6ci")
 
 [node name="ColorRect4" type="ColorRect" parent="."]
 layout_mode = 1
@@ -571,6 +579,7 @@ offset_bottom = 36.0
 grow_horizontal = 0
 
 [node name="SubscribeScreen2" type="ColorRect" parent="SubTrick"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -864,7 +873,7 @@ theme_override_constants/margin_right = 50
 [node name="close" type="Button" parent="ManageSub/SubDropDowns2/VBoxContainer/MarginContainer"]
 modulate = Color(0.607843, 1, 0.560784, 1)
 layout_mode = 2
-text = "Close"
+text = "Cancel"
 
 [node name="Label4" type="Label" parent="ManageSub/SubDropDowns2/VBoxContainer"]
 layout_mode = 2
@@ -900,6 +909,89 @@ grow_horizontal = 0
 wait_time = 10.0
 one_shot = true
 
+[node name="UnsubScreen" type="ColorRect" parent="ManageSub"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 338.0
+offset_top = 65.0
+offset_right = -316.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ManageSub/UnsubScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ManageSub/UnsubScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_font_sizes/font_size = 32
+text = "WARNING!!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="ManageSub/UnsubScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 18
+text = "We use YOUR subscription money in order to save countless puppies from abuse. By choosing not to subscribe, you are actively abusing puppies, which will decrease your odds of earing the favor of god."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ManageSub/UnsubScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="TextureRect" type="TextureRect" parent="ManageSub/UnsubScreen/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.77
+texture = ExtResource("4_6vwet")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ManageSub/UnsubScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ManageSub/UnsubScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="SignUp" type="Button" parent="ManageSub/UnsubScreen/VBoxContainer/HBoxContainer/MarginContainer"]
+modulate = Color(0.607843, 1, 0.560784, 1)
+layout_mode = 2
+text = "I love puppies!"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ManageSub/UnsubScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="NoSub" type="Button" parent="ManageSub/UnsubScreen/VBoxContainer/HBoxContainer/MarginContainer2"]
+self_modulate = Color(1, 0.447059, 0.486275, 1)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.243137, 0.243137, 0.243137, 1)
+text = "I hate puppies."
+
 [connection signal="button_down" from="VBoxContainer/ColorRect5/SettingsButton" to="ManageSub" method="_on_settings_button_button_down"]
 [connection signal="button_down" from="SubBar" to="ManageSub" method="_on_sub_bar_button_down"]
 [connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer/SignUp" to="SubTrick" method="subscribe"]
@@ -919,3 +1011,7 @@ one_shot = true
 [connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer6/HBoxContainer/cancel" to="ManageSub" method="_on_cancel_button_down"]
 [connection signal="button_down" from="ManageSub/SubDropDowns2/VBoxContainer/MarginContainer/close" to="ManageSub" method="close"]
 [connection signal="button_down" from="ManageSub/SubDropDowns2/VBoxContainer/MarginContainer2/cancelSub1" to="ManageSub" method="_on_cancel_sub_1_button_down"]
+[connection signal="button_down" from="ManageSub/UnsubScreen/VBoxContainer/HBoxContainer/MarginContainer/SignUp" to="ManageSub" method="close"]
+[connection signal="button_down" from="ManageSub/UnsubScreen/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="ManageSub" method="unsubscribe"]
+[connection signal="mouse_entered" from="ManageSub/UnsubScreen/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="SubTrick" method="_on_no_sub_mouse_entered"]
+[connection signal="mouse_exited" from="ManageSub/UnsubScreen/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="SubTrick" method="_on_no_sub_mouse_exited"]

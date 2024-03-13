@@ -12,13 +12,14 @@ func init():
 	$"../SubBar".visible = false;
 	$SubDropDowns.visible = true;
 	$SubDropDowns2.visible = false;
+	$UnsubScreen.visible = false;
 	for child in $SubDropDowns/VBoxContainer.get_children():
 		child.visible = false;
 	$SubDropDowns/VBoxContainer/Label.visible = true;
 	$SubDropDowns/VBoxContainer/MarginContainer.visible = true;
 	$SubDropDowns2/VBoxContainer/MarginContainer.visible = false;
 	$SubDropDowns2/VBoxContainer/MarginContainer2.visible = false;
-	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -86,7 +87,9 @@ func dotdotdot():
 
 func _on_cancel_sub_1_button_down():
 	doneStall = true;
+	$SubDropDowns2.visible = false;
+	$UnsubScreen.visible = true;
+	
+func unsubscribe():
+	Global.remove_sub($"..".subscription.id);
 	close();
-	$"../SubTrick".visible = true;
-	$"../SubTrick".init();
-	$"../SubTrick".no_subscribe();
