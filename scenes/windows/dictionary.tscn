@@ -7,7 +7,7 @@
 [node name="Dictionary" instance=ExtResource("1_2ttu2")]
 title = "Notepad"
 position = Vector2i(0, 22)
-size = Vector2i(512, 512)
+size = Vector2i(397, 392)
 script = ExtResource("2_iinu5")
 window_icon = ExtResource("3_3tfx1")
 window_name = "Dark UX Dictionary"
@@ -172,6 +172,22 @@ layout_mode = 2
 min_value = 1.0
 max_value = 20.0
 value = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" index="3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.02
+offset_top = -148.21
+offset_right = 101.98
+offset_bottom = 43.7901
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("3_3tfx1")
 
 [connection signal="tab_changed" from="Control/MarginContainer/VBoxContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Prev" to="." method="_on_prev_pressed"]
