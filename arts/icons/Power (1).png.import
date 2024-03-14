@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ed6rfvl13tp"
-path="res://.godot/imported/wallpaper.webp-35ccc581bb6a4fdf17e60fb6200534d4.ctex"
+uid="uid://82mihnvr25s1"
+path="res://.godot/imported/Power (1).png-0401439669853db116c1152034035045.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/wallpaper.webp"
-dest_files=["res://.godot/imported/wallpaper.webp-35ccc581bb6a4fdf17e60fb6200534d4.ctex"]
+source_file="res://arts/icons/Power (1).png"
+dest_files=["res://.godot/imported/Power (1).png-0401439669853db116c1152034035045.ctex"]
 
 [params]
 

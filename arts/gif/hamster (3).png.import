@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eacgxqex4k3u"
-path="res://.godot/imported/artage-io-48155_1707373438.png-bbf56cddc7e7bfe46507184d359f564b.ctex"
+uid="uid://3u21lk77xcrs"
+path="res://.godot/imported/hamster (3).png-4fd4bc2c19764863ef6d9cb7dcc6c871.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/icons/artage-io-48155_1707373438.png"
-dest_files=["res://.godot/imported/artage-io-48155_1707373438.png-bbf56cddc7e7bfe46507184d359f564b.ctex"]
+source_file="res://arts/gif/hamster (3).png"
+dest_files=["res://.godot/imported/hamster (3).png-4fd4bc2c19764863ef6d9cb7dcc6c871.ctex"]
 
 [params]
 

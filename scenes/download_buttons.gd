@@ -19,7 +19,7 @@ func _ready():
 		$TextureButton.set_default_cursor_shape(0)
 	
 	var newColor = Color.from_hsv((randi() % 12) / 12.0, 1, 1)
-	$TextureButton.modulate = newColor
+	#$TextureButton.modulate = newColor
 	$Leg.modulate = newColor
 	$Leg2.modulate = newColor
 
@@ -50,7 +50,8 @@ func _process(delta):
 func _on_texture_button_mouse_entered():
 	hovering = true
 	
-	$TextureButton.set_scale(Vector2(1.1, 1.1))
+	if bad:
+		$TextureButton.set_scale(Vector2(1.1, 1.1))
 	
 	if bad:
 		$Label.show()
@@ -59,7 +60,8 @@ func _on_texture_button_mouse_entered():
 func _on_texture_button_mouse_exited():
 	hovering = false
 	
-	$TextureButton.set_scale(Vector2(1, 1))
+	if bad:
+		$TextureButton.set_scale(Vector2(1, 1))
 	
 	$Label.hide()
 
@@ -69,7 +71,7 @@ func _on_texture_button_pressed():
 
 func _on_texture_button_button_down():
 	if bad:
-		target = Vector2(-160 + (800 * (randi() % 2)), randf_range(12, 500))
+		target = Vector2(-160 + (1000 * (randi() % 2)), randf_range(12, 500))
 		moving = true
 		$AnimationPlayer.play("Walking")
 		

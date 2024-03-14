@@ -31,43 +31,123 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Bait and Switch" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="1"]
+[node name="Asking More Than Intended" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="1"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Asking More Than Intended" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "When a site asks for more information than a user intends to tell, a tactic used to unethically collect personal information."
+fit_content = true
+
+[node name="Bait and Switch" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="2"]
+visible = false
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Bait and Switch" index="0"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "When the information in the page or button says something else and a different action gets performed upon clicking."
 fit_content = true
 
-[node name="Bait and Switch2" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="2"]
+[node name="Confirm Shaming" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="3"]
 visible = false
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Bait and Switch2" index="0"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Confirm Shaming" index="0"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "A manipulative tactic used to shame users for not doing an action (e.g. “no I do not like to save money”)."
 fit_content = true
 
-[node name="Bait and Switch3" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="3"]
+[node name="Disguised Ads" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="4"]
 visible = false
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Bait and Switch3" index="0"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Disguised Ads" index="0"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "When an advertisement is disguised as something familiar to a user or even an exact copy, but a different action is performed when you click on it."
 fit_content = true
 
-[node name="Bait and Switch4" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="4"]
+[node name="Disguised Links" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="5"]
 visible = false
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Bait and Switch4" index="0"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Disguised Links" index="0"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "When a link, usually containing an ad or malware, is hidden behind a false address. A tip is to always hover suspicious links to check for hidden hyperlinks."
+fit_content = true
+
+[node name="Fear of Missing Out (FOMO)" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="6"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Fear of Missing Out (FOMO)" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "More prevalent on ecommerce sites, this is where a user is told something is running out to guilt trip users into purchasing the item."
+fit_content = true
+
+[node name="Hidden Costs" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="7"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Hidden Costs" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "When an ecommerce site shows a different, usually lower price, initially but increases it when the buyer goes to checkout."
+fit_content = true
+
+[node name="Manipulative Visual Design" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="8"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Manipulative Visual Design" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Intentionally using visual characteristics (i.e. color, font, size, etc.) to manipulate user behavior."
+fit_content = true
+
+[node name="Misdirection" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="9"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Misdirection" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "A tactic used to distract users from the task at hand by encouraging them to focus on something different, usually for the benefit of the site."
+fit_content = true
+
+[node name="Roach Motel" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="10"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Roach Motel" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Commonly used by companies to make signing-up really easy but canceling incredibly confusing and difficult to discourage users from leaving."
+fit_content = true
+
+[node name="Triggering Fear" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="11"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Triggering Fear" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Usage of threats or any type of fear-inducing negative consequences to manipulate user decisions."
+fit_content = true
+
+[node name="Generative AI" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="12"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Generative AI" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "With the recent rise in commercial AI bots, it is important to look out for manipulative content generated through AI. One tip is to observe the images carefully and look for odd discrepancies."
 fit_content = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" index="1"]

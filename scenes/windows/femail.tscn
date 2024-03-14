@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scenes/windows/femail.gd" id="2_6edev"]
 [ext_resource type="Texture2D" uid="uid://l4x62gxv0oar" path="res://arts/icons/Email.png" id="3_j26nj"]
 [ext_resource type="Texture2D" uid="uid://btb7c35kbiuic" path="res://arts/ads/casino (1).jpg" id="4_egelx"]
+[ext_resource type="Texture2D" uid="uid://dj4573bj2qye" path="res://arts/icons/Trashbinretrieve.png" id="4_evcx2"]
 [ext_resource type="Texture2D" uid="uid://wx4f7gmebkib" path="res://arts/ads/frame_0_delay-2.5s.jpg" id="4_imfb1"]
 [ext_resource type="PackedScene" uid="uid://drdp1ecdhxd8t" path="res://scenes/EmailScene/emailIcon.tscn" id="4_pk7rf"]
 [ext_resource type="ButtonGroup" uid="uid://drl8s51j3tjwt" path="res://scenes/ButtonGroup.tres" id="4_vy51m"]
@@ -14,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://b4ib7fichebvo" path="res://arts/ads/frame_3_delay-s.jpg" id="7_i0y5b"]
 [ext_resource type="Texture2D" uid="uid://258b36qkvox4" path="res://arts/icons/Trashbin.png" id="9_bjsw6"]
 [ext_resource type="Texture2D" uid="uid://ra1kj16eof7e" path="res://arts/icons/Emailopened.png" id="10_sh33c"]
-[ext_resource type="PackedScene" uid="uid://urvucgyy7lmi" path="res://scenes/recovery_game.tscn" id="15_kpqrp"]
 [ext_resource type="AudioStream" uid="uid://bw4d6fy55ikxm" path="res://sounds/CorruptedMiniGame3.wav" id="16_dj14j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cw1f"]
@@ -284,11 +284,24 @@ text = "Please confirm what you would like to do with the email."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="MarginContainer3" type="MarginContainer" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="1"]
+[node name="MarginContainer4" type="MarginContainer" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="1"]
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="2"]
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_evcx2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="4"]
 layout_mode = 2
 alignment = 1
 
@@ -304,7 +317,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Un-Recover"
 
-[node name="Recover" type="Button" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="3"]
+[node name="Recover" type="Button" parent="Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer" index="5"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 3
@@ -445,11 +458,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Hello,
-
+ 
 I hope this message finds you well. As we continue our efforts to raise money for the recent  devastating earthquake, I wanted to reach out to you with an opportunity to make a meaningful impact.  
-
+ 
 At Red Cross, we are dedicated to providing immediate relief to areas that need it the most. We’ve seen firsthand the positive changes that can happen when people come together to support a common cause.
-
+ 
 Your contribution, no matter the size, can help us. To donate simply click on the link "
 fit_content = true
 
@@ -495,9 +508,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Every dollar counts and brings us closer to our goal.
-
+ 
 Thank you for considering this opportunity to support our cause. Together, we can create a brighter future for all.
-
+ 
 Best,
 The Red Cross Foundation"
 fit_content = true
@@ -515,7 +528,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Hi Dear,
-
+ 
 I’m in trouble! I fell off my chair and ended up at the ER yesterday. The bill is about $1,000 and I’m low on cash. Would you be able to send some cash to me through Wenmo? Here is my profile link: "
 fit_content = true
 
@@ -539,7 +552,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "I miss you, please come visit me. Love you.
-
+ 
 Best,
 Your Granny"
 fit_content = true
@@ -557,11 +570,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Hello,
-
+ 
 I hope this message finds you well. As we continue our efforts to raise money for the recent  devastating earthquake, I wanted to reach out to you with an opportunity to make a meaningful impact.  
-
+ 
 At Red Cross, we are dedicated to providing immediate relief to areas that need it the most. We’ve seen firsthand the positive changes that can happen when people come together to support a common cause.
-
+ 
 Your contribution, no matter the size, can help us. To donate simply click on the link "
 fit_content = true
 
@@ -607,9 +620,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Every dollar counts and brings us closer to our goal.
-
+ 
 Thank you for considering this opportunity to support our cause. Together, we can create a brighter future for all.
-
+ 
 Best,
 The Red Cross Foundation"
 fit_content = true
@@ -626,9 +639,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Dear Candidate,
-
+ 
 I hope this email finds you well. I am writing to express our appreciation for your interest in the Product Manager role at IGM. After reviewing your application, we are impressed with your qualifications and believe that your skills and experience align well with what we are looking for in our ideal candidate. We would like to invite you to an interview to discuss the position further and to learn more about your background and expertise. 
-
+ 
 Please make a video appointment using our"
 fit_content = true
 
@@ -652,9 +665,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "here.
-
+ 
 We Look forward to meeting you and discussing how you can contribute to our team!
-
+ 
 Best,
 IGM Human Resources"
 fit_content = true
@@ -672,13 +685,13 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Hello,
-
+ 
 Someone recently used your password to try to sign in to your account. Please see below for the sign-in details:
-
+ 
 Thursday, July 10, 2008 05:45:14 PM UTC
 IP Address: 65.89.56.144
 Location: Boulder, Colorado
-
+ 
 We prevented the sign-in attempt in case this was not you. Please sign in to your and reset your password here"
 fit_content = true
 
@@ -701,7 +714,7 @@ text = "www.fe-maill.com/reset_password/3t3252y687952"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "
+text = " 
 Best,
 Fe-Mail Security Dept"
 fit_content = true
@@ -862,12 +875,7 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_wf5ga")
 script = ExtResource("6_v6a1y")
 
-[node name="RecoveryGame" parent="." index="1" instance=ExtResource("15_kpqrp")]
-process_mode = 4
-visible = false
-position = Vector2(107.825, 13.29)
-
-[node name="CorruptedMiniGame" type="AudioStreamPlayer" parent="." index="2"]
+[node name="CorruptedMiniGame" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("16_dj14j")
 
 [connection signal="pressed" from="Control/CenterContainer/TabContainer/Panel1/CenterContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
@@ -893,8 +901,6 @@ stream = ExtResource("16_dj14j")
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBtns/Delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" to="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/TextureButton" method="_on_pressed"]
-[connection signal="dead" from="RecoveryGame" to="." method="_on_recovery_game_dead"]
-[connection signal="win" from="RecoveryGame" to="." method="_on_recovery_game_win"]
 
 [editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon"]
 [editable path="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon2"]

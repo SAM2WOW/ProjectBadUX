@@ -8,8 +8,8 @@ func _ready():
 
 
 func crash_game():
-	get_tree().change_scene_to_file("res://levels/crashed.tscn")
 	SoundPlayer.play("Crash")
+	get_tree().change_scene_to_file("res://levels/crashed.tscn")
 
 
 func install_app(texture,icon_name,window):

@@ -180,7 +180,7 @@ func _on_timer_timeout():
 		i.queue_free()
 	
 	$Control/ScrollContainer/TabContainer.set_current_tab(3)
-	SoundPlayer.play("Confirm")
+	SoundPlayer.play("Yay")
 
 
 func _on_spawn_timer_timeout():
@@ -206,7 +206,7 @@ func _on_duck_out():
 	
 	#$Timer.start(left_time)
 	Global.healthBar.take_damage(5)
-	Global.warningWindow.AddWarning(1)
+	Global.warningWindow.AddWarning(10)
 	pass
 
 

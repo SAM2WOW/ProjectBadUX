@@ -4,8 +4,13 @@ var totalTabs = 1
 var currentTabs = 0
 
 
+func set_page(value):
+	$Control/MarginContainer/VBoxContainer/TabContainer.set_current_tab(value)
+
+
 func _ready():
 	super._ready()
+	SoundPlayer.play("PageTurn")
 	
 	totalTabs = $Control/MarginContainer/VBoxContainer/TabContainer.get_tab_count()
 	
@@ -15,6 +20,8 @@ func _ready():
 
 
 func _on_tab_container_tab_changed(tab):
+	SoundPlayer.play("PageTurn")
+	
 	currentTabs = tab
 	$Control/MarginContainer/VBoxContainer/HBoxContainer/Label.set_text("%d/%d" % [currentTabs + 1, totalTabs])
 	

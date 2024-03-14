@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coy4yn6l0j0si"
-path="res://.godot/imported/dermotologists-hate-her.jpg-66f93fb81d325104b9559fcdac5dd62d.ctex"
+uid="uid://diemmorgwghe8"
+path="res://.godot/imported/heart (1).png-5a126ae5d6dbd4d52ebb97a4e7eca63b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/icons/dermotologists-hate-her.jpg"
-dest_files=["res://.godot/imported/dermotologists-hate-her.jpg-66f93fb81d325104b9559fcdac5dd62d.ctex"]
+source_file="res://arts/gif/heart (1).png"
+dest_files=["res://.godot/imported/heart (1).png-5a126ae5d6dbd4d52ebb97a4e7eca63b.ctex"]
 
 [params]
 

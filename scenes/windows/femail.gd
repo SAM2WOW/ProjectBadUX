@@ -14,9 +14,12 @@ var dvd = preload("res://scenes/windows/dvd.tscn")
 var thankyou = preload("res://scenes/windows/thankyou.tscn")
 var thankyou2 = preload("res://scenes/windows/thankyou2.tscn")
 
+var recovery = preload("res://scenes/recovery_game.tscn")
+
 var current_email
 
 var email_delete_count = 0
+var email_unarchived = false
 
 func _ready():
 	super._ready()
@@ -86,7 +89,7 @@ func _on_back_pressed():
 
 
 func _on_delete_pressed():
-	SoundPlayer.play("Fail")
+	SoundPlayer.play("Trash")
 	
 	Global.deleted_emails.append(current_email.sender_email)
 	current_email.queue_free()
@@ -98,7 +101,7 @@ func _on_delete_pressed():
 			Global.taskWindow.complete_task(2)
 	else:
 		Global.healthBar.take_damage(20)
-		Global.warningWindow.AddWarning(1)
+		Global.warningWindow.AddWarning(4)
 	
 	_on_back_pressed()
 
@@ -108,7 +111,7 @@ func _on_virus_pressed():
 	Global.windowsManager.add_window(w)
 	
 	Global.healthBar.take_damage(10)
-	Global.warningWindow.AddWarning(0)
+	Global.warningWindow.AddWarning(5)
 
 
 func _on_bad_link_pressed():
@@ -117,22 +120,23 @@ func _on_bad_link_pressed():
 		Global.windowsManager.add_window(w)
 	
 	Global.healthBar.take_damage(10)
-	Global.warningWindow.AddWarning(0)
+	Global.warningWindow.AddWarning(5)
 
 
 func _on_dvd_pressed():
 	Global.healthBar.take_damage(10)
-	Global.warningWindow.AddWarning(0)
+	Global.warningWindow.AddWarning(5)
 	
 	var w = dvd.instantiate()
 	Global.windowsManager.add_window(w)
 
 
 func _on_icon_pressed():
-	recover_tab.set_current_tab(0)
-	
-	$Control/CenterContainer.show()
-	$Control/MarginContainer.hide()
+	if not email_unarchived:
+		recover_tab.set_current_tab(0)
+		
+		$Control/CenterContainer.show()
+		$Control/MarginContainer.hide()
 
 
 func return_to_inbox():
@@ -164,6 +168,12 @@ func _on_continue2_pressed():
 	if password == "251234":
 		SoundPlayer.play("Confirm")
 		recover_tab.set_current_tab(3)
+		
+		var recover_btn = $Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer/Recover
+		recover_btn.modulate = Color("ffffff00")
+		var tween = create_tween()
+		tween.tween_property(recover_btn, "modulate", Color("ffffff"), 4)
+		
 	else:
 		SoundPlayer.play("Deny")
 
@@ -173,9 +183,18 @@ func _on_recover_pressed():
 	
 	$CorruptedMiniGame.play()
 	
-	$RecoveryGame.show()
-	$RecoveryGame.set_process_mode(Node.PROCESS_MODE_INHERIT)
-
+	#$RecoveryGame.show()
+	#$RecoveryGame.set_process_mode(Node.PROCESS_MODE_INHERIT)
+	
+	# spawn the recovery game
+	var r = recovery.instantiate()
+	r.connect("dead", _on_recovery_game_dead)
+	r.connect("win", _on_recovery_game_win)
+	
+	add_child(r)
+	r.set_position(Vector2(107.825, 13.29))
+	
+	
 
 func _on_recovery_game_dead():
 	SoundPlayer.play("Deny")
@@ -183,25 +202,32 @@ func _on_recovery_game_dead():
 	
 	$CorruptedMiniGame.stop()
 	
-	$RecoveryGame.hide()
-	$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
+	$RecoveryGame.queue_free()
+	#$RecoveryGame.hide()
+	#$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
 
 
 func _on_recovery_game_win():
 	$CorruptedMiniGame.stop()
 	
-	$RecoveryGame.hide()
-	$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
+	$RecoveryGame.queue_free()
+	#$RecoveryGame.hide()
+	#$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
 	
 	# delete the email
 	var email = $Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon
-	email.queue_free()
-	Global.deleted_emails.append(email.sender_email)
+	#email.queue_free()
+	#Global.deleted_emails.append(email.sender_email)
 	
 	Global.taskWindow.complete_task(3)
 	
 	return_to_inbox()
-
+	_on_email_button_pressed(email)
+	
+	# reparent email to inbox
+	email_unarchived = true
+	email.connect("btn_pressed", _on_email_button_pressed)
+	email.reparent($Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox)
 
 func _on_redcross_pressed():
 	SoundPlayer.play("Confirm")

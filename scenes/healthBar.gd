@@ -7,11 +7,16 @@ func _ready():
 	value = health;
 
 func take_damage(dmg : float):
+	SoundPlayer.play("Damage")
+	
 	if health <= 0: return;
 	health = max(health-dmg, 0);
 	value = health;
 	if health <= 0:
 		game_over();
+	
+	modulate = Color("ff0004a6")
+	$"../Timer".start()
 
 func game_over():
 	print("game over!");
@@ -27,3 +32,7 @@ func _input(ev):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass;
+
+
+func _on_timer_timeout():
+	modulate = Color.WHITE

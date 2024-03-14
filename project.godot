@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="ProjectBadUX"
-run/main_scene="res://levels/main.tscn"
+config/description="The Impossible Computer"
+run/main_scene="res://levels/login.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0.501961, 0.501961, 1)
+boot_splash/image="res://arts/icons/Internets.png"
+boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://arts/ducks/duck.png"
 

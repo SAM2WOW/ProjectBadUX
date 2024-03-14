@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2su87kxv6ukc"]
+[gd_scene load_steps=10 format=3 uid="uid://b2su87kxv6ukc"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_2tvth"]
 [ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/icons/artage-io-48177_1707373402.png" id="2_3bslj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c532wvuqb22an" path="res://arts/gif/thankyou (2).png" id="4_onv4h"]
 [ext_resource type="Texture2D" uid="uid://bqo8ipriu0gyu" path="res://arts/gif/thankyou (3).png" id="5_0731m"]
 [ext_resource type="Texture2D" uid="uid://bwso7jbx0qjr3" path="res://arts/gif/thankyou (4).png" id="6_34fa3"]
+[ext_resource type="AudioStream" uid="uid://3fsu4veuvrbw" path="res://sounds/Yay.wav" id="8_3v1vi"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yvrd6"]
 frames = 6
@@ -23,37 +24,68 @@ frame_4/duration = 0.15
 frame_5/texture = ExtResource("4_onv4h")
 frame_5/duration = 0.15
 
-[node name="Congradulation" instance=ExtResource("1_2tvth")]
-title = "Congradulation!"
+[node name="Congratulation" instance=ExtResource("1_2tvth")]
+title = "Congratulation!"
 position = Vector2i(0, 22)
-size = Vector2i(541, 387)
+size = Vector2i(606, 397)
+unresizable = true
 window_icon = ExtResource("2_3bslj")
-window_name = "Congradulation!"
+window_name = "Congratulation!"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Control/ScrollContainer/MarginContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+text = "You did it!
+ 
+It's super important to watch out for sneaky design tricks online because they can affect how we behave and feel while using apps or websites. These tricks, called dark user experience (UX) patterns, might push us to do things we don’t want to do or make us feel confused or powerless.The internet can be a scary place so we hope players leave our game feeling empowered to make informed decisions when navigating confusing UX."
+autowrap_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_yvrd6")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/MarginContainer/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Credits:
+Sam Feng (Programmer)
+Andrew Wei (Programmer)
+Gabriel Gallegos (Art & Sound)
+Samantha Chen (Designer)"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/MarginContainer/VBoxContainer" index="3"]
+layout_mode = 2
+texture = ExtResource("3_ynlug")
+stretch_mode = 5
+
+[node name="CenterContainer" parent="Control" index="2"]
+visible = false
 
 [node name="Label" parent="Control/CenterContainer" index="0"]
 visible = true
 text = ""
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="0"]
-layout_mode = 2
-text = "Congradulation!
- 
-You have finished the dark UX test!
- 
- Beware of what the internet have brought to you
-in the future...
- "
-horizontal_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="1"]
-layout_mode = 2
-texture = SubResource("AnimatedTexture_yvrd6")
-stretch_mode = 5
-
-[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="2"]
-layout_mode = 2
-texture = ExtResource("3_ynlug")
-stretch_mode = 5
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource("8_3v1vi")
+volume_db = -3.089
+autoplay = true

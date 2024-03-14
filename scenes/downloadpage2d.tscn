@@ -1,0 +1,218 @@
+[gd_scene load_steps=18 format=3 uid="uid://6q71gj50csw7"]
+
+[ext_resource type="Texture2D" uid="uid://pnviem0ldd1" path="res://arts/ducks/aiduck (2).png" id="1_vd7w2"]
+[ext_resource type="Texture2D" uid="uid://dxj4vh1c306f2" path="res://arts/ducks/aiduck (4).png" id="2_64bbo"]
+[ext_resource type="Texture2D" uid="uid://cm44y6lkx2dbh" path="res://arts/ducks/aiduck (5).png" id="3_i675b"]
+[ext_resource type="Texture2D" uid="uid://bg8pps5cwex8q" path="res://arts/ducks/aiduck (3).png" id="4_cyaj8"]
+[ext_resource type="Script" path="res://scripts/adsBtn.gd" id="5_nbhvy"]
+[ext_resource type="Texture2D" uid="uid://4io1lsu20clk" path="res://arts/ducks/aiduck (1).png" id="6_lh1d0"]
+[ext_resource type="Texture2D" uid="uid://bfrffih2lcpbp" path="res://arts/ducks/duck.png" id="7_o0pbf"]
+[ext_resource type="Texture2D" uid="uid://b4ib7fichebvo" path="res://arts/ads/frame_3_delay-s.jpg" id="8_7u0ur"]
+[ext_resource type="Texture2D" uid="uid://efchmxxwmlhu" path="res://arts/ads/mailads (3).jpg" id="9_gp5fc"]
+[ext_resource type="Texture2D" uid="uid://dkegxp5r34mqj" path="res://arts/ads/phone (3).jpg" id="10_3ygcc"]
+[ext_resource type="Texture2D" uid="uid://dduxp2jr8lmpx" path="res://arts/ads/retailads (2).jpg" id="11_7tce1"]
+[ext_resource type="Texture2D" uid="uid://boutkkdds8adt" path="res://arts/ads/phone (1).jpg" id="12_2mjbx"]
+[ext_resource type="Texture2D" uid="uid://de8np1mco2ohq" path="res://arts/ads/frame_1_delay-2.5s.jpg" id="13_74ph1"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_lkxhm"]
+frames = 4
+frame_0/texture = ExtResource("1_vd7w2")
+frame_1/texture = ExtResource("2_64bbo")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_i675b")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_cyaj8")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_0ohn4"]
+frames = 4
+frame_0/texture = ExtResource("2_64bbo")
+frame_1/texture = ExtResource("6_lh1d0")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_i675b")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("1_vd7w2")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2hu1d"]
+frames = 4
+frame_0/texture = ExtResource("8_7u0ur")
+frame_1/texture = ExtResource("9_gp5fc")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("10_3ygcc")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("11_7tce1")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gmqs1"]
+frames = 5
+speed_scale = 1.6
+frame_0/texture = ExtResource("11_7tce1")
+frame_1/texture = ExtResource("10_3ygcc")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("12_2mjbx")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("8_7u0ur")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("13_74ph1")
+frame_4/duration = 1.0
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Ads" type="Node2D" parent="."]
+
+[node name="Ads" type="TextureButton" parent="Ads"]
+custom_minimum_size = Vector2(150, 150)
+offset_left = 14.365
+offset_top = 9.15
+offset_right = 164.365
+offset_bottom = 159.15
+scale = Vector2(1.5, 1.5)
+size_flags_vertical = 10
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_lkxhm")
+stretch_mode = 5
+script = ExtResource("5_nbhvy")
+
+[node name="Ads2" type="TextureButton" parent="Ads"]
+custom_minimum_size = Vector2(150, 150)
+offset_left = 539.165
+offset_top = 169.845
+offset_right = 689.166
+offset_bottom = 319.845
+size_flags_vertical = 10
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_0ohn4")
+stretch_mode = 5
+script = ExtResource("5_nbhvy")
+
+[node name="Ads3" type="TextureButton" parent="Ads"]
+custom_minimum_size = Vector2(150, 150)
+offset_left = 549.54
+offset_top = 356.41
+offset_right = 699.54
+offset_bottom = 506.41
+size_flags_vertical = 10
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_o0pbf")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_nbhvy")
+
+[node name="Ads4" type="TextureButton" parent="Ads"]
+offset_left = 10.865
+offset_top = 251.675
+offset_right = 478.865
+offset_bottom = 311.675
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_2hu1d")
+script = ExtResource("5_nbhvy")
+
+[node name="Ads5" type="TextureButton" parent="Ads"]
+offset_left = 10.865
+offset_top = 456.295
+offset_right = 478.865
+offset_bottom = 516.296
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_gmqs1")
+script = ExtResource("5_nbhvy")
+
+[node name="Label" type="Label" parent="Ads"]
+offset_left = 78.64
+offset_top = 232.705
+offset_right = 210.64
+offset_bottom = 252.705
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+theme_override_font_sizes/font_size = 11
+text = "ADVERTISEMENT"
+
+[node name="Label2" type="Label" parent="Ads"]
+offset_left = 184.125
+offset_top = 310.355
+offset_right = 316.125
+offset_bottom = 330.355
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+theme_override_font_sizes/font_size = 11
+text = "ADVERTISEMENT"
+
+[node name="Label3" type="Label" parent="Ads"]
+offset_left = 184.125
+offset_top = 510.9
+offset_right = 316.125
+offset_bottom = 530.9
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+theme_override_font_sizes/font_size = 11
+text = "ADVERTISEMENT"
+
+[node name="Label4" type="Label" parent="Ads"]
+offset_left = 578.15
+offset_top = 503.725
+offset_right = 710.15
+offset_bottom = 523.725
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+theme_override_font_sizes/font_size = 11
+text = "ADVERTISEMENT"
+
+[node name="Label5" type="Label" parent="Ads"]
+offset_left = 530.005
+offset_top = 317.25
+offset_right = 662.005
+offset_bottom = 337.25
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+theme_override_font_sizes/font_size = 11
+text = "ADVERTISEMENT"
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Positions"]
+position = Vector2(87, 347)
+
+[node name="Node2D2" type="Node2D" parent="Positions"]
+position = Vector2(260.43, 347)
+
+[node name="Node2D3" type="Node2D" parent="Positions"]
+position = Vector2(434.415, 347)
+
+[node name="Node2D4" type="Node2D" parent="Positions"]
+position = Vector2(439.09, 408.78)
+
+[node name="Node2D5" type="Node2D" parent="Positions"]
+position = Vector2(260.36, 413.66)
+
+[node name="Node2D6" type="Node2D" parent="Positions"]
+position = Vector2(87.705, 413.66)
+
+[node name="Node2D8" type="Node2D" parent="Positions"]
+position = Vector2(312, 124)
+
+[node name="Node2D9" type="Node2D" parent="Positions"]
+position = Vector2(311, 197)
+
+[node name="Node2D11" type="Node2D" parent="Positions"]
+position = Vector2(445, 123)
+
+[node name="Node2D12" type="Node2D" parent="Positions"]
+position = Vector2(444, 196)
+
+[node name="Node2D14" type="Node2D" parent="Positions"]
+position = Vector2(597, 122)
+
+[node name="Node2D15" type="Node2D" parent="Positions"]
+position = Vector2(375, 52)
+
+[node name="Node2D16" type="Node2D" parent="Positions"]
+position = Vector2(528, 52)
+
+[connection signal="pressed" from="Ads/Ads" to="Ads/Ads" method="_on_pressed"]
+[connection signal="pressed" from="Ads/Ads2" to="Ads/Ads2" method="_on_pressed"]
+[connection signal="pressed" from="Ads/Ads3" to="Ads/Ads3" method="_on_pressed"]
+[connection signal="pressed" from="Ads/Ads4" to="Ads/Ads4" method="_on_pressed"]
+[connection signal="pressed" from="Ads/Ads5" to="Ads/Ads5" method="_on_pressed"]

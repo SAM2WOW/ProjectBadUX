@@ -28,7 +28,7 @@ func _on_dead_body_entered(body):
 		$CursorBody.set_freeze_enabled(true)
 		$CursorBody/Button.set_disabled(true)
 		
-		$CursorBody.set_position(Vector2.ZERO)
+		$CursorBody.set_position(Vector2(199, 115))
 		$CursorBody.set_rotation(0)
 		
 		SoundPlayer.play("Fail2")
@@ -50,9 +50,10 @@ func _on_win_body_entered(body):
 
 
 func _on_button_pressed():
-	falling = false
-	$CursorBody.set_freeze_enabled(true)
-	$CursorBody/Button.set_disabled(true)
-	
-	$CursorBody.set_position(Vector2.ZERO)
-	$CursorBody.set_rotation(0)
+	return
+	#falling = false
+	#$CursorBody.set_freeze_enabled(true)
+	#$CursorBody/Button.set_disabled(true)
+	#
+	#$CursorBody.set_position(Vector2.ZERO)
+	#$CursorBody.set_rotation(0)
