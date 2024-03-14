@@ -26,6 +26,8 @@ func show_window():
 	tween = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT);
 	tween.tween_property(self, "position", Vector2i(0, initialPos), 0.5);
 	
+	$Timer.start()
+	
 	await tween.finished
 
 
@@ -37,6 +39,8 @@ func hide_window():
 	
 	tween = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT);
 	tween.tween_property(self, "position", Vector2i(0 - size.x, initialPos), 0.5);
+	
+	$Timer.stop()
 	
 	await tween.finished
 	
@@ -97,3 +101,8 @@ func _process(delta):
 
 
 
+
+
+func _on_timer_timeout():
+	hide_window()
+	$"../TaskButton".set_pressed(false)

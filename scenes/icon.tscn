@@ -1,16 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpd7ml5of2hgr"]
+[gd_scene load_steps=3 format=3 uid="uid://dpd7ml5of2hgr"]
 
 [ext_resource type="Script" path="res://scenes/icon.gd" id="2_3ac65"]
+[ext_resource type="Texture2D" uid="uid://deaoil3bt8t0e" path="res://arts/icons/Dictionary.png" id="2_s22ym"]
 
 [node name="Icon" type="Button"]
 custom_minimum_size = Vector2(60, 60)
 offset_right = 40.0
 offset_bottom = 40.0
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 size_flags_vertical = 4
 focus_mode = 0
 mouse_default_cursor_shape = 2
 text = "Email"
+icon = ExtResource("2_s22ym")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true

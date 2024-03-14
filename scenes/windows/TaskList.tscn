@@ -66,3 +66,9 @@ offset_right = -2.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
