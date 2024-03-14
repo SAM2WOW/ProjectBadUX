@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/icons/Download1.webp" id="4_fxont"]
 [ext_resource type="Texture2D" uid="uid://cye1pdsjf00si" path="res://arts/icons/artage-io-48140_1707444770.png" id="6_cglk1"]
 [ext_resource type="PackedScene" uid="uid://bydua10qenqlu" path="res://scenes/windows/notepad.tscn" id="7_jkpee"]
-[ext_resource type="PackedScene" path="res://scenes/windows/notepad2.tscn" id="8_3ay7u"]
+[ext_resource type="PackedScene" uid="uid://cycf7w7p0b2q4" path="res://scenes/windows/notepad2.tscn" id="8_3ay7u"]
 [ext_resource type="Texture2D" uid="uid://l4x62gxv0oar" path="res://arts/icons/Email.png" id="11_pdjg2"]
 [ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="11_qbj6n"]
 [ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cmv4wtgfnvwbu" path="res://scenes/taskbar.tscn" id="18_n68yv"]
 [ext_resource type="PackedScene" uid="uid://cn6sbyi6q46q0" path="res://scenes/windows/web_browser.tscn" id="18_q7rax"]
 [ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/icons/artage-io-48177_1707373402.png" id="22_c4seq"]
-[ext_resource type="PackedScene" path="res://scenes/windows/congradulation.tscn" id="23_i12wd"]
+[ext_resource type="PackedScene" uid="uid://b2su87kxv6ukc" path="res://scenes/windows/congradulation.tscn" id="23_i12wd"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -159,7 +159,6 @@ icon_name = "Confirm Shame"
 window = ExtResource("14_kw5uc")
 
 [node name="TextureButton6" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
-visible = false
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
