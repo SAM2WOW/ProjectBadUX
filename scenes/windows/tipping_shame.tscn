@@ -1,0 +1,156 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7d30db2ypyo7"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_em17u"]
+[ext_resource type="Script" path="res://scenes/windows/tipping_shame.gd" id="2_tfyxj"]
+[ext_resource type="Texture2D" uid="uid://b4fgcmlicd0yl" path="res://arts/gif/heart (2).png" id="2_ypu1c"]
+[ext_resource type="Texture2D" uid="uid://diemmorgwghe8" path="res://arts/gif/heart (1).png" id="3_bbhq0"]
+[ext_resource type="Texture2D" uid="uid://dsmbxthm87gp2" path="res://arts/gif/heart (3).png" id="4_p77tl"]
+[ext_resource type="ButtonGroup" uid="uid://bnvmrnbad4c6r" path="res://scenes/TipsBtnGroup.tres" id="6_jyxu3"]
+[ext_resource type="Texture2D" uid="uid://l4x62gxv0oar" path="res://arts/icons/Email.png" id="6_mdga8"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_kfm6g"]
+frames = 3
+frame_0/texture = ExtResource("2_ypu1c")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("3_bbhq0")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("4_p77tl")
+frame_2/duration = 0.1
+
+[node name="TippingShame" instance=ExtResource("1_em17u")]
+title = "Tips"
+position = Vector2i(0, 0)
+size = Vector2i(371, 356)
+unresizable = true
+borderless = true
+script = ExtResource("2_tfyxj")
+window_icon = null
+window_name = ""
+
+[node name="Tips" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/Tips" index="0"]
+layout_mode = 2
+text = "Support our platform!
+Would you like to pay tips?"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Control/CenterContainer/Tips" index="1"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_kfm6g")
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/Tips" index="2"]
+layout_mode = 2
+
+[node name="15per" type="Button" parent="Control/CenterContainer/Tips/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = ExtResource("6_jyxu3")
+text = "15%"
+icon = ExtResource("6_mdga8")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="20per" type="Button" parent="Control/CenterContainer/Tips/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = ExtResource("6_jyxu3")
+text = "20%"
+icon = ExtResource("6_mdga8")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="50per" type="Button" parent="Control/CenterContainer/Tips/HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("6_jyxu3")
+text = "50%"
+icon = ExtResource("6_mdga8")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Customize" type="Button" parent="Control/CenterContainer/Tips" index="3"]
+modulate = Color(1, 1, 1, 0.121569)
+layout_mode = 2
+text = "Customize"
+
+[node name="Confirm" type="Button" parent="Control/CenterContainer/Tips" index="4"]
+layout_mode = 2
+text = "Confirm"
+
+[node name="Customize" type="VBoxContainer" parent="Control/CenterContainer" index="2"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/Customize" index="0"]
+layout_mode = 2
+text = "Please Enter the Amount"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Control/CenterContainer/Customize" index="1"]
+layout_mode = 2
+editable = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/Customize" index="2"]
+layout_mode = 2
+
+[node name="add3" type="Button" parent="Control/CenterContainer/Customize/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+3"
+
+[node name="sub4" type="Button" parent="Control/CenterContainer/Customize/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-4"
+
+[node name="mult2" type="Button" parent="Control/CenterContainer/Customize/HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "*2"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/CenterContainer/Customize" index="3"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Confirm" type="Button" parent="Control/CenterContainer/Customize" index="4"]
+layout_mode = 2
+text = "Confirm"
+
+[node name="Thank you" type="VBoxContainer" parent="Control/CenterContainer" index="3"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer/Thank you" index="0"]
+layout_mode = 2
+text = "Thank you for your donation!"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Control/CenterContainer/Thank you" index="1"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_kfm6g")
+stretch_mode = 5
+
+[node name="Close" type="Button" parent="Control/CenterContainer/Thank you" index="2"]
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="Control/CenterContainer/Tips/HBoxContainer/15per" to="." method="_on_per_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Tips/HBoxContainer/20per" to="." method="_on_per20_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Tips/HBoxContainer/50per" to="." method="_on_per50_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Tips/Customize" to="." method="_on_customize_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Tips/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Customize/HBoxContainer/add3" to="." method="_on_add_3_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Customize/HBoxContainer/sub4" to="." method="_on_sub_4_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Customize/HBoxContainer/mult2" to="." method="_on_mult_2_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Customize/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Thank you/Close" to="." method="_on_close_pressed"]

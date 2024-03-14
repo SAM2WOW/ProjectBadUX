@@ -5,7 +5,7 @@ var checkoutWindow = preload("res://scenes/windows/checkout_window.tscn");
 
 var shame = preload("res://scenes/windows/trick_confirm.tscn")
 var ads = preload("res://scenes/windows/ads.tscn")
-
+var tips = preload("res://scenes/windows/tipping_shame.tscn")
 
 func _ready():
 	await get_tree().create_timer(1).timeout;
@@ -38,7 +38,7 @@ func _on_coupon_button_pressed():
 
 func _on_dog_shampoo_pressed():
 	SoundPlayer.play("Confirm")
-	var w = shame.instantiate()
+	var w = tips.instantiate()
 	Global.windowsManager.add_window(w)
 
 
