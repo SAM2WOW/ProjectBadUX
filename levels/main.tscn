@@ -183,7 +183,5 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Taskbar" parent="CanvasLayer/Control" instance=ExtResource("18_n68yv")]
-top_level = true
-layout_mode = 1
 
 [node name="Windows" type="Node2D" parent="."]

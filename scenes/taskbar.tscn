@@ -6,14 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://8qx2cukxmkd8" path="res://scenes/windows/TaskList.tscn" id="4_aftko"]
 [ext_resource type="Script" path="res://scenes/warningWindow.gd" id="5_sk432"]
 
-[node name="Taskbar" type="Panel"]
-custom_minimum_size = Vector2(0, 40)
-anchors_preset = 12
-anchor_top = 1.0
+[node name="Taskbar" type="Window"]
+position = Vector2i(0, 680)
+size = Vector2i(1280, 40)
+unresizable = true
+borderless = true
+always_on_top = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+color = Color(0.764706, 0.780392, 0.796078, 1)
 
 [node name="TaskList" parent="." instance=ExtResource("4_aftko")]
 position = Vector2i(0, 365)
@@ -26,7 +32,6 @@ taskList = {
 }
 
 [node name="TaskButton" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 88.0
@@ -40,7 +45,6 @@ expand_icon = true
 script = ExtResource("3_oyxl4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -53,7 +57,6 @@ grow_vertical = 2
 alignment = 1
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -69,7 +72,6 @@ value = 100.0
 script = ExtResource("3_0dulu")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -88,6 +90,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="WarningSpawner" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

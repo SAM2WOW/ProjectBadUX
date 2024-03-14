@@ -75,6 +75,8 @@ func _on_search_button_pressed():
 		SoundPlayer.play("Confirm")
 		
 		$Control/Panel.show()
+	else:
+		SoundPlayer.play("Fail2")
 
 func _on_line_edit_text_submitted(new_text):
 	_on_search_button_pressed()

@@ -175,7 +175,7 @@ func _on_continue2_pressed():
 		tween.tween_property(recover_btn, "modulate", Color("ffffff"), 4)
 		
 	else:
-		SoundPlayer.play("Deny")
+		SoundPlayer.play("Fail2")
 
 
 func _on_recover_pressed():

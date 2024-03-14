@@ -37,7 +37,7 @@ func add_window(window):
 	window.popup_centered()
 	window.grab_focus()
 	
-	window.set_position(Vector2i(120, 20) + Vector2i(40, 40) * opened_windows.size())
+	window.set_position(Vector2i(120, 20) + Vector2i(120, 0) * (b.get_index() / 8) + Vector2i(40, 40) * (b.get_index() % 8))
 
 
 func remove_window(window):
