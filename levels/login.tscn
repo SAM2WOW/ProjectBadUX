@@ -24,6 +24,41 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -423.0
+offset_top = -163.0
+offset_right = 423.0
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 61
+text = "The Impossible Computer"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = 214.0
+offset_right = 58.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 21
+text = "Login"
+horizontal_alignment = 1
+
 [node name="TextureButton" type="TextureButton" parent="Control"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
@@ -32,16 +67,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = -192.0
-offset_right = 192.0
-offset_bottom = 192.0
+offset_left = -99.0
+offset_top = 18.0
+offset_right = 101.0
+offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_0iv87")
 texture_pressed = ExtResource("2_0iv87")
 texture_hover = ExtResource("3_kqnnj")
 ignore_texture_size = true
-stretch_mode = 5
+stretch_mode = 0
 
 [connection signal="pressed" from="Control/TextureButton" to="." method="_on_texture_button_pressed"]
