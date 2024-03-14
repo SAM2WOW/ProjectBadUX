@@ -1,8 +1,14 @@
 extends "res://scenes/window.gd"
 
+func _ready():
+	super._ready()
+	
+	SoundPlayer.play("Hammy1")
+
 
 func _on_close_requested():
 	SoundPlayer.play("Deny")
+	SoundPlayer.play("Hammy3")
 	
 	$Control.hide()
 	$RIP.show()
@@ -22,10 +28,14 @@ func _on_timer_timeout():
 	
 	$ConfirmationDialog.popup_centered()
 	$ConfirmationDialog.grab_focus()
+	
+	SoundPlayer.play("Fail")
 
 
 func _on_hunger_timer_timeout():
 	Global.healthBar.take_damage(2)
+	
+	SoundPlayer.play("Hammy1")
 	
 	$ConfirmationDialog.popup_centered()
 	$ConfirmationDialog.grab_focus()
@@ -38,10 +48,11 @@ func _on_confirmation_dialog_canceled():
 	_on_close_requested()
 
 func _on_confirmation_dialog_confirmed():
-	$HungerTimer.stop()
-	$Timer.start()
+	_on_feed_pressed()
 
 
 func _on_feed_pressed():
 	$HungerTimer.stop()
 	$Timer.start()
+	
+	SoundPlayer.play("Hammy2")

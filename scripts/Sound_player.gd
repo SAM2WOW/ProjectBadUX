@@ -11,7 +11,10 @@ var sounds = {
 	"PageTurn": "Pageturn.wav",
 	"Trash": "Trash_Sound.wav",
 	"Damage": "FailSplit2.wav",
-	"Yay": "Yay.wav"
+	"Yay": "Yay.wav",
+	"Hammy3": "Hampoter3.wav",
+	"Hammy1": "Hampter1.wav",
+	"Hammy2": "Hampter2.wav",
 }
 
 
