@@ -13,6 +13,7 @@ class_name WarningWindow;
 	8: ["Careful not to give out your personal information.", 1],
 	9: ["Oops, looks like you made an unintended purchase.", 7],
 	10: ["Stop those AI ducks before they fly out!", 12],
+	11: ["Don't fall for these 🤭.", 6],
 }
 
 var warningQueue : Array;

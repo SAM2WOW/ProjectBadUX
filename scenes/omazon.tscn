@@ -1,19 +1,28 @@
-[gd_scene load_steps=17 format=3 uid="uid://drdwgq3vfr6ip"]
+[gd_scene load_steps=28 format=3 uid="uid://drdwgq3vfr6ip"]
 
 [ext_resource type="Script" path="res://scenes/omazon.gd" id="1_t28q0"]
 [ext_resource type="Script" path="res://resources/subscription.gd" id="2_2qgc2"]
 [ext_resource type="Texture2D" uid="uid://kfn4uthq5lk" path="res://arts/Gear.png" id="3_c576v"]
+[ext_resource type="Texture2D" uid="uid://c1jouggc4og6r" path="res://arts/gif/Bear (1).png" id="3_hrq2x"]
 [ext_resource type="Script" path="res://scenes/subTrick.gd" id="3_qh38m"]
 [ext_resource type="Texture2D" uid="uid://7os4wvbnv5j4" path="res://arts/ads/sadPuppy.jpg" id="4_6vwet"]
 [ext_resource type="Texture2D" uid="uid://bp7cbdy1sxypy" path="res://arts/AIshampoo1.png" id="4_75xwu"]
+[ext_resource type="Texture2D" uid="uid://bpqeisl1ika6v" path="res://arts/gif/Bear (2).png" id="4_bd1ff"]
 [ext_resource type="Texture2D" uid="uid://c00tmhfbac5bg" path="res://arts/DogShampoo(3).png" id="4_ljkjo"]
 [ext_resource type="Script" path="res://scenes/ManageSub.gd" id="5_8sdxd"]
+[ext_resource type="Texture2D" uid="uid://sq7jkp6h7cyn" path="res://arts/gif/Bear (3).png" id="5_67c67"]
 [ext_resource type="Script" path="res://scenes/limitedSale.gd" id="5_lf62g"]
+[ext_resource type="Texture2D" uid="uid://w883eo0okce6" path="res://arts/gif/Bear (4).png" id="6_63l82"]
+[ext_resource type="Texture2D" uid="uid://bt6708rjsm3jo" path="res://arts/gif/Bear (5).png" id="7_5h6e3"]
 [ext_resource type="Texture2D" uid="uid://dxypnl8gpxscp" path="res://arts/AIshampoo2.png" id="7_vl2cx"]
+[ext_resource type="Texture2D" uid="uid://cn53864erk5uv" path="res://arts/gif/Bear (6).png" id="8_m2i6a"]
 [ext_resource type="Texture2D" uid="uid://dkqpt1gwlsoxc" path="res://arts/AIshampoo3.png" id="8_wssnf"]
 [ext_resource type="Texture2D" uid="uid://gl5kd2ytu74e" path="res://arts/AIshampoo4.png" id="9_cmf25"]
+[ext_resource type="Texture2D" uid="uid://cl6h0ninqi48m" path="res://arts/banners.png" id="10_5j085"]
 [ext_resource type="Texture2D" uid="uid://b4dkhi2xub5nt" path="res://arts/AIshampoo5.png" id="10_20utm"]
+[ext_resource type="Texture2D" uid="uid://dsxpcr8ym6ktj" path="res://arts/shipping.jpg" id="10_m80yr"]
 [ext_resource type="Texture2D" uid="uid://bhu2atmj7kt0l" path="res://arts/Realshampoo.png" id="11_lt87c"]
+[ext_resource type="Texture2D" uid="uid://dtbbpvilvrchv" path="res://arts/banners2.jpg" id="11_u46v6"]
 [ext_resource type="Texture2D" uid="uid://bfoqp7np1trw7" path="res://arts/XRed.png" id="13_ppnnu"]
 
 [sub_resource type="Resource" id="Resource_oj6ci"]
@@ -21,6 +30,27 @@ script = ExtResource("2_2qgc2")
 id = 0
 tickRate = 5.0
 damagePerTick = 5.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_rs7he"]
+frames = 6
+frame_0/texture = ExtResource("3_hrq2x")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("4_bd1ff")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("5_67c67")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("6_63l82")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("7_5h6e3")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("8_m2i6a")
+frame_5/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ns2io"]
+frames = 2
+frame_0/texture = ExtResource("10_5j085")
+frame_1/texture = ExtResource("11_u46v6")
+frame_1/duration = 1.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -64,6 +94,15 @@ theme_override_font_sizes/font_size = 32
 text = "Omazon"
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ColorRect5"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 5.0
+offset_right = 229.0
+offset_bottom = 70.0
+scale = Vector2(0.829946, 0.77869)
+texture = SubResource("AnimatedTexture_rs7he")
+
 [node name="SettingsButton" type="TextureButton" parent="VBoxContainer/ColorRect5"]
 layout_mode = 1
 anchors_preset = 11
@@ -89,11 +128,12 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/MarginContainer"]
+[node name="ColorRect6" type="TextureRect" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
-color = Color(0.835294, 0.835294, 0.835294, 1)
+texture = ExtResource("10_m80yr")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ColorRect6"]
 layout_mode = 1
@@ -128,16 +168,12 @@ text = "one-click-signup"
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.68
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
 
-[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/MarginContainer/MarginContainer"]
+[node name="ColorRect6" type="TextureRect" parent="VBoxContainer/MarginContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
-color = Color(0.835294, 0.835294, 0.835294, 1)
+texture = SubResource("AnimatedTexture_ns2io")
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer/MarginContainer/ColorRect6"]
 layout_mode = 1

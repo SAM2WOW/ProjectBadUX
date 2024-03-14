@@ -62,12 +62,24 @@ func show_error(text : String):
 func _on_confirm_button_down():
 	if !check_items():
 		show_error("You don't have the funds for this!");
+		
+		Global.healthBar.take_damage(5)
+		Global.warningWindow.AddWarning(9)
+		
 		return;
 	if !check_information():
 		show_error("Your information has been sold!");
+		
+		Global.healthBar.take_damage(10)
+		Global.warningWindow.AddWarning(8)
+		
 		return;
 	if !check_buttons():
 		show_error("Your information has been sold!");
+		
+		Global.healthBar.take_damage(10)
+		Global.warningWindow.AddWarning(8)
+		
 		return;
 	Global.taskWindow.complete_task(4)
 	$"../.."._on_close_requested();

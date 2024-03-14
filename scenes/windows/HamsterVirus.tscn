@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://kcxuc26fc1bx"]
+[gd_scene load_steps=17 format=3 uid="uid://kcxuc26fc1bx"]
 
 [ext_resource type="Script" path="res://scenes/windows/HamsterVirus.gd" id="1_i5upb"]
 [ext_resource type="Texture2D" uid="uid://c3bigyqh48pvl" path="res://arts/gif/hamster (1).png" id="2_a0c5v"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b4fgcmlicd0yl" path="res://arts/gif/heart (2).png" id="10_yvd4f"]
 [ext_resource type="Texture2D" uid="uid://diemmorgwghe8" path="res://arts/gif/heart (1).png" id="11_yde58"]
 [ext_resource type="Texture2D" uid="uid://dsmbxthm87gp2" path="res://arts/gif/heart (3).png" id="12_2n7fo"]
+[ext_resource type="Texture2D" uid="uid://bdcmu2ij2nvtt" path="res://arts/grave2.png" id="13_jmitl"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_f4jid"]
 frames = 8
@@ -169,14 +170,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.760784, 0.929412, 0.964706, 1)
 
 [node name="Label" type="Label" parent="RIP"]
+layout_mode = 0
 offset_left = 7.99
 offset_right = 247.99
 offset_bottom = 250.0
-theme_override_colors/font_color = Color(0, 0.298039, 0.929412, 1)
+theme_override_colors/font_color = Color(0.729412, 0, 0.196078, 1)
 text = "HAMMY IS DEAD
+ 
  
  
  
@@ -187,6 +190,14 @@ text = "HAMMY IS DEAD
  
 YOU ARE A TERRBLE PERSON"
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="RIP"]
+layout_mode = 0
+offset_left = 31.025
+offset_top = 24.275
+offset_right = 223.025
+offset_bottom = 216.275
+texture = ExtResource("13_jmitl")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0

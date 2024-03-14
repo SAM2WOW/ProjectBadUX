@@ -7,7 +7,7 @@ func _on_close_requested():
 	$Control.hide()
 	$RIP.show()
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2).timeout
 	
 	Global.windowsManager.remove_window(self)
 	queue_free()
