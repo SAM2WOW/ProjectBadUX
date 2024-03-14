@@ -12,7 +12,6 @@ func _ready():
 	Global.taskWindow = self
 	initiate_tasks();
 	initialPos = position.y;
-	show_window();
 
 
 func show_window():

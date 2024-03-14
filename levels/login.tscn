@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxvqrmxhkt02b"]
+
+[ext_resource type="Script" path="res://levels/login.gd" id="1_u7c1c"]
+[ext_resource type="Texture2D" uid="uid://ce0lfbh430qjo" path="res://arts/icons/Power.png" id="2_0iv87"]
+[ext_resource type="Texture2D" uid="uid://82mihnvr25s1" path="res://arts/icons/Power (1).png" id="3_kqnnj"]
+
+[node name="Login" type="Node"]
+script = ExtResource("1_u7c1c")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -192.0
+offset_right = 192.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_0iv87")
+texture_pressed = ExtResource("2_0iv87")
+texture_hover = ExtResource("3_kqnnj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Control/TextureButton" to="." method="_on_texture_button_pressed"]

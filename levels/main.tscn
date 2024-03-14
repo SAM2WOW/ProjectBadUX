@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=26 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
-[ext_resource type="Texture2D" uid="uid://0ed6rfvl13tp" path="res://arts/wallpaper.webp" id="2_dpm1l"]
 [ext_resource type="Script" path="res://scripts/WindowsManager.gd" id="3_6e8k6"]
 [ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="3_asdw0"]
 [ext_resource type="Texture2D" uid="uid://dd3trqs74kas0" path="res://arts/icons/Download1.webp" id="4_fxont"]
@@ -45,17 +44,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_dpm1l")
-expand_mode = 1
-
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -66,6 +54,7 @@ grow_vertical = 2
 color = Color(0, 0.501961, 0.501961, 1)
 
 [node name="Icons" type="MarginContainer" parent="Control"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -170,6 +159,7 @@ window = ExtResource("15_1l86a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 20
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 top_level = true
