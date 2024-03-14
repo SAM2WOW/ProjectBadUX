@@ -14,6 +14,8 @@ var dvd = preload("res://scenes/windows/dvd.tscn")
 var thankyou = preload("res://scenes/windows/thankyou.tscn")
 var thankyou2 = preload("res://scenes/windows/thankyou2.tscn")
 
+var recovery = preload("res://scenes/recovery_game.tscn")
+
 var current_email
 
 var email_delete_count = 0
@@ -164,6 +166,12 @@ func _on_continue2_pressed():
 	if password == "251234":
 		SoundPlayer.play("Confirm")
 		recover_tab.set_current_tab(3)
+		
+		var recover_btn = $Control/CenterContainer/TabContainer/Panel4/CenterContainer/VBoxContainer/Recover
+		recover_btn.modulate = Color("ffffff00")
+		var tween = create_tween()
+		tween.tween_property(recover_btn, "modulate", Color("ffffff"), 4)
+		
 	else:
 		SoundPlayer.play("Deny")
 
@@ -173,9 +181,18 @@ func _on_recover_pressed():
 	
 	$CorruptedMiniGame.play()
 	
-	$RecoveryGame.show()
-	$RecoveryGame.set_process_mode(Node.PROCESS_MODE_INHERIT)
-
+	#$RecoveryGame.show()
+	#$RecoveryGame.set_process_mode(Node.PROCESS_MODE_INHERIT)
+	
+	# spawn the recovery game
+	var r = recovery.instantiate()
+	r.connect("dead", _on_recovery_game_dead)
+	r.connect("win", _on_recovery_game_win)
+	
+	add_child(r)
+	r.set_position(Vector2(107.825, 13.29))
+	
+	
 
 func _on_recovery_game_dead():
 	SoundPlayer.play("Deny")
@@ -183,15 +200,17 @@ func _on_recovery_game_dead():
 	
 	$CorruptedMiniGame.stop()
 	
-	$RecoveryGame.hide()
-	$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
+	$RecoveryGame.queue_free()
+	#$RecoveryGame.hide()
+	#$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
 
 
 func _on_recovery_game_win():
 	$CorruptedMiniGame.stop()
 	
-	$RecoveryGame.hide()
-	$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
+	$RecoveryGame.queue_free()
+	#$RecoveryGame.hide()
+	#$RecoveryGame.set_process_mode(Node.PROCESS_MODE_DISABLED)
 	
 	# delete the email
 	var email = $Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon
