@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cmv4wtgfnvwbu"]
 
-[ext_resource type="Texture2D" uid="uid://bf8cyt2hiqp1a" path="res://arts/icons/Windows98ComputerIcon.webp" id="2_fa27x"]
+[ext_resource type="Texture2D" uid="uid://y1uqxnp3gy3d" path="res://arts/icons/Notepad.png" id="2_djmfe"]
 [ext_resource type="Script" path="res://scenes/healthBar.gd" id="3_0dulu"]
 [ext_resource type="Script" path="res://scenes/MenuButton.gd" id="3_oyxl4"]
 [ext_resource type="PackedScene" uid="uid://8qx2cukxmkd8" path="res://scenes/windows/TaskList.tscn" id="4_aftko"]
@@ -35,7 +35,7 @@ focus_mode = 0
 toggle_mode = true
 button_pressed = true
 text = "Tasks"
-icon = ExtResource("2_fa27x")
+icon = ExtResource("2_djmfe")
 expand_icon = true
 script = ExtResource("3_oyxl4")
 

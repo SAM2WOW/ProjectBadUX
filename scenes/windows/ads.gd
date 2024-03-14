@@ -15,7 +15,8 @@ var ads = [
 	"res://arts/ads/aiads (4).jpg",
 	"res://arts/ducks/aiduck (5).png",
 	"res://arts/ducks/aiduck (3).png",
-	"res://arts/ducks/aiduck (1).png"
+	"res://arts/ducks/aiduck (1).png",
+	"res://arts/ads/dermotologists-hate-her.jpg"
 ]
 
 func _process(delta):
