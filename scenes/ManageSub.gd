@@ -2,6 +2,8 @@ extends ColorRect
 
 var doneStall = false;
 
+var ads = preload("res://scenes/windows/ads.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false;
@@ -25,6 +27,8 @@ func _process(delta):
 	pass
 
 func close():
+	SoundPlayer.play("Deny")
+	
 	visible = false;
 	doneStall = true;
 	$Timer.stop();
@@ -39,16 +43,20 @@ func _on_settings_button_button_down():
 
 
 func _on_sub_1_button_down():
+	SoundPlayer.play("Confirm")
 	$SubDropDowns/VBoxContainer/MarginContainer2.visible = true;
 
 func _on_sub_2_button_down():
+	SoundPlayer.play("Confirm")
 	$SubDropDowns/VBoxContainer/MarginContainer3.visible = true;
 
 func _on_sub_3_button_down():
+	SoundPlayer.play("Confirm")
 	$SubDropDowns/VBoxContainer/MarginContainer4.visible = true;
 	$SubDropDowns/VBoxContainer/MarginContainer5.visible = true;
 
 func _on_sub_4_button_down():
+	SoundPlayer.play("Confirm")
 	$SubDropDowns/VBoxContainer/MarginContainer2.visible = false;
 	$SubDropDowns/VBoxContainer/MarginContainer3.visible = false;
 	$SubDropDowns/VBoxContainer/MarginContainer4.visible = false;
@@ -56,10 +64,12 @@ func _on_sub_4_button_down():
 	$SubDropDowns/VBoxContainer/MarginContainer6.visible = false;
 
 func _on_sub_5_button_down():
+	SoundPlayer.play("Confirm")
 	$SubDropDowns/VBoxContainer/MarginContainer6.visible = true;
 
 
 func _on_cancel_button_down():
+	SoundPlayer.play("Confirm")
 	$SubDropDowns.visible = false;
 	$SubDropDowns2.visible = true;
 	start_stall();
@@ -86,6 +96,7 @@ func dotdotdot():
 
 
 func _on_cancel_sub_1_button_down():
+	SoundPlayer.play("Deny")
 	doneStall = true;
 	$SubDropDowns2.visible = false;
 	$UnsubScreen.visible = true;
@@ -93,3 +104,13 @@ func _on_cancel_sub_1_button_down():
 func unsubscribe():
 	Global.remove_sub($"..".subscription.id);
 	close();
+
+
+func _on_ads_pressed():
+	SoundPlayer.play("Confirm")
+	
+	Global.healthBar.take_damage(10)
+	Global.warningWindow.AddWarning(0)
+	
+	var w = ads.instantiate()
+	Global.windowsManager.add_window(w)

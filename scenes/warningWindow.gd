@@ -14,6 +14,7 @@ class_name WarningWindow;
 	9: ["Oops, looks like you made an unintended purchase.", 7],
 	10: ["Stop those AI ducks before they fly out!", 12],
 	11: ["Don't fall for these 🤭.", 6],
+	12: ["Oh no, looks like they got you", 3]
 }
 
 var warningQueue : Array;

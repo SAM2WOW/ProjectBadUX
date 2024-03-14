@@ -73,5 +73,6 @@ func _on_no_sub_mouse_entered():
 
 
 func _on_no_sub_mouse_exited():
+	SoundPlayer.play("Deny")
 	$"../AudioStreamPlayer2D".stop();
 
