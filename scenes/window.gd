@@ -1,5 +1,5 @@
 extends Window
-
+class_name CustomWindow;
 
 @export var window_icon : Texture2D
 @export var window_name : String
