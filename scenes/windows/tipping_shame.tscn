@@ -23,9 +23,13 @@ position = Vector2i(0, 0)
 size = Vector2i(371, 356)
 unresizable = true
 borderless = true
+always_on_top = true
 script = ExtResource("2_tfyxj")
 window_icon = null
 window_name = ""
+
+[node name="ColorRect" parent="Control" index="0"]
+color = Color(0.658824, 0.85098, 1, 1)
 
 [node name="Tips" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
 layout_mode = 2
