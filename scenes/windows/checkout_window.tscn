@@ -9,6 +9,7 @@ title = "CHECKOUT"
 size = Vector2i(900, 640)
 unresizable = true
 window_icon = ExtResource("2_xjkds")
+window_name = "CHECKOUT"
 
 [node name="ColorRect" parent="Control" index="0"]
 visible = false
