@@ -140,6 +140,16 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Usage of threats or any type of fear-inducing negative consequences to manipulate user decisions."
 fit_content = true
 
+[node name="Generative AI" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/TabContainer" index="12"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/TabContainer/Generative AI" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "With the recent rise in commercial AI bots, it is important to look out for manipulative content generated through AI. One tip is to observe the images carefully and look for odd discrepancies."
+fit_content = true
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" index="1"]
 layout_mode = 2
 
