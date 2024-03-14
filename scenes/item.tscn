@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://onos8j83srey"]
+
+[ext_resource type="Script" path="res://scenes/ShopItem.gd" id="1_kyapc"]
+[ext_resource type="Texture2D" uid="uid://e477jmxvr3pk" path="res://arts/icon.svg" id="2_govpc"]
+
+[node name="Item" type="MarginContainer"]
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_kyapc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_govpc")
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 19.0
+grow_horizontal = 2
+size_flags_vertical = 3
+color = Color(0.635294, 0.635294, 0.635294, 1)
+
+[node name="Label" type="Label" parent="VBoxContainer/TextureRect/ColorRect"]
+layout_mode = 1
+offset_right = 80.0
+offset_bottom = 20.0
+size_flags_vertical = 2
+text = "yo mama"
+vertical_alignment = 1
+
+[node name="RemoveButton" type="Button" parent="VBoxContainer/TextureRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+
+[connection signal="button_down" from="VBoxContainer/TextureRect/ColorRect/RemoveButton" to="." method="_on_remove_button_button_down"]

@@ -1,0 +1,512 @@
+[gd_scene load_steps=3 format=3 uid="uid://3mcr2dw5igyv"]
+
+[ext_resource type="Script" path="res://scenes/checkout.gd" id="1_n71ts"]
+[ext_resource type="PackedScene" uid="uid://onos8j83srey" path="res://scenes/item.tscn" id="2_q5omh"]
+
+[node name="Checkout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n71ts")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.886275, 0.886275, 0.886275, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ReviewItems" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ReviewItems"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Review Items"
+
+[node name="ItemContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 22.15
+
+[node name="Item" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer" instance=ExtResource("2_q5omh")]
+layout_mode = 2
+correctItem = true
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item/VBoxContainer/TextureRect/ColorRect" index="0"]
+text = "Shampoo"
+
+[node name="Item2" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer" instance=ExtResource("2_q5omh")]
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item2/VBoxContainer/TextureRect/ColorRect" index="0"]
+text = "Deoderant"
+
+[node name="Item3" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer" instance=ExtResource("2_q5omh")]
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item3/VBoxContainer/TextureRect/ColorRect" index="0"]
+text = "Face Wash"
+
+[node name="Item4" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer" instance=ExtResource("2_q5omh")]
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item4/VBoxContainer/TextureRect/ColorRect" index="0"]
+text = "Bar of Soap"
+
+[node name="Item5" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer" instance=ExtResource("2_q5omh")]
+layout_mode = 2
+
+[node name="VBoxContainer" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item5" index="0"]
+visible = false
+
+[node name="PersonalInfo" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PersonalInfo"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+text = "Personal Info"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Name *"
+
+[node name="NameText" type="LineEdit" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Jason Mason"
+placeholder_text = "Jason Mason"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "IP Address"
+
+[node name="IpAddress" type="LineEdit" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "192.168 0.1"
+placeholder_text = "192.168 0.1"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Social Security Number"
+
+[node name="SSNText" type="LineEdit" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "101-48-9874"
+placeholder_text = "101-48-9874"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Address *"
+
+[node name="TextEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "82490 Bill Clinton Way, 12259"
+placeholder_text = "82490 Bill Clinton Way, 12259"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Info" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Info"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "* is required"
+horizontal_alignment = 2
+
+[node name="CardInfo" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CardInfo"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Card Info" type="Label" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+text = "Card Info"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Card No. *"
+
+[node name="TextEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.07
+text = "1760 1547 9584 8490"
+placeholder_text = "1760 1547 9584 8490"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Expiration Date *"
+
+[node name="TextEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.07
+text = "01/24/00"
+placeholder_text = "01/24/00"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Security Code *"
+
+[node name="TextEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.07
+text = "039"
+placeholder_text = "039"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Bank Routing Number"
+
+[node name="RoutingNumber" type="LineEdit" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.07
+text = "912408935"
+placeholder_text = "912408935"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Name"
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.07
+placeholder_text = "put your shit here
+"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer3"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Name"
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.07
+placeholder_text = "put your shit here
+"
+
+[node name="CardSliders" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Save card information"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer2"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Allow us to use your card"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer3"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer3/HBoxContainer"]
+layout_mode = 2
+text = "Enable monthly refill"
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer4"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer4/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer4/HBoxContainer"]
+layout_mode = 2
+text = "Don't give us your IP"
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer5"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer5/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer5/HBoxContainer"]
+layout_mode = 2
+text = "Hourly emails"
+
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer6"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer6/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer6/HBoxContainer"]
+layout_mode = 2
+text = "Insurance for Shampoo"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -614.0
+offset_top = -137.0
+offset_right = -34.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer3/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+text = "Total: $ _ . __"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="warningLabel" type="Label" parent="HBoxContainer/VBoxContainer3/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.996078, 0, 0, 1)
+text = "Your information has been sold!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Total: $ _ . __"
+horizontal_alignment = 1
+
+[node name="Confirm" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Confirm Purchase"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="button_down" from="HBoxContainer/VBoxContainer2/Confirm" to="." method="_on_confirm_button_down"]
+
+[editable path="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item"]
+[editable path="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item2"]
+[editable path="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item3"]
+[editable path="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item4"]
+[editable path="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item5"]

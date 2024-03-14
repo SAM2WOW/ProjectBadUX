@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctbonbwyu7yt"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_u1crr"]
+[ext_resource type="PackedScene" uid="uid://3mcr2dw5igyv" path="res://scenes/checkout.tscn" id="2_em8ae"]
+
+[node name="CheckoutWindow" instance=ExtResource("1_u1crr")]
+size = Vector2i(900, 600)
+unresizable = true
+
+[node name="ColorRect" parent="Control" index="0"]
+visible = false
+
+[node name="CenterContainer" parent="Control" index="1"]
+visible = false
+
+[node name="Checkout" parent="Control" index="2" instance=ExtResource("2_em8ae")]
+layout_mode = 1

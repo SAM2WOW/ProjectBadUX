@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqqmtve8d4xl0"]
+[gd_scene load_steps=2 format=3 uid="uid://bqqmtve8d4xl0"]
 
-[ext_resource type="Texture2D" uid="uid://b28svp7gvmcw" path="res://arts/icons/Email.webp" id="1_kw5so"]
 [ext_resource type="Script" path="res://scenes/windowicon.gd" id="2_m1438"]
 
 [node name="WindowIcon" type="Button"]
@@ -10,7 +9,6 @@ offset_bottom = 40.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
 focus_mode = 0
-icon = ExtResource("1_kw5so")
 clip_text = true
 icon_alignment = 1
 vertical_icon_alignment = 0
