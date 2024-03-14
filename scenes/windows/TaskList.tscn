@@ -2,21 +2,25 @@
 
 [ext_resource type="Script" path="res://scenes/windows/task_window.gd" id="1_mvjnr"]
 
-[node name="TaskList" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 395.0
-offset_right = -1013.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TaskList" type="Window"]
+size = Vector2i(283, 316)
+unresizable = true
+borderless = true
+always_on_top = true
 script = ExtResource("1_mvjnr")
 taskList = {
 1: "task 1"
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel"]
 custom_minimum_size = Vector2(33.865, 0)
 layout_mode = 1
 anchors_preset = 9
@@ -35,11 +39,11 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="ColorRect2" type="ColorRect" parent="Panel/MarginContainer"]
+[node name="ColorRect2" type="ColorRect" parent="Control/Panel/MarginContainer"]
 layout_mode = 2
 color = Color(0, 0.109804, 0.682353, 1)
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/ColorRect2"]
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/ColorRect2"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 151.0
@@ -51,14 +55,14 @@ text = "MY TASK LIST"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TaskContainer" type="VBoxContainer" parent="."]
+[node name="TaskContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 38.0
 offset_top = 11.0
-offset_right = -7.0
+offset_right = -2.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2

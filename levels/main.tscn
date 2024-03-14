@@ -167,7 +167,7 @@ icon_name = "Downloader"
 window = ExtResource("15_1l86a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 10
+layer = 20
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 top_level = true

@@ -9,8 +9,15 @@ func _process(delta):
 	pass
 
 func _on_pressed():
-	if !$"../TaskList".visible:
+	if not $"../TaskList".is_visible():
 		$"../TaskList".show_window();
 	else:
 		$"../TaskList".hide_window();
 
+
+
+func _on_toggled(toggled_on):
+	if toggled_on:
+		$"../TaskList".show_window();
+	else:
+		$"../TaskList".hide_window();

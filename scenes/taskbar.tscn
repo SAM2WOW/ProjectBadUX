@@ -16,14 +16,8 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="TaskList" parent="." instance=ExtResource("4_aftko")]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 9
-anchor_right = 0.0
-offset_top = -309.0
-offset_right = 263.0
-offset_bottom = -38.0
-grow_horizontal = 1
+position = Vector2i(0, 365)
+visible = false
 taskList = {
 1: "Download an image of a duck",
 2: "Clean your email inbox",
@@ -112,4 +106,4 @@ warningList = {
 3: "Get fucking owned nerd hope you like shampoo subscriptions"
 }
 
-[connection signal="pressed" from="TaskButton" to="TaskButton" method="_on_pressed"]
+[connection signal="toggled" from="TaskButton" to="TaskButton" method="_on_toggled"]
