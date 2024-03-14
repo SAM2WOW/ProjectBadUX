@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ygmll4g223mh"]
+[gd_scene load_steps=28 format=3 uid="uid://ygmll4g223mh"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
 [ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://cn6sbyi6q46q0" path="res://scenes/windows/web_browser.tscn" id="18_q7rax"]
 [ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/icons/artage-io-48177_1707373402.png" id="22_c4seq"]
 [ext_resource type="PackedScene" uid="uid://b2su87kxv6ukc" path="res://scenes/windows/congradulation.tscn" id="23_i12wd"]
+[ext_resource type="Texture2D" uid="uid://c3bigyqh48pvl" path="res://arts/gif/hamster (1).png" id="25_45j14"]
+[ext_resource type="PackedScene" uid="uid://kcxuc26fc1bx" path="res://scenes/windows/HamsterVirus.tscn" id="26_prcqp"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3si3j")
@@ -121,7 +123,7 @@ icon_texture = ExtResource("15_a7776")
 icon_name = "Dark UX Dictionary"
 window = ExtResource("16_7jdu2")
 
-[node name="TextureButton3" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+[node name="DVD" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false
 layout_mode = 2
 text = ""
@@ -130,8 +132,7 @@ icon_texture = ExtResource("11_qbj6n")
 icon_name = "DVD"
 window = ExtResource("12_q22pg")
 
-[node name="TextureButton4" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
-visible = false
+[node name="Congradulation" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
@@ -139,7 +140,7 @@ icon_texture = ExtResource("22_c4seq")
 icon_name = "Congradulation"
 window = ExtResource("23_i12wd")
 
-[node name="TextureButton5" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+[node name="Confirm Shame" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false
 layout_mode = 2
 text = ""
@@ -148,7 +149,7 @@ icon_texture = ExtResource("4_fxont")
 icon_name = "Confirm Shame"
 window = ExtResource("14_kw5uc")
 
-[node name="TextureButton6" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+[node name="Downloader" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false
 layout_mode = 2
 text = ""
@@ -156,6 +157,14 @@ icon = ExtResource("4_fxont")
 icon_texture = ExtResource("4_fxont")
 icon_name = "Downloader"
 window = ExtResource("15_1l86a")
+
+[node name="Hamster" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("25_45j14")
+icon_name = "Hamster"
+window = ExtResource("26_prcqp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 20
