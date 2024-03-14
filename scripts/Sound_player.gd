@@ -10,7 +10,8 @@ var sounds = {
 	"Success": "Success.wav",
 	"PageTurn": "Pageturn.wav",
 	"Trash": "Trash_Sound.wav",
-	"Damage": "FailSplit2.wav"
+	"Damage": "FailSplit2.wav",
+	"Yay": "Yay.wav"
 }
 
 

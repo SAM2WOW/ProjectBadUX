@@ -13,7 +13,6 @@ func _ready():
 	initiate_tasks();
 	initialPos = position.y;
 
-
 func show_window():
 	SoundPlayer.play("Confirm")
 	
@@ -64,14 +63,33 @@ func complete_task(taskId : int):
 		if !task is Task || task.id != taskId: continue;
 		task.finish_task();
 		taskCompletion[taskId] = true;
+		
+		# check if all the task if complete
+		var allComplete = true
+		for i in taskCompletion.values():
+			if i == false:
+				allComplete = false
+		
+		if allComplete:
+			show_final_completion()
+
+
+func show_final_completion():
+	var final_window = load("res://scenes/windows/congradulation.tscn")
+	Global.console.install_app(load("res://arts/icons/Notepad.png"), "Congratulation", final_window)
+	
+	var w = final_window.instantiate()
+	Global.windowsManager.add_window(w)
 
 
 func show_warning(warning : String):
 	pass;
 	
+	
 func _input(ev):
 	if (Input.is_key_pressed(KEY_2)):
-		complete_task(1);
+		return
+		show_final_completion()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -47,6 +47,8 @@ func _ready():
 
 
 func donwload():
+	$CorruptedMiniGame.stop()
+	
 	$Control.hide()
 	$Finished.show()
 	

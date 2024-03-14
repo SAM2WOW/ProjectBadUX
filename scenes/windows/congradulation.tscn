@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2su87kxv6ukc"]
+[gd_scene load_steps=10 format=3 uid="uid://b2su87kxv6ukc"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_2tvth"]
 [ext_resource type="Texture2D" uid="uid://cwift0uawmdct" path="res://arts/icons/artage-io-48177_1707373402.png" id="2_3bslj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c532wvuqb22an" path="res://arts/gif/thankyou (2).png" id="4_onv4h"]
 [ext_resource type="Texture2D" uid="uid://bqo8ipriu0gyu" path="res://arts/gif/thankyou (3).png" id="5_0731m"]
 [ext_resource type="Texture2D" uid="uid://bwso7jbx0qjr3" path="res://arts/gif/thankyou (4).png" id="6_34fa3"]
+[ext_resource type="AudioStream" uid="uid://3fsu4veuvrbw" path="res://sounds/Yay.wav" id="8_3v1vi"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yvrd6"]
 frames = 6
@@ -23,12 +24,12 @@ frame_4/duration = 0.15
 frame_5/texture = ExtResource("4_onv4h")
 frame_5/duration = 0.15
 
-[node name="Congradulation" instance=ExtResource("1_2tvth")]
-title = "Congradulation!"
+[node name="Congratulation" instance=ExtResource("1_2tvth")]
+title = "Congratulation!"
 position = Vector2i(0, 22)
-size = Vector2i(541, 387)
+size = Vector2i(541, 397)
 window_icon = ExtResource("2_3bslj")
-window_name = "Congradulation!"
+window_name = "Congratulation!"
 
 [node name="Label" parent="Control/CenterContainer" index="0"]
 visible = true
@@ -57,3 +58,8 @@ stretch_mode = 5
 layout_mode = 2
 texture = ExtResource("3_ynlug")
 stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource("8_3v1vi")
+volume_db = -3.089
+autoplay = true
