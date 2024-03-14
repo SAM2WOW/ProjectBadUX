@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://b11hmmcjsikmg"]
+[gd_scene load_steps=8 format=3 uid="uid://b11hmmcjsikmg"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_vl86w"]
 [ext_resource type="Texture2D" uid="uid://dunifqaoe4grn" path="res://Themes/Classic95/Styles/General/DownArrow.png" id="2_80wfq"]
 [ext_resource type="Script" path="res://scenes/windows/trick_confirm.gd" id="2_wxph2"]
+[ext_resource type="Texture2D" uid="uid://b4fgcmlicd0yl" path="res://arts/gif/heart (2).png" id="4_f15ne"]
+[ext_resource type="Texture2D" uid="uid://diemmorgwghe8" path="res://arts/gif/heart (1).png" id="5_2eft2"]
+[ext_resource type="Texture2D" uid="uid://dsmbxthm87gp2" path="res://arts/gif/heart (3).png" id="6_3bq8e"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_8g0sn"]
+frames = 3
+frame_0/texture = ExtResource("4_f15ne")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("5_2eft2")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("6_3bq8e")
+frame_2/duration = 0.1
 
 [node name="Trick Confirm" instance=ExtResource("1_vl86w")]
 position = Vector2i(0, 22)
@@ -15,25 +27,38 @@ second_trick = false
 
 [node name="CenterContainer2" type="CenterContainer" parent="Control" index="2"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 65.0
 grow_horizontal = 2
-grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer2" index="0"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/CenterContainer2/VBoxContainer" index="0"]
 layout_mode = 2
-text = "Would you like to scbscribe to our
-Preminum Automated E-mail service?
+text = " 
  
  
-"
+ 
+ 
+Sign up now and receive 80% off coupons
+for your next purchase!"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer2/VBoxContainer" index="1"]
+[node name="Label2" type="Label" parent="Control/CenterContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.635294, 0.635294, 0.635294, 1)
+theme_override_font_sizes/font_size = 11
+text = "(Terms and conditions applys)"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Control/CenterContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_8g0sn")
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer2/VBoxContainer" index="3"]
 layout_mode = 2
 alignment = 1
 
@@ -44,14 +69,14 @@ offset_left = 132.0
 offset_top = 217.0
 offset_right = 211.0
 offset_bottom = 245.0
-text = "    YES    "
+text = "    OK    "
 
 [node name="Confirm" type="Button" parent="Node2D" index="1"]
 offset_left = 215.0
 offset_top = 217.0
 offset_right = 292.0
 offset_bottom = 245.0
-text = "confirm"
+text = "Confirm"
 
 [node name="No" type="Button" parent="Node2D" index="2"]
 anchors_preset = 3
@@ -70,8 +95,9 @@ text = "NO"
 flat = true
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="." index="2"]
-size = Vector2i(241, 155)
-dialog_text = "If you choose to cancel, you might lose ALL of your save data!"
+title = "Are you sure?"
+size = Vector2i(256, 155)
+dialog_text = "If you choose no, you might lose ALL of your purchase infos!"
 dialog_autowrap = true
 
 [connection signal="pressed" from="Node2D/Yes" to="." method="_on_yes_pressed"]

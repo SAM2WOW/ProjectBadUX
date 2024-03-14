@@ -34,6 +34,9 @@ func _on_no_pressed():
 func _on_yes_pressed():
 	emit_signal("confirmed")
 	
+	Global.healthBar.take_damage(10)
+	Global.warningWindow.AddWarning(3)
+	
 	SoundPlayer.play("Confirm")
 	Global.windowsManager.remove_window(self)
 	queue_free()

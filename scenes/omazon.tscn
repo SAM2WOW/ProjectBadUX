@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://drdwgq3vfr6ip"]
+[gd_scene load_steps=29 format=3 uid="uid://drdwgq3vfr6ip"]
 
 [ext_resource type="Script" path="res://scenes/omazon.gd" id="1_t28q0"]
 [ext_resource type="Script" path="res://resources/subscription.gd" id="2_2qgc2"]
@@ -51,6 +51,14 @@ frames = 2
 frame_0/texture = ExtResource("10_5j085")
 frame_1/texture = ExtResource("11_u46v6")
 frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_xuiol"]
+frames = 3
+frame_0/texture = ExtResource("4_75xwu")
+frame_1/texture = ExtResource("8_wssnf")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("10_20utm")
+frame_2/duration = 1.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -261,11 +269,18 @@ theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 
-[node name="Button" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/LimitedSale/ColorRect7/VBoxContainer/MarginContainer"]
+[node name="CouponBtn" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/LimitedSale/ColorRect7/VBoxContainer/MarginContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_75xwu")
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_xuiol")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/LimitedSale/ColorRect7/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "80% Off Sale!"
+horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
@@ -303,14 +318,15 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 0
 
-[node name="Button" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer"]
+[node name="DogShampoo" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_ljkjo")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_lf62g")
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/Button"]
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/DogShampoo"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -324,7 +340,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0, 0, 0, 0.411765)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/Button/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/DogShampoo/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -332,7 +348,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="expire" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/Button/ColorRect/VBoxContainer"]
+[node name="expire" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/DogShampoo/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
@@ -341,19 +357,19 @@ text = " EXPIRES IN
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/Button/ColorRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/DogShampoo/ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/Button/ColorRect/VBoxContainer/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/DogShampoo/ColorRect/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 0.486275)
 
-[node name="TimerText" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/Button/ColorRect/VBoxContainer/MarginContainer/ColorRect"]
+[node name="TimerText" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/DogShampoo/ColorRect/VBoxContainer/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -410,9 +426,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_right = 2
 
-[node name="TextureRect" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer"]
+[node name="ShampooAds" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_vl2cx")
 ignore_texture_size = true
 stretch_mode = 0
@@ -423,9 +440,10 @@ size_flags_horizontal = 3
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_right = 2
 
-[node name="TextureRect" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer2"]
+[node name="ShampooAds" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_wssnf")
 ignore_texture_size = true
 stretch_mode = 0
@@ -435,9 +453,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 2
 
-[node name="TextureRect" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer3"]
+[node name="ShampooAds" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("9_cmf25")
 ignore_texture_size = true
 stretch_mode = 0
@@ -482,9 +501,10 @@ size_flags_horizontal = 3
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_right = 2
 
-[node name="TextureRect" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer"]
+[node name="ShampooAds" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("10_20utm")
 ignore_texture_size = true
 stretch_mode = 0
@@ -498,6 +518,7 @@ theme_override_constants/margin_right = 2
 [node name="RightButton" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_lt87c")
 ignore_texture_size = true
 stretch_mode = 0
@@ -507,9 +528,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 5
 
-[node name="TextureRect" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer3"]
+[node name="ShampooAds" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_75xwu")
 ignore_texture_size = true
 stretch_mode = 0
@@ -1129,7 +1151,14 @@ text = "I hate puppies."
 
 [connection signal="button_down" from="VBoxContainer/ColorRect5/SettingsButton" to="ManageSub" method="_on_settings_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/MarginContainer/MarginContainer/ColorRect6/baitButton" to="." method="_on_bait_button_button_down"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/LimitedSale/ColorRect7/VBoxContainer/MarginContainer/CouponBtn" to="." method="_on_coupon_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/HBoxContainer/MarginContainer2/ColorRect8/VBoxContainer/MarginContainer/DogShampoo" to="." method="_on_dog_shampoo_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer/ShampooAds" to="." method="_on_shampoo_ads_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer2/ShampooAds" to="." method="_on_shampoo_ads_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer3/ShampooAds" to="." method="_on_shampoo_ads_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer/ShampooAds" to="." method="_on_shampoo_ads_pressed"]
 [connection signal="button_down" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer2/RightButton" to="." method="_on_right_button_button_down"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer3/ShampooAds" to="." method="_on_shampoo_ads_pressed"]
 [connection signal="button_down" from="SubBar" to="ManageSub" method="_on_sub_bar_button_down"]
 [connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer/SignUp" to="SubTrick" method="subscribe"]
 [connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer2/Subscribe" to="SubTrick" method="subscribe"]
