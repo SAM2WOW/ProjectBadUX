@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 script = ExtResource("1_wco4s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -39,6 +40,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CloseButton" type="Button" parent="ColorRect/ColorRect2"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

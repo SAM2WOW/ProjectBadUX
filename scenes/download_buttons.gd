@@ -19,7 +19,7 @@ func _ready():
 		$TextureButton.set_default_cursor_shape(0)
 	
 	var newColor = Color.from_hsv((randi() % 12) / 12.0, 1, 1)
-	$TextureButton.modulate = newColor
+	#$TextureButton.modulate = newColor
 	$Leg.modulate = newColor
 	$Leg2.modulate = newColor
 

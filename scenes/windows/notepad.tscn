@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bydua10qenqlu"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_wfr3h"]
-[ext_resource type="Texture2D" uid="uid://cye1pdsjf00si" path="res://arts/icons/artage-io-48140_1707444770.png" id="2_0ttwu"]
+[ext_resource type="Texture2D" uid="uid://bkppim5yhtbal" path="res://arts/icons/StickNote1.png" id="2_u50ov"]
 [ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="3_omi5c"]
 [ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="4_sol5s"]
 [ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="5_vgsp1"]
@@ -10,7 +10,7 @@
 title = "Memo.txt"
 position = Vector2i(0, 0)
 size = Vector2i(256, 317)
-window_icon = ExtResource("2_0ttwu")
+window_icon = ExtResource("2_u50ov")
 window_name = "Memo.txt"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" index="2"]
