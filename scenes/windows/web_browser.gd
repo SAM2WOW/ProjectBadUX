@@ -5,6 +5,7 @@ var ads = preload("res://scenes/windows/ads.tscn")
 var ads_video = preload("res://scenes/windows/ads_video.tscn")
 var cup = preload("res://scenes/windows/crash_cup.tscn")
 var downloader = preload("res://scenes/windows/downloader.tscn")
+var hammy = preload("res://scenes/windows/HamsterVirus.tscn")
 
 var spawn_time = 2.0
 var duck = preload("res://scenes/duck.tscn")
@@ -93,22 +94,24 @@ func _on_bad_website_1_pressed():
 			await get_tree().create_timer(0.2).timeout
 
 func _on_bad_website_2_pressed():
-	#var w = cup.instantiate()
-	#Global.windowsManager.add_window(w)
-	
-	#_on_button_pressed()
+	var w = hammy.instantiate()
+	Global.windowsManager.add_window(w)
 	
 	SoundPlayer.play("Confirm")
 	
 	Global.healthBar.take_damage(10)
 	Global.warningWindow.AddWarning(0)
 	
-	for i in range(2):
+	Global.console.install_app(load("res://arts/gif/hamster (1).png"), "Hammy", load("res://scenes/windows/HamsterVirus.tscn"))
+	
+	"""2):
 		var w = ads.instantiate()
 		Global.windowsManager.add_window(w)
 		
 		if get_tree():
 			await get_tree().create_timer(0.2).timeout
+	"""
+
 
 func _on_good_website_pressed():
 	SoundPlayer.play("Confirm")

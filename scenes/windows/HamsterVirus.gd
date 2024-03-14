@@ -1,7 +1,16 @@
 extends "res://scenes/window.gd"
 
+
 func _on_close_requested():
-	Global.console.crash_game()
+	SoundPlayer.play("Deny")
+	
+	$Control.hide()
+	$RIP.show()
+	
+	await get_tree().create_timer(1).timeout
+	
+	Global.windowsManager.remove_window(self)
+	queue_free()
 
 
 func _process(delta):
@@ -33,3 +42,6 @@ func _on_confirmation_dialog_confirmed():
 	$Timer.start()
 
 
+func _on_feed_pressed():
+	$HungerTimer.stop()
+	$Timer.start()

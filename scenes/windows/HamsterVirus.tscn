@@ -46,6 +46,7 @@ bg_color = Color(0.898039, 0.466667, 0, 1)
 
 [node name="Hamster" type="Window"]
 title = "Hamster!! (cute"
+position = Vector2i(0, 22)
 size = Vector2i(256, 256)
 unresizable = true
 keep_title_visible = true
@@ -144,6 +145,49 @@ max_value = 20.0
 value = 20.0
 show_percentage = false
 
+[node name="Feed" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 194.13
+offset_top = 85.685
+offset_right = 244.13
+offset_bottom = 113.685
+text = "Feed"
+
+[node name="RIP" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="RIP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="RIP"]
+offset_left = 7.99
+offset_right = 247.99
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(0, 0.298039, 0.929412, 1)
+text = "HAMMY IS DEAD
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+YOU ARE A TERRBLE PERSON"
+horizontal_alignment = 1
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
@@ -160,6 +204,7 @@ dialog_close_on_escape = false
 cancel_button_text = "No I hate him"
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="Control/Feed" to="." method="_on_feed_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
 [connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
