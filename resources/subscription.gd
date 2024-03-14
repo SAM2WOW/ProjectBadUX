@@ -20,4 +20,5 @@ func update(delta):
 	tickTimer += delta;
 	if tickTimer >= tickRate:
 		tickTimer -= tickRate;
-		Global.healthBar.take_damage(damagePerTick);
+		if Global.healthBar != null: 
+			Global.healthBar.call_deferred("take_damage", damagePerTick)

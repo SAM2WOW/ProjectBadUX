@@ -399,7 +399,7 @@ texture_normal = ExtResource("4_v6qtc")
 texture_pressed = ExtResource("5_4eyai")
 
 [node name="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton2/HBoxContainer" index="1"]
-text = "Allow us to use your card"
+text = "Allow us to use your card for auto refill"
 
 [node name="ToggleButton3" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2" instance=ExtResource("3_u1k2m")]
 layout_mode = 2

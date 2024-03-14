@@ -9,6 +9,7 @@ func _ready():
 
 func crash_game():
 	SoundPlayer.play("Crash")
+	Global.subscriptions.clear();
 	get_tree().change_scene_to_file("res://levels/crashed.tscn")
 
 

@@ -168,6 +168,9 @@ icon_texture = ExtResource("25_45j14")
 icon_name = "Hamster"
 window = ExtResource("26_prcqp")
 
+[node name="Taskbar" parent="." instance=ExtResource("18_n68yv")]
+position = Vector2i(0, 570)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 20
 visible = false
@@ -175,13 +178,14 @@ visible = false
 [node name="Control" type="Control" parent="CanvasLayer"]
 top_level = true
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 mouse_filter = 2
 
-[node name="Taskbar" parent="CanvasLayer/Control" instance=ExtResource("18_n68yv")]
-
 [node name="Windows" type="Node2D" parent="."]
+
+[editable path="Taskbar"]

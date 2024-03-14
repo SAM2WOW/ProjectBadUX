@@ -2,9 +2,12 @@ extends Node
 
 
 func _ready():
+	# f u
+	$Taskbar.position = Vector2i(0, 680)
+	
 	await get_tree().create_timer(0.3).timeout
 	$CanvasLayer.show()
-	$CanvasLayer/Control/Taskbar/TaskList.show_window()
+	$Taskbar/TaskList.show_window()
 	
 	await get_tree().create_timer(0.4).timeout
 	$Control/Icons.show()
