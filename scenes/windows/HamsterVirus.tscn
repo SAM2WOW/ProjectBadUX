@@ -1,0 +1,167 @@
+[gd_scene load_steps=16 format=3 uid="uid://kcxuc26fc1bx"]
+
+[ext_resource type="Script" path="res://scenes/windows/HamsterVirus.gd" id="1_i5upb"]
+[ext_resource type="Texture2D" uid="uid://c3bigyqh48pvl" path="res://arts/gif/hamster (1).png" id="2_a0c5v"]
+[ext_resource type="Texture2D" uid="uid://d3slp1o4yfop1" path="res://arts/gif/hamster (2).png" id="3_qdjul"]
+[ext_resource type="Texture2D" uid="uid://3u21lk77xcrs" path="res://arts/gif/hamster (3).png" id="4_4xxsl"]
+[ext_resource type="Texture2D" uid="uid://dxh2cbujvusly" path="res://arts/gif/hamster (4).png" id="5_q0o1u"]
+[ext_resource type="Texture2D" uid="uid://dx7qn8k62i6ec" path="res://arts/gif/hamster (5).png" id="6_ovrhc"]
+[ext_resource type="Texture2D" uid="uid://wpbcsy264xrm" path="res://arts/gif/hamster (6).png" id="7_ajca0"]
+[ext_resource type="Texture2D" uid="uid://dlrt1xdgijyg2" path="res://arts/gif/hamster (7).png" id="8_bghek"]
+[ext_resource type="Texture2D" uid="uid://bkhwondmo672p" path="res://arts/gif/hamster (8).png" id="9_kuw46"]
+[ext_resource type="Texture2D" uid="uid://b4fgcmlicd0yl" path="res://arts/gif/heart (2).png" id="10_yvd4f"]
+[ext_resource type="Texture2D" uid="uid://diemmorgwghe8" path="res://arts/gif/heart (1).png" id="11_yde58"]
+[ext_resource type="Texture2D" uid="uid://dsmbxthm87gp2" path="res://arts/gif/heart (3).png" id="12_2n7fo"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_f4jid"]
+frames = 8
+speed_scale = 10.0
+frame_0/texture = ExtResource("2_a0c5v")
+frame_1/texture = ExtResource("3_qdjul")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_4xxsl")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_q0o1u")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("6_ovrhc")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("7_ajca0")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("8_bghek")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("9_kuw46")
+frame_7/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_jmudr"]
+frames = 3
+frame_0/texture = ExtResource("10_yvd4f")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("11_yde58")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("12_2n7fo")
+frame_2/duration = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6mda"]
+bg_color = Color(0.898039, 0.466667, 0, 1)
+
+[node name="Hamster" type="Window"]
+title = "Hamster!! (cute"
+size = Vector2i(256, 256)
+unresizable = true
+keep_title_visible = true
+content_scale_mode = 1
+script = ExtResource("1_i5upb")
+window_icon = ExtResource("2_a0c5v")
+window_name = "Hamster!! (cute"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.792157, 0.623529, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 33.53
+offset_top = 50.235
+offset_right = 93.53
+offset_bottom = 120.235
+scale = Vector2(3.015, 2)
+texture = SubResource("AnimatedTexture_f4jid")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 13.175
+offset_top = 76.575
+offset_right = 53.175
+offset_bottom = 116.575
+texture = SubResource("AnimatedTexture_jmudr")
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 191.02
+offset_top = 129.12
+offset_right = 231.02
+offset_bottom = 169.12
+texture = SubResource("AnimatedTexture_jmudr")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 7.99
+offset_right = 247.99
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(0, 0.298039, 0.929412, 1)
+text = "DO NOT CLOSE THIS WINDOW!
+YOUR PC WILL CRASH!
+ 
+ 
+ 
+ 
+ 
+ 
+Feed Hammy or else
+YOU WILL SUFFER!"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.454902, 0.172549, 0.0313726, 1)
+theme_override_font_sizes/font_size = 11
+text = "Hunger:"
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_x6mda")
+max_value = 20.0
+value = 20.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="HungerTimer" type="Timer" parent="."]
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = "PLEASE PLEASE PLEASE"
+always_on_top = true
+ok_button_text = "FEED"
+dialog_text = "FEED HAMMY NOW~!"
+dialog_close_on_escape = false
+cancel_button_text = "No I hate him"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
+[connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
+[connection signal="close_requested" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_close_requested"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
