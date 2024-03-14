@@ -421,13 +421,13 @@ texture_normal = ExtResource("4_v6qtc")
 texture_pressed = ExtResource("5_4eyai")
 
 [node name="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton4/HBoxContainer" index="1"]
-text = "Subscribe to weekly emails"
+text = "Share my card information"
 
 [node name="ToggleButton5" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2" instance=ExtResource("3_u1k2m")]
 layout_mode = 2
 
 [node name="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton5/HBoxContainer" index="1"]
-text = "Unsubscribe to emails"
+text = "Don't sell personal information"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
