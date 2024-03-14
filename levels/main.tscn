@@ -112,7 +112,7 @@ layout_mode = 2
 text = ""
 icon = ExtResource("4_fxont")
 icon_texture = ExtResource("14_35ubr")
-icon_name = "Omazon Shopping"
+icon_name = "Omazon"
 window = ExtResource("14_pm5rl")
 
 [node name="DuckBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
