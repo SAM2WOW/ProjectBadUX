@@ -27,37 +27,63 @@ frame_5/duration = 0.15
 [node name="Congratulation" instance=ExtResource("1_2tvth")]
 title = "Congratulation!"
 position = Vector2i(0, 22)
-size = Vector2i(541, 397)
+size = Vector2i(606, 397)
+unresizable = true
 window_icon = ExtResource("2_3bslj")
 window_name = "Congratulation!"
 
-[node name="Label" parent="Control/CenterContainer" index="0"]
-visible = true
-text = ""
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" index="1"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/MarginContainer" index="0"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer" index="0"]
+[node name="Label2" type="Label" parent="Control/ScrollContainer/MarginContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
-text = "Congradulation!
+text = "You did it!
  
-You have finished the dark UX test!
- 
- Beware of what the internet have brought to you
-in the future...
- "
-horizontal_alignment = 1
+It's super important to watch out for sneaky design tricks online because they can affect how we behave and feel while using apps or websites. These tricks, called dark user experience (UX) patterns, might push us to do things we don’t want to do or make us feel confused or powerless.The internet can be a scary place so we hope players leave our game feeling empowered to make informed decisions when navigating confusing UX."
+autowrap_mode = 3
 
-[node name="TextureRect2" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="1"]
+[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/MarginContainer/VBoxContainer" index="1"]
 layout_mode = 2
 texture = SubResource("AnimatedTexture_yvrd6")
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/VBoxContainer" index="2"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/MarginContainer/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Credits:
+Sam Feng (Programmer)
+Andrew Wei (Programmer)
+Gabriel Gallegos (Art & Sound)
+Samantha Chen (Designer)"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/MarginContainer/VBoxContainer" index="3"]
 layout_mode = 2
 texture = ExtResource("3_ynlug")
 stretch_mode = 5
+
+[node name="CenterContainer" parent="Control" index="2"]
+visible = false
+
+[node name="Label" parent="Control/CenterContainer" index="0"]
+visible = true
+text = ""
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("8_3v1vi")
