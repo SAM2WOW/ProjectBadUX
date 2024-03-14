@@ -88,7 +88,7 @@ func _on_back_pressed():
 
 
 func _on_delete_pressed():
-	SoundPlayer.play("Fail")
+	SoundPlayer.play("Trash")
 	
 	Global.deleted_emails.append(current_email.sender_email)
 	current_email.queue_free()

@@ -15,6 +15,8 @@ func _ready():
 
 
 func _on_tab_container_tab_changed(tab):
+	SoundPlayer.play("PageTurn")
+	
 	currentTabs = tab
 	$Control/MarginContainer/VBoxContainer/HBoxContainer/Label.set_text("%d/%d" % [currentTabs + 1, totalTabs])
 	

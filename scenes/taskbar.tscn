@@ -106,4 +106,9 @@ warningList = {
 3: "Get fucking owned nerd hope you like shampoo subscriptions"
 }
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="toggled" from="TaskButton" to="TaskButton" method="_on_toggled"]
+[connection signal="timeout" from="Timer" to="HealthBar" method="_on_timer_timeout"]
