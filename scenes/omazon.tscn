@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://drdwgq3vfr6ip"]
+[gd_scene load_steps=33 format=3 uid="uid://drdwgq3vfr6ip"]
 
 [ext_resource type="Script" path="res://scenes/omazon.gd" id="1_t28q0"]
 [ext_resource type="Script" path="res://resources/subscription.gd" id="2_2qgc2"]
@@ -24,6 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://bhu2atmj7kt0l" path="res://arts/Realshampoo.png" id="11_lt87c"]
 [ext_resource type="Texture2D" uid="uid://dtbbpvilvrchv" path="res://arts/banners2.jpg" id="11_u46v6"]
 [ext_resource type="Texture2D" uid="uid://bfoqp7np1trw7" path="res://arts/XRed.png" id="13_ppnnu"]
+[ext_resource type="Texture2D" uid="uid://b4fgcmlicd0yl" path="res://arts/gif/heart (2).png" id="22_eb2ds"]
+[ext_resource type="Texture2D" uid="uid://diemmorgwghe8" path="res://arts/gif/heart (1).png" id="23_077cs"]
+[ext_resource type="Texture2D" uid="uid://dsmbxthm87gp2" path="res://arts/gif/heart (3).png" id="24_co7li"]
 
 [sub_resource type="Resource" id="Resource_oj6ci"]
 script = ExtResource("2_2qgc2")
@@ -59,6 +62,15 @@ frame_1/texture = ExtResource("8_wssnf")
 frame_1/duration = 1.0
 frame_2/texture = ExtResource("10_20utm")
 frame_2/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_f2kvo"]
+frames = 3
+frame_0/texture = ExtResource("22_eb2ds")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("23_077cs")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("24_co7li")
+frame_2/duration = 0.1
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -690,6 +702,19 @@ autowrap_mode = 3
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 18
+text = "You will be charged HP every 2 seconds!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="SubTrick/SubscribeScreen/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_f2kvo")
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="SubTrick/SubscribeScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 18
 text = "If you would like to change your subscription, please go to your account settings"
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -1162,13 +1187,13 @@ text = "I hate puppies."
 [connection signal="button_down" from="SubBar" to="ManageSub" method="_on_sub_bar_button_down"]
 [connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer/SignUp" to="SubTrick" method="subscribe"]
 [connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer2/Subscribe" to="SubTrick" method="subscribe"]
-[connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer2/NoButton" to="SubTrick" method="no_subscribe"]
 [connection signal="mouse_entered" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer2/NoButton" to="SubTrick" method="_on_no_label_mouse_entered"]
+[connection signal="pressed" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer2/NoButton" to="SubTrick" method="no_subscribe"]
 [connection signal="button_down" from="SubTrick/SubscribeScreen/Button" to="SubTrick" method="close"]
-[connection signal="button_down" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer/SignUp" to="SubTrick" method="subscribe2"]
-[connection signal="button_down" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="SubTrick" method="close"]
+[connection signal="pressed" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer/SignUp" to="SubTrick" method="subscribe2"]
 [connection signal="mouse_entered" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="SubTrick" method="_on_no_sub_mouse_entered"]
 [connection signal="mouse_exited" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="SubTrick" method="_on_no_sub_mouse_exited"]
+[connection signal="pressed" from="SubTrick/SubscribeScreen2/VBoxContainer/HBoxContainer/MarginContainer2/NoSub" to="SubTrick" method="close"]
 [connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer/sub1" to="ManageSub" method="_on_sub_1_button_down"]
 [connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer2/sub2" to="ManageSub" method="_on_sub_2_button_down"]
 [connection signal="button_down" from="ManageSub/SubDropDowns/VBoxContainer/MarginContainer3/sub3" to="ManageSub" method="_on_sub_3_button_down"]

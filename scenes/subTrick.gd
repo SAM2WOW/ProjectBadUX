@@ -44,6 +44,9 @@ func _on_no_label_mouse_entered():
 	
 func subscribe():
 	print("sub");
+	
+	SoundPlayer.play("Yay")
+	
 	Global.warningWindow.AddWarning(7);
 	Global.subscriptions.push_back($"..".subscription.duplicate());
 	$SubPrompt.visible = false;
@@ -54,6 +57,7 @@ func subscribe2():
 	subscribe();
 	
 func no_subscribe():
+	SoundPlayer.play("Confirm")
 	$SubPrompt.visible = false;
 	$SubscribeScreen2.visible = true;
 
