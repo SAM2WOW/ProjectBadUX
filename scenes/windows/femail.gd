@@ -100,7 +100,7 @@ func _on_delete_pressed():
 			Global.taskWindow.complete_task(2)
 	else:
 		Global.healthBar.take_damage(20)
-		Global.warningWindow.AddWarning(1)
+		Global.warningWindow.AddWarning(4)
 	
 	_on_back_pressed()
 
@@ -110,7 +110,7 @@ func _on_virus_pressed():
 	Global.windowsManager.add_window(w)
 	
 	Global.healthBar.take_damage(10)
-	Global.warningWindow.AddWarning(0)
+	Global.warningWindow.AddWarning(5)
 
 
 func _on_bad_link_pressed():
@@ -119,12 +119,12 @@ func _on_bad_link_pressed():
 		Global.windowsManager.add_window(w)
 	
 	Global.healthBar.take_damage(10)
-	Global.warningWindow.AddWarning(0)
+	Global.warningWindow.AddWarning(5)
 
 
 func _on_dvd_pressed():
 	Global.healthBar.take_damage(10)
-	Global.warningWindow.AddWarning(0)
+	Global.warningWindow.AddWarning(5)
 	
 	var w = dvd.instantiate()
 	Global.windowsManager.add_window(w)

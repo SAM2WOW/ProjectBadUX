@@ -44,7 +44,7 @@ func _on_no_label_mouse_entered():
 	
 func subscribe():
 	print("sub");
-	Global.warningWindow.AddWarning(3);
+	Global.warningWindow.AddWarning(7);
 	Global.subscriptions.push_back($"..".subscription.duplicate());
 	$SubPrompt.visible = false;
 	$SubscribeScreen2.visible = false;

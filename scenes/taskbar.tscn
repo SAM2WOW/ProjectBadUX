@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/healthBar.gd" id="3_0dulu"]
 [ext_resource type="Script" path="res://scenes/MenuButton.gd" id="3_oyxl4"]
 [ext_resource type="PackedScene" uid="uid://8qx2cukxmkd8" path="res://scenes/windows/TaskList.tscn" id="4_aftko"]
-[ext_resource type="PackedScene" uid="uid://c7vxo6rpic2x6" path="res://scenes/warningWindow.tscn" id="8_whrwn"]
+[ext_resource type="Script" path="res://scenes/warningWindow.gd" id="5_sk432"]
 
 [node name="Taskbar" type="Panel"]
 custom_minimum_size = Vector2(0, 40)
@@ -87,24 +87,11 @@ horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="WarningWindow" parent="." instance=ExtResource("8_whrwn")]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-offset_left = -209.0
-offset_top = -234.0
-offset_right = -2.0
-offset_bottom = -30.0
-grow_horizontal = 0
-grow_vertical = 0
-warningList = {
-0: "Watch out for websites that hide behind a false address. (Tip: hover above the site before you click).",
-1: "Careful not to hit a real duck! AI is becoming increasingly better at emulating the world around us.",
-2: "Oops wrong button. Make sure to check if the button is an advertisement in disguise",
-3: "Get fucking owned nerd hope you like shampoo subscriptions"
-}
+[node name="WarningSpawner" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_sk432")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2

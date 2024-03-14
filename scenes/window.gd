@@ -27,8 +27,4 @@ func _on_close_requested():
 
 
 func _on_button_pressed():
-	Global.windowsManager.remove_window(self)
-	
-	queue_free()
-	
-	SoundPlayer.play("Deny")
+	_on_close_requested()

@@ -7,7 +7,7 @@ var ads = preload("res://scenes/windows/ads.tscn")
 
 func _on_pressed():
 	Global.healthBar.take_damage(10)
-	Global.warningWindow.AddWarning(0)
+	Global.warningWindow.AddWarning(3)
 	
 	for i in range(amount):
 		var w = ads.instantiate()
