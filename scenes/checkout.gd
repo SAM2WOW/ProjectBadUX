@@ -1,5 +1,6 @@
 extends Control
 var itemContainer;
+var buttonContainer;
 var ipText;
 var ssnText;
 var bankText;
@@ -9,6 +10,7 @@ var totalLabel;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	itemContainer = $MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer;
+	buttonContainer = $MarginContainer/VBoxContainer/CardSliders/VBoxContainer2;
 	ipText = $MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/IpAddress;
 	ssnText = $MarginContainer/VBoxContainer/PersonalInfo/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer/SSNText;
 	bankText = $MarginContainer/VBoxContainer/CardInfo/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer/RoutingNumber;
@@ -42,6 +44,13 @@ func check_information():
 		return false;
 	return true;
 
+func check_buttons():
+	for c in buttonContainer.get_children():
+		if !c is ToggleButton: continue;
+		print(c.toggled);
+		if !c.toggled: return false;
+	return true;
+
 func show_error(text : String):
 	$Timer.start();
 	warningLabel.text = text;
@@ -54,12 +63,11 @@ func _on_confirm_button_down():
 	if !check_items():
 		show_error("You don't have the funds for this!");
 		return;
-		print("wrong items");
-	else:
-		print("correct items");
 	if !check_information():
 		show_error("Your information has been sold!");
 		return;
-		print("wrong info");
-	else:
-		print("correct info");
+	if !check_buttons():
+		show_error("Your information has been sold!");
+		return;
+	Global.taskWindow.complete_task(4)
+	$"../.."._on_close_requested();

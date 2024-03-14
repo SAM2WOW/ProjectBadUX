@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://3mcr2dw5igyv"]
+[gd_scene load_steps=11 format=3 uid="uid://3mcr2dw5igyv"]
 
 [ext_resource type="Script" path="res://scenes/checkout.gd" id="1_n71ts"]
 [ext_resource type="PackedScene" uid="uid://onos8j83srey" path="res://scenes/item.tscn" id="2_q5omh"]
+[ext_resource type="Texture2D" uid="uid://bhu2atmj7kt0l" path="res://arts/Realshampoo.png" id="3_d4ghj"]
+[ext_resource type="PackedScene" uid="uid://bsi6j6j6uf5yq" path="res://scenes/toggle_button.tscn" id="3_u1k2m"]
+[ext_resource type="Texture2D" uid="uid://m4inxudg5at7" path="res://arts/CheckRed.png" id="4_v6qtc"]
+[ext_resource type="Texture2D" uid="uid://bp7cbdy1sxypy" path="res://arts/AIshampoo1.png" id="4_y5o7y"]
+[ext_resource type="Texture2D" uid="uid://d0tvjcgx1jrhn" path="res://arts/Xgreen.png" id="5_4eyai"]
+[ext_resource type="Texture2D" uid="uid://dkqpt1gwlsoxc" path="res://arts/AIshampoo3.png" id="5_vbp17"]
+[ext_resource type="Texture2D" uid="uid://b4dkhi2xub5nt" path="res://arts/AIshampoo5.png" id="6_ktu38"]
+[ext_resource type="Texture2D" uid="uid://gl5kd2ytu74e" path="res://arts/AIshampoo4.png" id="7_ffdoh"]
 
 [node name="Checkout" type="Control"]
 layout_mode = 3
@@ -58,11 +66,17 @@ size_flags_stretch_ratio = 22.15
 layout_mode = 2
 correctItem = true
 
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item/VBoxContainer" index="0"]
+texture = ExtResource("3_d4ghj")
+
 [node name="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item/VBoxContainer/TextureRect/ColorRect" index="0"]
 text = "Shampoo"
 
 [node name="Item2" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer" instance=ExtResource("2_q5omh")]
 layout_mode = 2
+
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item2/VBoxContainer" index="0"]
+texture = ExtResource("4_y5o7y")
 
 [node name="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item2/VBoxContainer/TextureRect/ColorRect" index="0"]
 text = "Deoderant"
@@ -70,11 +84,17 @@ text = "Deoderant"
 [node name="Item3" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer" instance=ExtResource("2_q5omh")]
 layout_mode = 2
 
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item3/VBoxContainer" index="0"]
+texture = ExtResource("5_vbp17")
+
 [node name="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item3/VBoxContainer/TextureRect/ColorRect" index="0"]
 text = "Face Wash"
 
 [node name="Item4" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer" instance=ExtResource("2_q5omh")]
 layout_mode = 2
+
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item4/VBoxContainer" index="0"]
+texture = ExtResource("6_ktu38")
 
 [node name="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item4/VBoxContainer/TextureRect/ColorRect" index="0"]
 text = "Bar of Soap"
@@ -82,8 +102,11 @@ text = "Bar of Soap"
 [node name="Item5" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer" instance=ExtResource("2_q5omh")]
 layout_mode = 2
 
-[node name="VBoxContainer" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item5" index="0"]
-visible = false
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item5/VBoxContainer" index="0"]
+texture = ExtResource("7_ffdoh")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item5/VBoxContainer/TextureRect/ColorRect" index="0"]
+text = "Totally Shampoo"
 
 [node name="PersonalInfo" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -360,89 +383,51 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer"]
+[node name="ToggleButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2" instance=ExtResource("3_u1k2m")]
 layout_mode = 2
 
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer/HBoxContainer"]
+[node name="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton/HBoxContainer" index="0"]
+button_pressed = true
+texture_normal = ExtResource("4_v6qtc")
+texture_pressed = ExtResource("5_4eyai")
+
+[node name="ToggleButton2" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2" instance=ExtResource("3_u1k2m")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "Save card information"
+[node name="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton2/HBoxContainer" index="0"]
+texture_normal = ExtResource("4_v6qtc")
+texture_pressed = ExtResource("5_4eyai")
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer2"]
-layout_mode = 2
-
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer2/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer2/HBoxContainer"]
-layout_mode = 2
+[node name="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton2/HBoxContainer" index="1"]
 text = "Allow us to use your card"
 
-[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer3"]
+[node name="ToggleButton3" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2" instance=ExtResource("3_u1k2m")]
 layout_mode = 2
 
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer3/HBoxContainer"]
+[node name="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton3/HBoxContainer" index="0"]
+button_pressed = true
+texture_normal = ExtResource("5_4eyai")
+texture_pressed = ExtResource("4_v6qtc")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton3/HBoxContainer" index="1"]
+text = "Don't sell your data"
+
+[node name="ToggleButton4" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2" instance=ExtResource("3_u1k2m")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer3/HBoxContainer"]
-layout_mode = 2
-text = "Enable monthly refill"
+[node name="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton4/HBoxContainer" index="0"]
+button_pressed = true
+texture_normal = ExtResource("4_v6qtc")
+texture_pressed = ExtResource("5_4eyai")
 
-[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton4/HBoxContainer" index="1"]
+text = "Subscribe to weekly emails"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer4"]
-layout_mode = 2
-
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer4/HBoxContainer"]
+[node name="ToggleButton5" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2" instance=ExtResource("3_u1k2m")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer4/HBoxContainer"]
-layout_mode = 2
-text = "Don't give us your IP"
-
-[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer5"]
-layout_mode = 2
-
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer5/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer5/HBoxContainer"]
-layout_mode = 2
-text = "Hourly emails"
-
-[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer6"]
-layout_mode = 2
-
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer6/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/MarginContainer6/HBoxContainer"]
-layout_mode = 2
-text = "Insurance for Shampoo"
+[node name="Label" parent="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton5/HBoxContainer" index="1"]
+text = "Unsubscribe to emails"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -495,6 +480,7 @@ text = "Total: $ _ . __"
 horizontal_alignment = 1
 
 [node name="Confirm" type="Button" parent="HBoxContainer/VBoxContainer2"]
+self_modulate = Color(1, 1, 0.470588, 1)
 layout_mode = 2
 size_flags_vertical = 3
 text = "Confirm Purchase"
@@ -510,3 +496,8 @@ one_shot = true
 [editable path="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item3"]
 [editable path="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item4"]
 [editable path="MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item5"]
+[editable path="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton"]
+[editable path="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton2"]
+[editable path="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton3"]
+[editable path="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton4"]
+[editable path="MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton5"]

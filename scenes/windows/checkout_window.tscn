@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctbonbwyu7yt"]
+[gd_scene load_steps=4 format=3 uid="uid://ctbonbwyu7yt"]
 
 [ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_u1crr"]
 [ext_resource type="PackedScene" uid="uid://3mcr2dw5igyv" path="res://scenes/checkout.tscn" id="2_em8ae"]
+[ext_resource type="Texture2D" uid="uid://doiqmgy3d7agt" path="res://arts/icons/Internets.png" id="2_xjkds"]
 
 [node name="CheckoutWindow" instance=ExtResource("1_u1crr")]
-size = Vector2i(900, 600)
+title = "CHECKOUT"
+size = Vector2i(900, 640)
 unresizable = true
+window_icon = ExtResource("2_xjkds")
 
 [node name="ColorRect" parent="Control" index="0"]
 visible = false
@@ -15,3 +18,15 @@ visible = false
 
 [node name="Checkout" parent="Control" index="2" instance=ExtResource("2_em8ae")]
 layout_mode = 1
+
+[editable path="Control/Checkout"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item2"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item3"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item4"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer/Item5"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton2"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton3"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton4"]
+[editable path="Control/Checkout/MarginContainer/VBoxContainer/CardSliders/VBoxContainer2/ToggleButton5"]

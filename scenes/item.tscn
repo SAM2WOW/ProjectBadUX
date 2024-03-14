@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://onos8j83srey"]
+[gd_scene load_steps=4 format=3 uid="uid://onos8j83srey"]
 
 [ext_resource type="Script" path="res://scenes/ShopItem.gd" id="1_kyapc"]
 [ext_resource type="Texture2D" uid="uid://e477jmxvr3pk" path="res://arts/icon.svg" id="2_govpc"]
+[ext_resource type="Texture2D" uid="uid://bfoqp7np1trw7" path="res://arts/XRed.png" id="3_ydtr8"]
 
 [node name="Item" type="MarginContainer"]
 size_flags_horizontal = 3
@@ -34,7 +35,7 @@ size_flags_vertical = 2
 text = "yo mama"
 vertical_alignment = 1
 
-[node name="RemoveButton" type="Button" parent="VBoxContainer/TextureRect/ColorRect"]
+[node name="RemoveButton" type="TextureButton" parent="VBoxContainer/TextureRect/ColorRect"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -42,5 +43,8 @@ anchor_right = 1.0
 offset_left = -20.0
 offset_bottom = 20.0
 grow_horizontal = 0
+texture_normal = ExtResource("3_ydtr8")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="button_down" from="VBoxContainer/TextureRect/ColorRect/RemoveButton" to="." method="_on_remove_button_button_down"]
