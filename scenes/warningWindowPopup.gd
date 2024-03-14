@@ -1,6 +1,7 @@
 extends Window
 
 var dictionary = preload("res://scenes/windows/dictionary.tscn")
+var page = 0
 
 func _ready():
 	SoundPlayer.play("Fail2")
@@ -17,13 +18,12 @@ func _process(delta):
 	
 	$Control/ProgressBar.set_value($Timer.get_time_left())
 
-func SetDescription(newDesc : String):
-	$Control/Button/MarginContainer/Description.set_text(newDesc)
+func SetDescription(newDesc):
+	$Control/Button/MarginContainer/Description.set_text(newDesc[0])
+	page = newDesc[1]
 
 
 func _on_infobutton_pressed():
-	SoundPlayer.play("Confirm")
-	
 	var w = dictionary.instantiate()
 	
 	# don't spawn if window already open, only focus
@@ -31,10 +31,13 @@ func _on_infobutton_pressed():
 		w.queue_free()
 		
 		# change page
-		
+		Global.windowsManager.opened_windows[w.name].window.set_page(page - 1)
 		return
 	
 	Global.windowsManager.add_window(w)
+	w.set_page(page - 1)
+	
+	_on_close_requested()
 
 
 func _on_timer_timeout():

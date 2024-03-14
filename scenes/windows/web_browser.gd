@@ -206,7 +206,7 @@ func _on_duck_out():
 	
 	#$Timer.start(left_time)
 	Global.healthBar.take_damage(5)
-	Global.warningWindow.AddWarning(1)
+	Global.warningWindow.AddWarning(10)
 	pass
 
 

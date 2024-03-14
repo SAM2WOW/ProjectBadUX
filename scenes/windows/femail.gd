@@ -19,6 +19,7 @@ var recovery = preload("res://scenes/recovery_game.tscn")
 var current_email
 
 var email_delete_count = 0
+var email_unarchived = false
 
 func _ready():
 	super._ready()
@@ -131,10 +132,11 @@ func _on_dvd_pressed():
 
 
 func _on_icon_pressed():
-	recover_tab.set_current_tab(0)
-	
-	$Control/CenterContainer.show()
-	$Control/MarginContainer.hide()
+	if not email_unarchived:
+		recover_tab.set_current_tab(0)
+		
+		$Control/CenterContainer.show()
+		$Control/MarginContainer.hide()
 
 
 func return_to_inbox():
@@ -214,13 +216,18 @@ func _on_recovery_game_win():
 	
 	# delete the email
 	var email = $Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Archive/Vbox/Icon
-	email.queue_free()
-	Global.deleted_emails.append(email.sender_email)
+	#email.queue_free()
+	#Global.deleted_emails.append(email.sender_email)
 	
 	Global.taskWindow.complete_task(3)
 	
 	return_to_inbox()
-
+	_on_email_button_pressed(email)
+	
+	# reparent email to inbox
+	email_unarchived = true
+	email.connect("btn_pressed", _on_email_button_pressed)
+	email.reparent($Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox)
 
 func _on_redcross_pressed():
 	SoundPlayer.play("Confirm")

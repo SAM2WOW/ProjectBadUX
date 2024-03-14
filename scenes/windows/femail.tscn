@@ -458,11 +458,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Hello,
-
+ 
 I hope this message finds you well. As we continue our efforts to raise money for the recent  devastating earthquake, I wanted to reach out to you with an opportunity to make a meaningful impact.  
-
+ 
 At Red Cross, we are dedicated to providing immediate relief to areas that need it the most. We’ve seen firsthand the positive changes that can happen when people come together to support a common cause.
-
+ 
 Your contribution, no matter the size, can help us. To donate simply click on the link "
 fit_content = true
 
@@ -508,9 +508,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Every dollar counts and brings us closer to our goal.
-
+ 
 Thank you for considering this opportunity to support our cause. Together, we can create a brighter future for all.
-
+ 
 Best,
 The Red Cross Foundation"
 fit_content = true
@@ -528,7 +528,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Hi Dear,
-
+ 
 I’m in trouble! I fell off my chair and ended up at the ER yesterday. The bill is about $1,000 and I’m low on cash. Would you be able to send some cash to me through Wenmo? Here is my profile link: "
 fit_content = true
 
@@ -552,7 +552,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "I miss you, please come visit me. Love you.
-
+ 
 Best,
 Your Granny"
 fit_content = true
@@ -570,11 +570,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Hello,
-
+ 
 I hope this message finds you well. As we continue our efforts to raise money for the recent  devastating earthquake, I wanted to reach out to you with an opportunity to make a meaningful impact.  
-
+ 
 At Red Cross, we are dedicated to providing immediate relief to areas that need it the most. We’ve seen firsthand the positive changes that can happen when people come together to support a common cause.
-
+ 
 Your contribution, no matter the size, can help us. To donate simply click on the link "
 fit_content = true
 
@@ -620,9 +620,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Every dollar counts and brings us closer to our goal.
-
+ 
 Thank you for considering this opportunity to support our cause. Together, we can create a brighter future for all.
-
+ 
 Best,
 The Red Cross Foundation"
 fit_content = true
@@ -639,9 +639,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Dear Candidate,
-
+ 
 I hope this email finds you well. I am writing to express our appreciation for your interest in the Product Manager role at IGM. After reviewing your application, we are impressed with your qualifications and believe that your skills and experience align well with what we are looking for in our ideal candidate. We would like to invite you to an interview to discuss the position further and to learn more about your background and expertise. 
-
+ 
 Please make a video appointment using our"
 fit_content = true
 
@@ -665,9 +665,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "here.
-
+ 
 We Look forward to meeting you and discussing how you can contribute to our team!
-
+ 
 Best,
 IGM Human Resources"
 fit_content = true
@@ -685,13 +685,13 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Hello,
-
+ 
 Someone recently used your password to try to sign in to your account. Please see below for the sign-in details:
-
+ 
 Thursday, July 10, 2008 05:45:14 PM UTC
 IP Address: 65.89.56.144
 Location: Boulder, Colorado
-
+ 
 We prevented the sign-in attempt in case this was not you. Please sign in to your and reset your password here"
 fit_content = true
 
@@ -714,7 +714,7 @@ text = "www.fe-maill.com/reset_password/3t3252y687952"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "
+text = " 
 Best,
 Fe-Mail Security Dept"
 fit_content = true

@@ -4,8 +4,13 @@ var totalTabs = 1
 var currentTabs = 0
 
 
+func set_page(value):
+	$Control/MarginContainer/VBoxContainer/TabContainer.set_current_tab(value)
+
+
 func _ready():
 	super._ready()
+	SoundPlayer.play("PageTurn")
 	
 	totalTabs = $Control/MarginContainer/VBoxContainer/TabContainer.get_tab_count()
 	

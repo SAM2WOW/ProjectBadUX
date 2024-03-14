@@ -2,16 +2,17 @@ extends Control
 class_name WarningWindow;
 
 @export var warningList = {
-    0: "Watch out for websites that hide behind a false address!",
-    1: "Ouch, you hit a real duck 😭.",
-    2: "Oops wrong button!",
-    3: "Oops! Watch out for suspicious ads.",
-    4: "Oh no you deleted an important email 🙁.",
-    5: "Careful not to click on scam email links.",
-    6: "AI is getting really good at replicating things.",
-    7: "You’re losing health, hurry and unsubscribe!",
-    8: "Careful not to give out your personal information.",
-    9: "Oops, looks like you made an unintended purchase."
+	0: ["Watch out for websites that hide behind a false address!", 5],
+	1: ["Ouch, you hit a real duck 😭.", 12],
+	2: ["Oops wrong button!", 2],
+	3: ["Oops! Watch out for suspicious ads.", 4],
+	4: ["Oh no you deleted an important email 🙁.", 8],
+	5: ["Careful not to click on scam email links.", 5],
+	6: ["AI is getting really good at replicating things.", 12],
+	7: ["You’re losing health, hurry and unsubscribe!", 10],
+	8: ["Careful not to give out your personal information.", 1],
+	9: ["Oops, looks like you made an unintended purchase.", 7],
+	10: ["Stop those AI ducks before they fly out!", 12],
 }
 
 var warningQueue : Array;
