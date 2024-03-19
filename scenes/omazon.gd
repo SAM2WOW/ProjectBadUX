@@ -59,5 +59,5 @@ func _on_shampoo_ads_pressed():
 
 func _on_shampoo_tip_pressed():
 	SoundPlayer.play("Confirm")
-	var w = dogshampoo.instantiate()
+	var w = tips.instantiate()
 	Global.windowsManager.add_window(w)
