@@ -27,12 +27,6 @@ color = Color(0.764706, 0.780392, 0.796078, 1)
 [node name="TaskList" parent="." instance=ExtResource("4_aftko")]
 position = Vector2i(0, 365)
 visible = false
-taskList = {
-1: "Download an image of a duck",
-2: "Clean your email inbox",
-3: "Retrive archived email",
-4: "Shop for shampoo online"
-}
 
 [node name="TaskButton" type="Button" parent="."]
 anchors_preset = 9

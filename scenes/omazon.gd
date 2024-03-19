@@ -6,6 +6,7 @@ var checkoutWindow = preload("res://scenes/windows/checkout_window.tscn");
 var shame = preload("res://scenes/windows/trick_confirm.tscn")
 var ads = preload("res://scenes/windows/ads.tscn")
 var tips = preload("res://scenes/windows/tipping_shame.tscn")
+var dogshampoo = preload("res://scenes/windows/dogshampoo.tscn")
 
 func _ready():
 	await get_tree().create_timer(1).timeout;
@@ -38,7 +39,7 @@ func _on_coupon_button_pressed():
 
 func _on_dog_shampoo_pressed():
 	SoundPlayer.play("Confirm")
-	var w = tips.instantiate()
+	var w = dogshampoo.instantiate()
 	Global.windowsManager.add_window(w)
 
 
@@ -54,3 +55,9 @@ func _on_shampoo_ads_pressed():
 		
 		if get_tree():
 			await get_tree().create_timer(0.2).timeout
+
+
+func _on_shampoo_tip_pressed():
+	SoundPlayer.play("Confirm")
+	var w = dogshampoo.instantiate()
+	Global.windowsManager.add_window(w)

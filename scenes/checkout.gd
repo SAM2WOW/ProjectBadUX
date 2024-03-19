@@ -7,6 +7,8 @@ var bankText;
 var warningLabel;
 var totalLabel;
 
+var thanku = preload("res://scenes/windows/thankyou3.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	itemContainer = $MarginContainer/VBoxContainer/ReviewItems/VBoxContainer/ItemContainer;
@@ -81,5 +83,10 @@ func _on_confirm_button_down():
 		Global.warningWindow.AddWarning(8)
 		
 		return;
+	
 	Global.taskWindow.complete_task(4)
+	
+	var t = thanku.instantiate()
+	Global.windowsManager.add_window(t)
+	
 	$"../.."._on_close_requested();

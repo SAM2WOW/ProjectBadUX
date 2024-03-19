@@ -613,7 +613,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_rt1hf")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_yklec")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmq0h")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lh8uk")
-text = "www.redcrossfoundation.com"
+text = "www.savethekids.buy"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailInbox/Inbox/Vbox/Icon3/Content" index="4"]
 layout_mode = 2

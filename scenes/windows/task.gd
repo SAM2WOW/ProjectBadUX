@@ -18,10 +18,11 @@ func init_task(taskId : int, newTaskText : String):
 	id = taskId;
 	text = "☐ %s" % taskText
 
-func finish_task():
+func finish_task(effect : bool):
 	print("task finished!");
 	set("theme_override_colors/font_color",Color("00ec56"))
 	
 	text = "🗹 %s" % taskText
 	
-	SoundPlayer.play("Success")
+	if effect:
+		SoundPlayer.play("Success")

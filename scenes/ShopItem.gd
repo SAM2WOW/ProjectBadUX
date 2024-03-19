@@ -16,5 +16,6 @@ func _process(delta):
 	active = $VBoxContainer.visible;
 
 func _on_remove_button_button_down():
+	SoundPlayer.play("Deny")
 	get_parent().move_child(self, get_parent().get_child_count());
 	$VBoxContainer.visible = false;

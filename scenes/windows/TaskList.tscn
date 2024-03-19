@@ -8,9 +8,6 @@ unresizable = true
 borderless = true
 always_on_top = true
 script = ExtResource("1_mvjnr")
-taskList = {
-1: "task 1"
-}
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

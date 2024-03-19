@@ -1,6 +1,12 @@
 extends Window
 
-@export var taskList : Dictionary;
+var taskList = {
+	1: "Download an image of a duck",
+	2: "Delete scam emails",
+	3: "Retrive archived email",
+	4: "Shop for shampoo online",
+}
+
 var taskNode = preload("res://scenes/windows/task.tscn");
 var taskCompletion : Dictionary;
 
@@ -12,6 +18,7 @@ func _ready():
 	Global.taskWindow = self
 	initiate_tasks();
 	initialPos = position.y;
+
 
 func show_window():
 	SoundPlayer.play("Confirm")
@@ -53,19 +60,28 @@ func initiate_tasks():
 		t.init_task(task, taskList[task]);
 		$Control/TaskContainer.add_child(t);
 		taskCompletion[task] = false;
+		
+		# restore all completed task from global
+		if Global.taskCompletion:
+			if Global.taskCompletion.has(task):
+				if Global.taskCompletion[task]:
+					complete_task(task, false)
 
 
-func complete_task(taskId : int):
+func complete_task(taskId : int, effect : bool = true):
 	# also toggle the button
 	$"../TaskButton".set_pressed(true)
 	
-	await show_window();
+	if effect:
+		await show_window();
+	
 	if taskCompletion[taskId]:
 		print("task already completed");
 		return;
+	
 	for task in $Control/TaskContainer.get_children():
 		if !task is Task || task.id != taskId: continue;
-		task.finish_task();
+		task.finish_task(effect);
 		taskCompletion[taskId] = true;
 		
 		# check if all the task if complete
@@ -76,6 +92,9 @@ func complete_task(taskId : int):
 		
 		if allComplete:
 			show_final_completion()
+	
+	# save the game to global
+	Global.taskCompletion = taskCompletion.duplicate()
 
 
 func show_final_completion():

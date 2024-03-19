@@ -68,6 +68,14 @@ theme_override_constants/margin_bottom = 15
 [node name="GridContainer" type="GridContainer" parent="Control/Icons"]
 layout_mode = 2
 
+[node name="DictionaryBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = ExtResource("4_fxont")
+icon_texture = ExtResource("15_a7776")
+icon_name = "Dark UX Dictionary"
+window = ExtResource("16_7jdu2")
+
 [node name="NoteBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 layout_mode = 2
 text = ""
@@ -114,14 +122,6 @@ icon = ExtResource("4_fxont")
 icon_texture = ExtResource("13_1w4ho")
 icon_name = "Duck.jpg"
 window = ExtResource("14_5cp0w")
-
-[node name="DictionaryBtn" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
-layout_mode = 2
-text = ""
-icon = ExtResource("4_fxont")
-icon_texture = ExtResource("15_a7776")
-icon_name = "Dark UX Dictionary"
-window = ExtResource("16_7jdu2")
 
 [node name="DVD" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
 visible = false

@@ -544,7 +544,7 @@ theme_override_constants/margin_left = 5
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_75xwu")
+texture_normal = ExtResource("11_u46v6")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1183,7 +1183,7 @@ text = "I hate puppies."
 [connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer/ColorRect9/HBoxContainer/MarginContainer3/ShampooAds" to="." method="_on_shampoo_ads_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer/ShampooAds" to="." method="_on_shampoo_ads_pressed"]
 [connection signal="button_down" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer2/RightButton" to="." method="_on_right_button_button_down"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer3/ShampooAds" to="." method="_on_shampoo_ads_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/MarginContainer2/ColorRect9/HBoxContainer/MarginContainer3/ShampooAds" to="." method="_on_shampoo_tip_pressed"]
 [connection signal="button_down" from="SubBar" to="ManageSub" method="_on_sub_bar_button_down"]
 [connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer/SignUp" to="SubTrick" method="subscribe"]
 [connection signal="button_down" from="SubTrick/SubPrompt/VBoxContainer/HBoxContainer/MarginContainer2/Subscribe" to="SubTrick" method="subscribe"]

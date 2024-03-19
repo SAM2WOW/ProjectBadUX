@@ -13,9 +13,11 @@ var crash_reason = ""
 # taskWindow.complete_task(id) to complete task
 # warningWindow.AddWarning(id) to show a warning
 
-var subscriptions = [];
+var subscriptions = []
 var deleted_emails = []
 var notepad_content = ""
+
+var taskCompletion
 
 func _process(delta):
 	for s in subscriptions:
