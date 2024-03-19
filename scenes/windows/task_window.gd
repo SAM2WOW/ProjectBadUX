@@ -4,7 +4,7 @@ var taskList = {
 	1: "Download an image of a duck",
 	2: "Delete scam emails",
 	3: "Retrive archived email",
-	4: "Shop for shampoo online",
+	4: "Buy a real shampoo on Omazon",
 }
 
 var taskNode = preload("res://scenes/windows/task.tscn");

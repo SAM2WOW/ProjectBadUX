@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmv4wtgfnvwbu"]
+[gd_scene load_steps=8 format=3 uid="uid://cmv4wtgfnvwbu"]
 
 [ext_resource type="Texture2D" uid="uid://y1uqxnp3gy3d" path="res://arts/icons/Notepad.png" id="2_djmfe"]
 [ext_resource type="Script" path="res://scenes/healthBar.gd" id="3_0dulu"]
 [ext_resource type="Script" path="res://scenes/MenuButton.gd" id="3_oyxl4"]
 [ext_resource type="PackedScene" uid="uid://8qx2cukxmkd8" path="res://scenes/windows/TaskList.tscn" id="4_aftko"]
 [ext_resource type="Script" path="res://scenes/warningWindow.gd" id="5_sk432"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvs33"]
+bg_color = Color(0.470588, 0.470588, 0.470588, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o30ao"]
 bg_color = Color(0, 0.756863, 0.431373, 1)
@@ -65,6 +68,7 @@ offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.874434, 0.954044)
+theme_override_styles/background = SubResource("StyleBoxFlat_lvs33")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o30ao")
 value = 65.92
 script = ExtResource("3_0dulu")

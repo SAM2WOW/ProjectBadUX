@@ -9,7 +9,7 @@ func _physics_process(delta):
 	if not falling:
 		var mouse_pos = get_local_mouse_position()
 		var clamp_x = clamp(mouse_pos.x, 11, 476)
-		var clamp_y = clamp(mouse_pos.y, 19, 175)
+		var clamp_y = clamp(mouse_pos.y, 82, 115)
 		$CursorBody.set_position(Vector2(clamp_x, clamp_y))
 
 

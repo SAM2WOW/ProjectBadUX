@@ -4,7 +4,7 @@ var console
 var windowsManager
 var healthBar
 var taskWindow
-var warningWindow;
+var warningWindow
 
 var files = []
 

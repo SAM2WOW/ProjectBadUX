@@ -741,15 +741,15 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Dear Team,
-
+ 
 I wanted to touch base regarding our upcoming team meeting scheduled for this Friday at 10:00 AM in the conference room.
-
+ 
 Please come prepared to share updates on your respective tasks and any relevant information you think the team should be aware of.
-
+ 
 If you have any agenda items you'd like to add, please let me know by Thursday so we can incorporate them into the meeting.
-
+ 
 Looking forward to a productive discussion.
-
+ 
 Best regards,
 Sheila Bard
 Targot Management Team"
