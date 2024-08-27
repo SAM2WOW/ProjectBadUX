@@ -8,7 +8,7 @@ var taskList = {
 }
 
 var taskNode = preload("res://scenes/windows/task.tscn");
-var taskCompletion : Dictionary;
+var taskCompletion : Dictionary = {};
 
 var initialPos;
 var tween
@@ -60,12 +60,13 @@ func initiate_tasks():
 		t.init_task(task, taskList[task]);
 		$Control/TaskContainer.add_child(t);
 		taskCompletion[task] = false;
-		
-		# restore all completed task from global
-		if Global.taskCompletion:
-			if Global.taskCompletion.has(task):
-				if Global.taskCompletion[task]:
-					complete_task(task, false)
+	
+	# only start checking after the dictionary has initialized
+	if Global.taskCompletion:
+		for task in Global.taskCompletion.keys():
+			# restore all completed task from global
+			if Global.taskCompletion[task]:
+				complete_task(task, false)
 
 
 func complete_task(taskId : int, effect : bool = true):
@@ -86,9 +87,13 @@ func complete_task(taskId : int, effect : bool = true):
 		
 		# check if all the task if complete
 		var allComplete = true
+		print("Checking Task")
+		print(taskCompletion)
+		print(Global.taskCompletion)
 		for i in taskCompletion.values():
 			if i == false:
 				allComplete = false
+				break
 		
 		if allComplete:
 			show_final_completion()

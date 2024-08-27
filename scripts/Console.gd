@@ -20,10 +20,8 @@ func crash_game():
 		#for i in Global.subscriptions:
 			#i.queue_free()
 	
-	print("Clear")
 	Global.subscriptions.clear()
-	Global.subscriptions = []
-	print(Global.subscriptions)
+	Global.deleted_emails.clear()
 	
 	get_tree().change_scene_to_file("res://levels/crashed.tscn")
 

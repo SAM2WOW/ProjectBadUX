@@ -34,8 +34,6 @@ func _process(delta):
 			tickTimer -= tickRate;
 			if Global.healthBar != null: 
 				Global.healthBar.call_deferred("take_damage", damagePerTick * subscriptions.size(), "Your uncancelled subscriptions got you!")
-				
-				print(Global.subscriptions)
 	
 	#for s in subscriptions:
 		#s.update(delta);

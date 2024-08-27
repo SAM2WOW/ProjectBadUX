@@ -31,6 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="RichTextLabel" parent="Control/CenterContainer"]
+visible = false
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][b][ Your PC CRASHED ][/b] [/center]
