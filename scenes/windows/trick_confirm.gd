@@ -34,7 +34,7 @@ func _on_no_pressed():
 func _on_yes_pressed():
 	emit_signal("confirmed")
 	
-	Global.healthBar.take_damage(10)
+	Global.healthBar.take_damage(10, "Ouch! You fell for the tricks!")
 	Global.warningWindow.AddWarning(12)
 	
 	SoundPlayer.play("Confirm")

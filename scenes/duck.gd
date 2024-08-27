@@ -52,7 +52,7 @@ func kill():
 	queue_free()
 	
 	if not bad:
-		Global.healthBar.take_damage(5)
+		Global.healthBar.take_damage(5, "Maybe don't kill the real ducky!")
 		Global.warningWindow.AddWarning(1)
 
 

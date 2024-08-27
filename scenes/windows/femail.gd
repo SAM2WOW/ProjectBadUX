@@ -100,8 +100,8 @@ func _on_delete_pressed():
 		if email_delete_count == 3:
 			Global.taskWindow.complete_task(2)
 	else:
-		Global.healthBar.take_damage(20)
 		Global.warningWindow.AddWarning(4)
+		Global.healthBar.take_damage(20, "Don't delete the useful emails!")
 	
 	_on_back_pressed()
 
@@ -110,8 +110,8 @@ func _on_virus_pressed():
 	var w = cup.instantiate()
 	Global.windowsManager.add_window(w)
 	
-	Global.healthBar.take_damage(10)
 	Global.warningWindow.AddWarning(5)
+	Global.healthBar.take_damage(10, "You clicked on a virus!")
 
 
 func _on_bad_link_pressed():
@@ -119,12 +119,12 @@ func _on_bad_link_pressed():
 		var w = ads.instantiate()
 		Global.windowsManager.add_window(w)
 	
-	Global.healthBar.take_damage(10)
 	Global.warningWindow.AddWarning(5)
+	Global.healthBar.take_damage(10, "You clicked on a bad link!")
 
 
 func _on_dvd_pressed():
-	Global.healthBar.take_damage(10)
+	Global.healthBar.take_damage(10, "Watch what link you're clicking on!")
 	Global.warningWindow.AddWarning(5)
 	
 	var w = dvd.instantiate()

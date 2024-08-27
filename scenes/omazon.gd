@@ -1,6 +1,6 @@
 extends Control
 
-@export var subscription : Subscription;
+#@export var subscription : Subscription;
 var checkoutWindow = preload("res://scenes/windows/checkout_window.tscn");
 
 var shame = preload("res://scenes/windows/trick_confirm.tscn")
@@ -46,7 +46,7 @@ func _on_dog_shampoo_pressed():
 func _on_shampoo_ads_pressed():
 	SoundPlayer.play("Confirm")
 	
-	Global.healthBar.take_damage(10)
+	Global.healthBar.take_damage(10, "You clicked on a shampoo ads!")
 	Global.warningWindow.AddWarning(0)
 	
 	for i in range(randi_range(1, 3)):

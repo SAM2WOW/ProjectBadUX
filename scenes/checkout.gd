@@ -65,21 +65,21 @@ func _on_confirm_button_down():
 	if !check_items():
 		show_error("You don't have the funds for this!");
 		
-		Global.healthBar.take_damage(5)
+		Global.healthBar.take_damage(5, "Check your shopping cart before checking out!")
 		Global.warningWindow.AddWarning(9)
 		
 		return;
 	if !check_information():
 		show_error("Your information has been sold!");
 		
-		Global.healthBar.take_damage(10)
+		Global.healthBar.take_damage(10, "Your informations got stolen!")
 		Global.warningWindow.AddWarning(8)
 		
 		return;
 	if !check_buttons():
 		show_error("Your information has been sold!");
 		
-		Global.healthBar.take_damage(10)
+		Global.healthBar.take_damage(10, "Your informations got stolen!")
 		Global.warningWindow.AddWarning(8)
 		
 		return;

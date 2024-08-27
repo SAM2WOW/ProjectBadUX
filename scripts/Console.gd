@@ -11,16 +11,19 @@ func crash_game():
 	SoundPlayer.play("Crash")
 	
 	Global.console = null
-	Global.windowsManager = null
-	Global.healthBar = null
-	Global.taskWindow = null
-	Global.warningWindow = null
+	#Global.windowsManager = null
+	#Global.healthBar = null
+	#Global.taskWindow = null
+	#Global.warningWindow = null
 	
-	if Global.subscriptions:
-		for i in Global.subscriptions:
-			i.queue_free()
-		
-		Global.subscriptions.clear();
+	#if Global.subscriptions:
+		#for i in Global.subscriptions:
+			#i.queue_free()
+	
+	print("Clear")
+	Global.subscriptions.clear()
+	Global.subscriptions = []
+	print(Global.subscriptions)
 	
 	get_tree().change_scene_to_file("res://levels/crashed.tscn")
 

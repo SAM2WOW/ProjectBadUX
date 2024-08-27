@@ -77,5 +77,5 @@ func _on_texture_button_button_down():
 		
 		$AudioStreamPlayer.play()
 		
-		Global.healthBar.take_damage(5)
+		Global.healthBar.take_damage(5, "The fake download buttons got you!")
 		Global.warningWindow.AddWarning(2)

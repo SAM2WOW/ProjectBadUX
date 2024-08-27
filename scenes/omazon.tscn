@@ -1,7 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://drdwgq3vfr6ip"]
+[gd_scene load_steps=31 format=3 uid="uid://drdwgq3vfr6ip"]
 
 [ext_resource type="Script" path="res://scenes/omazon.gd" id="1_t28q0"]
-[ext_resource type="Script" path="res://resources/subscription.gd" id="2_2qgc2"]
 [ext_resource type="Texture2D" uid="uid://kfn4uthq5lk" path="res://arts/Gear.png" id="3_c576v"]
 [ext_resource type="Texture2D" uid="uid://c1jouggc4og6r" path="res://arts/gif/Bear (1).png" id="3_hrq2x"]
 [ext_resource type="Script" path="res://scenes/subTrick.gd" id="3_qh38m"]
@@ -27,12 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://b4fgcmlicd0yl" path="res://arts/gif/heart (2).png" id="22_eb2ds"]
 [ext_resource type="Texture2D" uid="uid://diemmorgwghe8" path="res://arts/gif/heart (1).png" id="23_077cs"]
 [ext_resource type="Texture2D" uid="uid://dsmbxthm87gp2" path="res://arts/gif/heart (3).png" id="24_co7li"]
-
-[sub_resource type="Resource" id="Resource_oj6ci"]
-script = ExtResource("2_2qgc2")
-id = 0
-tickRate = 5.0
-damagePerTick = 5.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_rs7he"]
 frames = 6
@@ -80,7 +73,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t28q0")
-subscription = SubResource("Resource_oj6ci")
 
 [node name="ColorRect4" type="ColorRect" parent="."]
 layout_mode = 1

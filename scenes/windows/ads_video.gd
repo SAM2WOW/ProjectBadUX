@@ -37,4 +37,4 @@ func _on_timer_timeout():
 
 
 func _on_timer_damange_timeout():
-	Global.healthBar.take_damage(2)
+	Global.healthBar.take_damage(2, "Don't forget to close the ads videos!")

@@ -13,7 +13,7 @@ func _on_confirm_pressed():
 		$Control/CenterContainer/Customize.hide()
 		$"Control/CenterContainer/Thank you".show()
 		
-		Global.healthBar.take_damage(abs(tips))
+		Global.healthBar.take_damage(abs(tips), "Maybe check the vendor before tipping!")
 	
 	else:
 		_on_close_requested()

@@ -85,7 +85,7 @@ func _on_line_edit_text_submitted(new_text):
 func _on_bad_website_1_pressed():
 	SoundPlayer.play("Confirm")
 	
-	Global.healthBar.take_damage(10)
+	Global.healthBar.take_damage(10, "Don't click the bad websites!")
 	Global.warningWindow.AddWarning(0)
 	
 	for i in range(4):
@@ -101,7 +101,7 @@ func _on_bad_website_2_pressed():
 	
 	SoundPlayer.play("Confirm")
 	
-	Global.healthBar.take_damage(10)
+	Global.healthBar.take_damage(10 ,"Don't click the bad websites!")
 	Global.warningWindow.AddWarning(0)
 	
 	Global.console.install_app(load("res://arts/gif/hamster (1).png"), "Hammy", load("res://scenes/windows/HamsterVirus.tscn"))
@@ -210,7 +210,7 @@ func _on_duck_out():
 	#var left_time = max($Timer.get_time_left() + 2, 0.0)
 	
 	#$Timer.start(left_time)
-	Global.healthBar.take_damage(5)
+	Global.healthBar.take_damage(5, "Oops! The AI Ducks got you!")
 	Global.warningWindow.AddWarning(10)
 	pass
 
@@ -230,6 +230,3 @@ func _on_download_pressed():
 	Global.windowsManager.add_window(w)
 	
 	_on_button_pressed()
-
-
-

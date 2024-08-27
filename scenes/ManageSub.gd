@@ -109,7 +109,7 @@ func unsubscribe():
 func _on_ads_pressed():
 	SoundPlayer.play("Confirm")
 	
-	Global.healthBar.take_damage(10)
+	Global.healthBar.take_damage(10, "You clicked on an ads!")
 	Global.warningWindow.AddWarning(0)
 	
 	var w = ads.instantiate()

@@ -48,7 +48,8 @@ func subscribe():
 	SoundPlayer.play("Yay")
 	
 	Global.warningWindow.AddWarning(7);
-	Global.subscriptions.push_back($"..".subscription.duplicate());
+	#Global.subscriptions.append($"..".subscription.duplicate());
+	Global.subscriptions.append(1);
 	$SubPrompt.visible = false;
 	$SubscribeScreen2.visible = false;
 	$SubscribeScreen.visible = true;
@@ -75,4 +76,3 @@ func _on_no_sub_mouse_entered():
 func _on_no_sub_mouse_exited():
 	SoundPlayer.play("Deny")
 	$"../AudioStreamPlayer2D".stop();
-

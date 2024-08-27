@@ -33,7 +33,7 @@ func _on_timer_timeout():
 
 
 func _on_hunger_timer_timeout():
-	Global.healthBar.take_damage(2)
+	Global.healthBar.take_damage(2, "Hammy Killed You. So Kawaii")
 	
 	SoundPlayer.play("Hammy1")
 	

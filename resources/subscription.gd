@@ -2,8 +2,8 @@ extends Resource
 class_name Subscription;
 
 @export var id : int = 0;
-@export var tickRate : float;
-@export var damagePerTick : float;
+@export var tickRate : float = 2;
+@export var damagePerTick : float = 2;
 
 var tickTimer = 0;
 
@@ -21,4 +21,4 @@ func update(delta):
 	if tickTimer >= tickRate:
 		tickTimer -= tickRate;
 		if Global.healthBar != null: 
-			Global.healthBar.call_deferred("take_damage", damagePerTick)
+			Global.healthBar.call_deferred("take_damage", damagePerTick, "Don't forget your subscriptions!")
