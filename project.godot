@@ -12,6 +12,7 @@ config_version=5
 
 config/name="ProjectBadUX"
 config/description="The Impossible Computer"
+config/version="1.0"
 run/main_scene="res://levels/login.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0.501961, 0.501961, 1)

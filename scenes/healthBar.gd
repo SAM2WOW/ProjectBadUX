@@ -27,13 +27,14 @@ func game_over(new_reason : String):
 	
 	Global.console.crash_game()
 
-func _input(ev):
-	if Input.is_key_pressed(KEY_1):
-		take_damage(10, "Kill yourself");
+#func _input(ev):
+#	if Input.is_physical_key_pressed(KEY_1):
+#		take_damage(10, "Kill yourself");
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass;
+	pass
+	#take_damage(delta * 3, "Kill yourself");
 
 
 func _on_timer_timeout():
