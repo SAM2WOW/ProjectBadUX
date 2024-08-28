@@ -1,13 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd4j6rx1mth4r"]
+[gd_scene load_steps=3 format=3 uid="uid://cd4j6rx1mth4r"]
 
 [ext_resource type="Script" path="res://scenes/windows/task.gd" id="1_myego"]
+[ext_resource type="Texture2D" uid="uid://drgdubgk5rapl" path="res://Themes/Classic95/Styles/CheckBox/Unchecked.png" id="2_id6nq"]
 
 [node name="Task" type="Label"]
 custom_minimum_size = Vector2(24, 24)
 offset_right = 191.0
 offset_bottom = 24.0
-text = "🗹 yo mama"
+text = "     yo mama"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 script = ExtResource("1_myego")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_id6nq")

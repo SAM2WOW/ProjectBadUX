@@ -210,7 +210,7 @@ func _on_duck_out():
 	#var left_time = max($Timer.get_time_left() + 2, 0.0)
 	
 	#$Timer.start(left_time)
-	Global.healthBar.take_damage(5, "Oops! The AI Ducks got you!")
+	Global.healthBar.take_damage(5, "You missed the AI ducks!")
 	Global.warningWindow.AddWarning(10)
 	pass
 
